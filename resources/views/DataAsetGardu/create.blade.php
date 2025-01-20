@@ -21,6 +21,8 @@
             <img src="{{ asset('halaman_data_aset/assets/img/Logo_PLN.png') }}" width="40" height="50" alt="" class="d-inline-block align-text-center">
             PT PLN (Persero) UP3 Pinrang
          </a>
+           <!-- Sidebar Toggle-->
+           <button class="btn btn-link btn-sm order-1 order-lg-0 ms-auto me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
@@ -133,7 +135,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Id_Transpower</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">KVA Internal</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="id_transpower" class="form-control form-control-sm" id="id_transpower" placeholder="id_transpower">
                                 </div>
