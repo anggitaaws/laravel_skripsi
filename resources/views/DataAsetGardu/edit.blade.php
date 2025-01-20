@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Id_Transpower</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">KVA Internal</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="id_transpower" class="form-control form-control-sm" id="id_transpower" placeholder="id_transpower" value="{{ $data_aset_gardu->id_transpower }}">
                                 </div>

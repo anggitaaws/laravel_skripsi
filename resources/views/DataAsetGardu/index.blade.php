@@ -136,7 +136,7 @@
                                             <th>No</th>
                                             <th>Nama Gardu Baru</th>
                                             <th>ULP</th>
-                                            <th>Id_Transpower</th>
+                                            <th>KVA Internal</th>
                                             <th>Phasa Internal</th>
                                             <th>Lokasi(APKT)</th>
                                             <th>Penyulang</th>
