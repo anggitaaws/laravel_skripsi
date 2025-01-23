@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('location')->nullable();
             $table->string('segment')->nullable();
             $table->string('spec_fabrication')->nullable();
-            $table->integer('cable_length');
+            $table->decimal('cable_length');
             $table->string('spec_CableSize');
             $table->integer('NumberofPole');
             $table->timestamps();

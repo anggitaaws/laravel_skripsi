@@ -13,7 +13,7 @@ class DataAsetGarduController extends Controller
      */
     public function index()
     {
-        $data_aset_gardu = DataAsetGardu::orderBy('created_at', 'DESC')->get();
+        $data_aset_gardu = DataAsetGardu::orderBy('created_at', 'ASC')->get();
         return view('DataAsetGardu.index',compact('data_aset_gardu'));
         
     }

@@ -62,8 +62,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #fff;
-  --bs-link-hover-color: #efe62f;
+  --bs-link-color: #125d72 ;
+  --bs-link-hover-color:#efe62f;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -11228,4 +11228,11 @@ body {
 
 .sb-sidenav .sb-sidenav-menu .nav .nav-link:hover {
   -webkit-text-fill-color: #efe62f !important;
+}
+
+#sidebarToggle {
+  font-size: 24px;  /* Ukuran teks */
+  padding: 12px 24px; /* Padding tombol */
+  width: 60px; /* Lebar tombol */
+  height: 60px; /* Tinggi tombol */
 }

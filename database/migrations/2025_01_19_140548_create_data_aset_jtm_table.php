@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('segment');
             $table->integer('phase');
             $table->integer('cable_length');
-            $table->integer('spec_cablesize');
+            $table->decimal('spec_cablesize');
             $table->string('spec_pole');
             $table->string('spec_consule');
             $table->integer('height_pole');

@@ -13,28 +13,47 @@ return new class extends Migration
     {
         Schema::create('data_aset_gardu', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('ulp');
-            $table->integer('id_transpower');
-            $table->integer('phase');
-            $table->string('location');
-            $table->string('penyulang');
-            $table->string('keypoint');
-            $table->string('section');
-            $table->string('segment');
-            $table->decimal('latitude',10,8);
-            $table->decimal('longitude',11,8);
-            $table->string('spec_fabrication');
-            $table->integer('spec_transtap')->nullable();
-            $table->integer('spec_voltage')->nullable();
-            $table->integer('spec_current')->nullable();
-            $table->integer('spec_year')->nullable();
-            $table->string('spec_wiring')->nullable();
-            $table->string('spec_mineraloil')->nullable();
-            $table->string('spec_cooling_type')->nullable();   
-            $table->integer('spec_oilweight')->nullable();   
-            $table->integer('spec_transweight')->nullable();
-            $table->integer('test_earth')->nullable();
+            $table->string('name'); //nama gardu
+            $table->string('no_spbj'); // No.SPBJ Pelaksana
+            $table->string('ulp'); // ulp
+            $table->integer('id_transpower'); // Daya/Phasa
+            $table->integer('phase'); // Phasa
+            $table->string('location'); // Lokasi
+            $table->string('penyulang'); // penyulang
+            $table->string('keypoint'); // keypoint
+            $table->string('section'); // section
+            $table->string('segment'); // segment
+            $table->decimal('latitude',10,8); // latitude/koordinat
+            $table->decimal('longitude',11,8); // longitude/koordinat
+            $table->string('spec_fabrication'); // Merk / Type
+            $table->integer('spec_transtap')->nullable(); // Posisi TAP
+            $table->integer('spec_voltage')->nullable(); // Teg. Pengenal (V)
+            $table->integer('spec_current')->nullable(); // Arus Pengenal (A)
+            $table->integer('spec_year')->nullable(); // THN. Buat
+            $table->string('spec_wiring')->nullable(); // Vektor Group
+            $table->string('spec_cooling_type')->nullable(); // sistem pendingin
+            $table->integer('spec_oilweight')->nullable(); // Berat / Vol. minyak
+            $table->integer('spec_transweight')->nullable(); // Berat Total 
+            $table->string('vendor'); //vendor
+            $table->string('construction'); // konstruksi
+            $table->string('serial_number'); // No.Seri
+            $table->integer('impedance')->nullable(); //Impedansi
+            $table->string('standar'); //standar
+            $table->string('bahan_belitan'); //bahan belitan
+            $table->integer('spec_transtap1')->nullable(); //Sadapan
+            $table->string('temperature')->nullable(); //Kenaikan Suhu
+            $table->integer('trafo_load')->nullable(); //Beban Trafo
+            $table->string('information')->nullable(); // Keterangan
+            $table->decimal('insulation_r_body')->nullable(); // R-body
+            $table->decimal('insulation_s_body')->nullable(); // S-body
+            $table->decimal('insulation_t_body')->nullable(); // T-body
+            $table->decimal('earthneutral')->nullable(); // Tahanan Pentanahan Netral Trafo dan Ujung JTR
+            $table->decimal('earthla')->nullable(); // Tahanan Pentanahan Lightning Arrester 
+            $table->decimal('earthbody')->nullable(); // Tahanan Pentanahan Body Trafo
+            $table->decimal('insulation_R_r')->nullable(); // R-r
+            $table->decimal('insulation_S_s')->nullable(); // S-s
+            $table->decimal('insulation_T_t')->nullable(); //T-t
+            $table->
             $table->timestamps();
         });
     }

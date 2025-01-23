@@ -62,10 +62,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #fff;
-  --bs-link-color1: #14a2ba;
-  --bs-link-hover-color: #efe62f;
-  --bs-link-hover-color1: #efe62f;
+  --bs-link-color: #125d72 ;
+  --bs-link-hover-color:#efe62f;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -3600,8 +3598,8 @@ textarea.form-control-lg {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: ;
-  --bs-nav-link-color: var(--bs-link-color1);
-  --bs-nav-link-hover-color: var(--bs-link-hover-color1);
+  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-hover-color: var(--bs-link-hover-color);
   --bs-nav-link-disabled-color: #6c757d;
   display: flex;
   flex-wrap: wrap;
@@ -11271,4 +11269,10 @@ th {
   display: flex;
   justify-content: space-evenly; /* Meratakan tombol dengan jarak merata */
   gap: 10px; /* Alternatif untuk margin antar tombol */
+}
+#sidebarToggle {
+  font-size: 24px;  /* Ukuran teks */
+  padding: 12px 24px; /* Padding tombol */
+  width: 60px; /* Lebar tombol */
+  height: 60px; /* Tinggi tombol */
 }

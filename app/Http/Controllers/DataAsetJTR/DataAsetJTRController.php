@@ -13,7 +13,7 @@ class DataAsetJTRController extends Controller
      */
     public function index()
     {
-        $data_aset_jtr = DataAsetJTR::orderBy('created_at', 'DESC')->get();
+        $data_aset_jtr = DataAsetJTR::orderBy('created_at', 'ASC')->get();
         return view('DataAsetJTR.index',compact('data_aset_jtr'));
     }
 

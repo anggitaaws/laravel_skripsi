@@ -62,6 +62,13 @@
 			</div>
 		</div>
 	</section>
+	<footer class="py-4 mt-auto" style="background-color: #D9D9D9; color: black;">
+		<div class="container-fluid px-3">
+			<div class="d-flex align-items-center justify-content-between small">
+				<div class="text-muted">Copyright &copy; Anggita-Maya 2025</div>
+			</div>
+		</div>
+	</footer>
 
     <script src="{{ asset('halaman_login/js/jquery.min.js') }}"></script>
   <script src="{{ asset('halaman_login/js/popper.js') }}"></script>
