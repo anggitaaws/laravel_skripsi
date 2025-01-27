@@ -12,6 +12,8 @@ class DataAsetGardu extends Model
     public $table = "data_aset_gardu";
 
     protected $fillable = [
+        'nomor_berita_acara',
+        'tanggal',
         'name',
         'ulp',
         'id_transpower',
@@ -50,9 +52,4 @@ class DataAsetGardu extends Model
         'earthla',
         'earthbody',
     ];
-
-    public function BAPengoperasian_GD()
-    {
-        return $this->belongsTo(BeritaAcaraPengoperasian_GD::class);
-    }
 }

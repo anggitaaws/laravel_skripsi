@@ -13,24 +13,26 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function index()
     {
-        
+        $data_aset_gardu = BeritaAcaraPengoperasian_GD::orderBy('created_at','ASC')->get();
+        return view('BeritaAcaraPengoperasianGD.index',compact('data_aset_gardu'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function createOrEdit($id = null)
+    public function create()
     {
-        
+        return view('BeritaAcaraPengoperasianGD.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function storeOrUpdate(Request $request, $id = null)
+    public function store(Request $request)
     {
-       
-}
+       BeritaAcaraPengoperasian_GD::create($request->all());
+       return redirect()->route('BeritaAcaraPengoperasianGD')->with('success','Berita Acara Pengoperasian Gardu Berhasil Ditambahkan');
+    }
 
     /**
      * Display the specified resource.

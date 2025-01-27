@@ -116,7 +116,7 @@
                         <div class="card mb-3">
                             <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
                                 Daftar Berita Acara Gardu Distribusi
-                                <a href="#" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
+                                <a href="{{ route('BeritaAcaraPengoperasianGD.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
                             </div>
                     <table id="tableBeritaAcara" class="table table-striped">
                         <thead>
@@ -128,7 +128,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($berita_acara_pengoperasian_gd as $item)
+                            @foreach ($data_aset_gardu as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nomor_berita_acara }}</td>

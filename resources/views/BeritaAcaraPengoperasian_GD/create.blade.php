@@ -120,7 +120,7 @@
                                 Buat Berita Acara Pengoperasian Gardu
                             </div>
                             <div class="card-body">
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('BeritaAcaraPengoperasianGD.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>
@@ -128,6 +128,12 @@
                                   <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal">
+                              </div>
+                          </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
                                 <div class="col-sm-10">
@@ -219,7 +225,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Daya/Phasa</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Daya</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="id_transpower" class="form-control form-control-sm" id="id_transpower" placeholder="id_transpower">
                                 </div>

@@ -53,4 +53,6 @@ Route::controller(DataAsetJTMController::class)->prefix('data_aset_jtm')->group(
 
 Route::controller(BeritaAcaraPengoperasianGDController::class)->prefix('berita_acara_pengoperasian_gd')->group(function(){
     Route::get('','index')->name('BeritaAcaraPengoperasianGD');
+    Route::get('/create','create')->name('BeritaAcaraPengoperasianGD.create');
+    Route::post('/store','store')->name('BeritaAcaraPengoperasianGD.store');
 });
