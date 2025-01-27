@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\DataAsetJTM\DataAsetJTMController;
 use App\Http\Controllers\DataAsetJTR\DataAsetJTRController;
 use App\Http\Controllers\DataAsetGardu\DataAsetGarduController;
+use App\Http\Controllers\BeritaAcaraPengoperasianGD\BeritaAcaraPengoperasianGDController;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -48,4 +49,8 @@ Route::controller(DataAsetJTMController::class)->prefix('data_aset_jtm')->group(
     Route::get('/edit/{id}','edit')->name('DataAsetJTM.edit');
     Route::put('/edit/{id}','update')->name('DataAsetJTM.update');
     Route::delete('/destroy/{id}', 'destroy')->name('DataAsetJTM.destroy');
+});
+
+Route::controller(BeritaAcaraPengoperasianGDController::class)->prefix('berita_acara_pengoperasian_gd')->group(function(){
+    Route::get('','index')->name('BeritaAcaraPengoperasianGD');
 });

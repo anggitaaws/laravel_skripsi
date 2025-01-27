@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('data_aset_gardu', function (Blueprint $table) {
             $table->id();
+            $table->string('nomor_berita_acara')->nullable(); // nomor berita acara
+            $table->date('tanggal');
             $table->string('name'); //nama gardu
             $table->string('no_spbj'); // No.SPBJ Pelaksana
             $table->string('ulp'); // ulp
@@ -53,7 +55,6 @@ return new class extends Migration
             $table->decimal('insulation_R_r')->nullable(); // R-r
             $table->decimal('insulation_S_s')->nullable(); // S-s
             $table->decimal('insulation_T_t')->nullable(); //T-t
-            $table->
             $table->timestamps();
         });
     }

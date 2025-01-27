@@ -102,174 +102,45 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container">
-                        <div class="text center">
-                        <img src="{{ asset('halaman_data_aset/assets/img/Logo_PLN.png') }}" alt="logo pln">
-                        <h5>UID SULSELBAR</h5>
-                        <h5>UP3 PINRANG</h5>
-                        <h3 class="mt-3"> BERITA ACARA PENGOPERASIAN GARDU DISTRIBUSI</h3>
-                        <h5> NO: {{ $data_aset_gardu->no_dokumen }} </h5>
-                    </div>
-                        
-
-                    <p> Pada hari ini, {{ $data_aset_gardu->timestamps }}, kami yang bertanda tangan di bawah ini menyatakan bahwa: </p>
-                        <table class="table table-borderless">
-                            <tr><td>ULP</td><td>:</td><td> {{ $data_aset_gardu->ulp }} </td></tr>
-                            <tr><td>NO.SPBJ PELAKSANA</td><td>:</td><td> {{ $data_aset_gardu->no_spbj }}</td></tr>
-                            <tr><td>VENDOR</td><td>:</td><td>{{ $data_aset_gardu->vendor }}</td></tr>
-                            <tr><td>NAMA GD</td><td>:</td><td>{{ $data_aset_gardu->name }}</td></tr>
-                            <tr><td>LOKASI</td><td>:</td><td>{{ $data_aset_gardu->location }}</td></tr>
-                            <tr><td>KOORDINAT</td><td>:</td><td>{{ $data_aset_gardu->latitude }}</td></tr>
-                            <tr><td>KOORDINAT</td><td>:</td><td>{{ $data_aset_gardu->longitude }}</td></tr>
-                            <tr><td>PENYULANG</td><td>:</td><td>{{ $data_aset_gardu->penyulang }}</td></tr>
-                            <tr><td>KEYPOINT</td><td>:</td><td>{{ $data_aset_gardu->keypoint }}</td></tr>
-                            <tr><td>SECTION</td><td>:</td><td>{{ $data_aset_gardu->section }}</td></tr>
-                            <tr><td>SEGMENT</td><td>:</td><td>{{ $data_aset_gardu->segment }}</td></tr>
-                            <tr><td>KONSTRUKSI</td><td>:</td><td>{{ $data_aset_gardu->construction }}</td></tr>
-                            <tr><td>PHASA</td><td>:</td><td>{{ $data_aset_gardu->phase }}</td></tr>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Gardu Distribusi PT PLN (Persero) UP3 Pinrang</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Berita Acara Gardu Distribusi</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body fw-semi-bold" style="color: #125D72;">
+                                Halaman berita acara merupakan sekumpulan berita acara yang dimiliki PT PLN (Persero) UP3 Pinrang
+                            </div>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
+                                Daftar Berita Acara Gardu Distribusi
+                                <a href="#" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
+                            </div>
+                    <table id="tableBeritaAcara" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nomor Berita Acara</th>
+                                <th>Tanggal</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($berita_acara_pengoperasian_gd as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->nomor_berita_acara }}</td>
+                                    <td>{{ $item->tanggal }}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="#">Detail </button>
+                                        <a href="#" class="btn btn-sm btn-danger">Edit</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
                         </table>
-
-                        <table class="table table-bordered">
-                            <tr>
-                                <th>NO</th>
-                                <th>DATA</th>
-                                <th>DIPASANG</th>
-                            </tr>
-
-                            <tr>
-                                <td>1</td>
-                                <td>MERK/TYPE</td>
-                                <td>{{ $data_aset_gardu->spec_fabrication }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td>NO.SERI</td>
-                                <td>{{ $data_aset_gardu->serial_number }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>DAYA/PHASA</td>
-                                <td>{{ $data_aset_gardu->id_transpower }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td>BERAT/VOL.MINYAK</td>
-                                <td>{{ $data_aset_gardu->spec_oilweight }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>5</td>
-                                <td>BERAT TOTAL</td>
-                                <td>{{ $data_aset_gardu->spec_transweight }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>6</td>
-                                <td>IMPEDANSI</td>
-                                <td>{{ $data_aset_gardu->impedance }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>7</td>
-                                <td>VEKTOR GROUP</td>
-                                <td>{{ $data_aset_gardu->spec_wiring }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>8</td>
-                                <td>POSISI TAP</td>
-                                <td>{{ $data_aset_gardu->spec_transtap }}</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>9</td>
-                                <td>STANDAR</td>
-                                <td>{{ $data_aset_gardu->standar }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>10</td>
-                                <td>BAHAN BELITAN</td>
-                                <td>{{ $data_aset_gardu->bahan_belitan }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>11</td>
-                                <td>SISTEM PENDINGIN</td>
-                                <td>{{ $data_aset_gardu->spec_cooling_type }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>12</td>
-                                <td>SADAPAN</td>
-                                <td>{{ $data_aset_gardu->spec_transtap1 }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>13</td>
-                                <td>ARUS PENGENAL (A)</td>
-                                <td>{{ $data_aset_gardu->spec_current }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>14</td>
-                                <td>TEG.PENGENAL (V)</td>
-                                <td>{{ $data_aset_gardu->spec_voltage }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>15</td>
-                                <td>THN.BUAT</td>
-                                <td>{{ $data_aset_gardu->spec_year }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>16</td>
-                                <td>BEBAN TRAFO</td>
-                                <td>{{ $data_aset_gardu->trafo_load }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>17</td>
-                                <td>KETERANGAN</td>
-                                <td>{{ $data_aset_gardu->information }}</td>
-                            </tr>
-
-                        </table>
-                        
-                        <h5>PEMERIKSAAN TAHANAN ISOLASI TRAFO YANG TERPASANG</h5>
-                        <table class="table table-borderless">
-                            <tr>
-                                <td>R-Body</td>
-                                <td>{{ $data_aset_gardu->insulation_r_body }}</td>
-                            </tr>
-                            <tr>
-                                <td>S-Body</td>
-                                <td>{{ $data_aset_gardu->insulation_s_body }}</td>
-                            </tr>
-                            <tr>
-                                <td>T-Body</td>
-                                <td>{{ $data_aset_gardu->insulation_t_body }}</td>
-                            </tr>
-                            <tr>
-                                <td>Tahanan Pentanahan Netral Trafo dan Ujung JTR</td>
-                                <td>{{ $data_aset_gardu->earthneutral }}</td>
-                            </tr>
-                            <tr>
-                                <td>Tahanan Pentanahan Lightning Arrester</td>
-                                <td>{{ $data_aset_gardu->earthla }}</td>
-                            </tr>
-                            <tr>
-                                <td>Tahanan Pentanahan Body Trafo</td>
-                                <td>{{ $data_aset_gardu->earthbody }}</td>
-                            </tr>
-                        </table>
-
-                        <p>Demikian Berita Acara ini dibuat untuk digunakan sebagaimana mestinya</p>
-                    </div>
                 </main>
                 <footer class="py-3 mt-auto" style="background-color: #D9D9D9; color: black;">
                     <div class="container-fluid px-4">

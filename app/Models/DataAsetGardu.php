@@ -12,7 +12,6 @@ class DataAsetGardu extends Model
     public $table = "data_aset_gardu";
 
     protected $fillable = [
-        'bulan', 
         'name',
         'ulp',
         'id_transpower',
@@ -29,10 +28,31 @@ class DataAsetGardu extends Model
         'spec_voltage',
         'spec_year',
         'spec_wiring',
-        'spec_mineraloil',
         'spec_cooling_type',
         'spec_oilweight',
         'spec_transweight',
-        'test_earth'
+        'no_spbj',
+        'vendor',
+        'construction',
+        'serial_number',
+        'impedance',
+        'standar',
+        'bahan_belitan',
+        'spec_transtap1',
+        'spec_current',
+        'temperature',
+        'trafo_load',
+        'information',
+        'insulation_r_body',
+        'insulation_s_body',
+        'insulation_t_body',
+        'earthneutral',
+        'earthla',
+        'earthbody',
     ];
+
+    public function BAPengoperasian_GD()
+    {
+        return $this->belongsTo(BeritaAcaraPengoperasian_GD::class);
+    }
 }
