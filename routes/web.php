@@ -55,4 +55,8 @@ Route::controller(BeritaAcaraPengoperasianGDController::class)->prefix('berita_a
     Route::get('','index')->name('BeritaAcaraPengoperasianGD');
     Route::get('/create','create')->name('BeritaAcaraPengoperasianGD.create');
     Route::post('/store','store')->name('BeritaAcaraPengoperasianGD.store');
+    Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianGD.show');
+    Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianGD.edit');
+    Route::put('/edit/{id}','update')->name('BeritaAcaraPengoperasianGD.update');
+    Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPengoperasianGD.destroy');
 });

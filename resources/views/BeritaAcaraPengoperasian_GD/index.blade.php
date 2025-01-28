@@ -115,12 +115,17 @@
                         </div>
                         <div class="card mb-3">
                             <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
-                                Daftar Berita Acara Gardu Distribusi
+                                Daftar Berita Acara Pengoperasian Gardu Distribusi
                                 <a href="{{ route('BeritaAcaraPengoperasianGD.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
                             </div>
+                            @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ Session::get('success') }}
+                            </div>
+                            @endif
                     <table id="tableBeritaAcara" class="table table-striped">
                         <thead>
-                            <tr>
+                            <tr class="align-items-center" style="background-color: #e7f6f9; color: #125d72;">
                                 <th>No</th>
                                 <th>Nomor Berita Acara</th>
                                 <th>Tanggal</th>
@@ -128,17 +133,30 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if ($data_aset_gardu->count() > 0)
                             @foreach ($data_aset_gardu as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nomor_berita_acara }}</td>
                                     <td>{{ $item->tanggal }}</td>
                                     <td>
-                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="#">Detail </button>
-                                        <a href="#" class="btn btn-sm btn-danger">Edit</a>
+                                        <div class = "btn-group" role="group" aria-label="Basic example">
+                                            <a href="{{ route('BeritaAcaraPengoperasianGD.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                            <a href="{{ route('BeritaAcaraPengoperasianGD.edit',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
+                                            <form action ="{{ route('BeritaAcaraPengoperasianGD.destroy',$item->id) }}" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
+                                                @csrf
+                                                @method('delete')
+                                            <button class = "btn btn-group btn-primary rounded submit" style="background-color: #14A2BA;">Hapus</button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach
+                                @else
+                                <tr>
+                                    <td class="align-middle text-center" colspan="24"> Berita Acara Gardu Kosong </td>
+                                    </tr>
+                                    @endif
                             </tbody>
                         </table>
                 </main>

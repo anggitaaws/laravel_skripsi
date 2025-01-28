@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_aset_gardu', function (Blueprint $table) {
+        Schema::create('berita_acara_pengoperasian_gd', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_berita_acara')->nullable(); // nomor berita acara
+            $table->string('nomor_berita_acara');
             $table->date('tanggal');
             $table->string('name'); //nama gardu
             $table->string('no_spbj'); // No.SPBJ Pelaksana
@@ -64,6 +64,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_aset_gardu');
+        Schema::dropIfExists('berita_acara_pengoperasian_gd');
     }
 };

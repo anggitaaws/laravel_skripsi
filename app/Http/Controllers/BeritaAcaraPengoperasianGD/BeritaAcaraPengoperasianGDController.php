@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\BeritaAcaraPengoperasianGD;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\BeritaAcaraPengoperasian_GD;
+use App\Models\BeritaAcaraPengoperasianGD;
+use App\Models\DataAsetGardu;
+use Illuminate\Http\Request;
 
 class BeritaAcaraPengoperasianGDController extends Controller
 {
@@ -13,8 +14,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function index()
     {
-        $data_aset_gardu = BeritaAcaraPengoperasian_GD::orderBy('created_at','ASC')->get();
-        return view('BeritaAcaraPengoperasianGD.index',compact('data_aset_gardu'));
+        $data_aset_gardu = BeritaAcaraPengoperasianGD::orderBy('created_at','ASC')->get();
+        return view('BeritaAcaraPengoperasian_GD.index',compact('data_aset_gardu'));
     }
 
     /**
@@ -22,7 +23,7 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function create()
     {
-        return view('BeritaAcaraPengoperasianGD.create');
+        return view('BeritaAcaraPengoperasian_GD.create');
     }
 
     /**
@@ -30,8 +31,123 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function store(Request $request)
     {
-       BeritaAcaraPengoperasian_GD::create($request->all());
-       return redirect()->route('BeritaAcaraPengoperasianGD')->with('success','Berita Acara Pengoperasian Gardu Berhasil Ditambahkan');
+
+        //Validasi request
+        $validated = $request->validate([
+            'nomor_berita_acara' => 'required',
+            'tanggal' => 'required',
+            'name' => 'required',
+            'no_spbj' => 'required',
+            'ulp' => 'required',
+            'id_transpower' => 'required',
+            'phase' => 'required',
+            'location' => 'required',
+            'penyulang' => 'required',
+            'keypoint' => 'required',
+            'section' => 'required',
+            'segment' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+            'vendor' => 'required',
+            'construction' => 'required',
+            'serial_number' => 'required',
+            'impedance' => 'required',
+            'standar' => 'required',
+            'bahan_belitan' => 'required'
+        ]);
+
+        //Menyimpan data ke BeritaAcaraPengoperasianGD
+        $berita_acara_pengoperasian_gd = BeritaAcaraPengoperasianGD::create([
+        'nomor_berita_acara' => $request->input('nomor_berita_acara'),
+        'tanggal' => $request->input('tanggal'),
+        'ulp' => $request->input('ulp'),
+        'no_spbj' => $request->input('no_spbj'),
+        'vendor' => $request->input('vendor'),
+        'name' => $request->input('name'),
+        'location' => $request->input('location'),
+        'latitude' => $request->input('latitude'),
+        'longitude' => $request->input('longitude'),
+        'penyulang' => $request->input('penyulang'),
+        'keypoint' => $request->input('keypoint'),
+        'section' => $request->input('section'),
+        'segment' => $request->input('segment'),
+        'construction' => $request->input('construction'),
+        'phase' => $request->input('phase'),
+        'spec_fabrication' => $request->input('spec_fabrication'),
+        'serial_number' => $request->input('serial_number'),
+        'id_transpower' => $request->input('id_transpower'),
+        'spec_oilweight' => $request->input('spec_oilweight'),
+        'spec_transweight' => $request->input('spec_transweight'),
+        'impedance' => $request->input('impedance'),
+        'spec_wiring' => $request->input('spec_wiring'),
+        'spec_transtap' => $request->input('spec_transtap'),
+        'standar' => $request->input('standar'),
+        'bahan_belitan' => $request->input('bahan_belitan'),
+        'spec_cooling_type' => $request->input('spec_cooling_type'),
+        'spec_transtap1' => $request->input('spec_transtap1'),
+        'spec_current' => $request->input('spec_current'),
+        'spec_voltage' => $request->input('spec_voltage'),
+        'temperature' => $request->input('temperature'),
+        'spec_year' => $request->input('spec_year'),
+        'trafo_load' => $request->input('trafo_load'),
+        'information' => $request->input('information'),
+        'insulation_r_body' => $request->input('insulation_r_body'),
+        'insulation_s_body' => $request->input('insulation_s_body'),
+        'insulation_t_body' => $request->input('insulation_t_body'),
+        'earthneutral' => $request->input('earthneutral'),
+        'earthla' => $request->input('earthla'),
+        'earthbody' => $request->input('earthbody'),
+        'insulation_R_r' => $request->input('insulation_R_r'),
+        'insulation_S_s' => $request->input('insulation_S_s'),
+        'insulation_T_t' => $request->input('insulation_T_t'),
+        ]);
+
+        //Menyimpan data ke DataAsetGardu
+        DataAsetGardu::create([
+            'nomor_berita_acara' => $request->input('nomor_berita_acara'),
+            'tanggal' => $request->input('tanggal'),
+            'ulp' => $request->input('ulp'),
+            'no_spbj' => $request->input('no_spbj'),
+            'vendor' => $request->input('vendor'),
+            'name' => $request->input('name'),
+            'location' => $request->input('location'),
+            'latitude' => $request->input('latitude'),
+            'longitude' => $request->input('longitude'),
+            'penyulang' => $request->input('penyulang'),
+            'keypoint' => $request->input('keypoint'),
+            'section' => $request->input('section'),
+            'segment' => $request->input('segment'),
+            'construction' => $request->input('construction'),
+            'phase' => $request->input('phase'),
+            'spec_fabrication' => $request->input('spec_fabrication'),
+            'serial_number' => $request->input('serial_number'),
+            'id_transpower' => $request->input('id_transpower'),
+            'spec_oilweight' => $request->input('spec_oilweight'),
+            'spec_transweight' => $request->input('spec_transweight'),
+            'impedance' => $request->input('impedance'),
+            'spec_wiring' => $request->input('spec_wiring'),
+            'spec_transtap' => $request->input('spec_transtap'),
+            'standar' => $request->input('standar'),
+            'bahan_belitan' => $request->input('bahan_belitan'),
+            'spec_cooling_type' => $request->input('spec_cooling_type'),
+            'spec_transtap1' => $request->input('spec_transtap1'),
+            'spec_current' => $request->input('spec_current'),
+            'spec_voltage' => $request->input('spec_voltage'),
+            'temperature' => $request->input('temperature'),
+            'spec_year' => $request->input('spec_year'),
+            'trafo_load' => $request->input('trafo_load'),
+            'information' => $request->input('information'),
+            'insulation_r_body' => $request->input('insulation_r_body'),
+            'insulation_s_body' => $request->input('insulation_s_body'),
+            'insulation_t_body' => $request->input('insulation_t_body'),
+            'earthneutral' => $request->input('earthneutral'),
+            'earthla' => $request->input('earthla'),
+            'earthbody' => $request->input('earthbody'),
+            'insulation_R_r' => $request->input('insulation_R_r'),
+            'insulation_S_s' => $request->input('insulation_S_s'),
+            'insulation_T_t' => $request->input('insulation_T_t'),
+        ]);
+        return redirect()->route('BeritaAcaraPengoperasianGD')->with('success', 'Data berhasil Disimpan');
     }
 
     /**
@@ -39,7 +155,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function show(string $id)
     {
-
+        $data_aset_gardu = BeritaAcaraPengoperasianGD::findOrFail($id);
+        return view('BeritaAcaraPengoperasian_GD.show',compact('data_aset_gardu'));
     }
 
     /**
@@ -47,7 +164,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data_aset_gardu = BeritaAcaraPengoperasianGD::findOrFail($id);
+        return view('BeritaAcaraPengoperasian_GD.edit',compact('data_aset_gardu'));
     }
 
     /**
@@ -55,7 +173,126 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $berita_acara_pengoperasian_gd = BeritaAcaraPengoperasianGD::findOrFail($id);
+               //Validasi request
+               $validated = $request->validate([
+                'nomor_berita_acara' => 'required',
+                'tanggal' => 'required',
+                'name' => 'required',
+                'no_spbj' => 'required',
+                'ulp' => 'required',
+                'id_transpower' => 'required',
+                'phase' => 'required',
+                'location' => 'required',
+                'penyulang' => 'required',
+                'keypoint' => 'required',
+                'section' => 'required',
+                'segment' => 'required',
+                'latitude' => 'required',
+                'longitude' => 'required',
+                'vendor' => 'required',
+                'construction' => 'required',
+                'serial_number' => 'required',
+                'impedance' => 'required',
+                'standar' => 'required',
+                'bahan_belitan' => 'required'
+            ]);
+
+        //Menyimpan data ke BeritaAcaraPengoperasianGD
+        $berita_acara_pengoperasian_gd->update([
+            'nomor_berita_acara' => $request->input('nomor_berita_acara'),
+            'tanggal' => $request->input('tanggal'),
+            'ulp' => $request->input('ulp'),
+            'no_spbj' => $request->input('no_spbj'),
+            'vendor' => $request->input('vendor'),
+            'name' => $request->input('name'),
+            'location' => $request->input('location'),
+            'latitude' => $request->input('latitude'),
+            'longitude' => $request->input('longitude'),
+            'penyulang' => $request->input('penyulang'),
+            'keypoint' => $request->input('keypoint'),
+            'section' => $request->input('section'),
+            'segment' => $request->input('segment'),
+            'construction' => $request->input('construction'),
+            'phase' => $request->input('phase'),
+            'spec_fabrication' => $request->input('spec_fabrication'),
+            'serial_number' => $request->input('serial_number'),
+            'id_transpower' => $request->input('id_transpower'),
+            'spec_oilweight' => $request->input('spec_oilweight'),
+            'spec_transweight' => $request->input('spec_transweight'),
+            'impedance' => $request->input('impedance'),
+            'spec_wiring' => $request->input('spec_wiring'),
+            'spec_transtap' => $request->input('spec_transtap'),
+            'standar' => $request->input('standar'),
+            'bahan_belitan' => $request->input('bahan_belitan'),
+            'spec_cooling_type' => $request->input('spec_cooling_type'),
+            'spec_transtap1' => $request->input('spec_transtap1'),
+            'spec_current' => $request->input('spec_current'),
+            'spec_voltage' => $request->input('spec_voltage'),
+            'temperature' => $request->input('temperature'),
+            'spec_year' => $request->input('spec_year'),
+            'trafo_load' => $request->input('trafo_load'),
+            'information' => $request->input('information'),
+            'insulation_r_body' => $request->input('insulation_r_body'),
+            'insulation_s_body' => $request->input('insulation_s_body'),
+            'insulation_t_body' => $request->input('insulation_t_body'),
+            'earthneutral' => $request->input('earthneutral'),
+            'earthla' => $request->input('earthla'),
+            'earthbody' => $request->input('earthbody'),
+            'insulation_R_r' => $request->input('insulation_R_r'),
+            'insulation_S_s' => $request->input('insulation_S_s'),
+            'insulation_T_t' => $request->input('insulation_T_t'),
+            ]);
+
+            // Optional: Jika juga ingin update di DataAsetGardu
+        $data_aset_gardu = DataAsetGardu::where('nomor_berita_acara', $berita_acara_pengoperasian_gd->nomor_berita_acara)->first();
+    if ($data_aset_gardu) {
+        $data_aset_gardu->update([
+            'nomor_berita_acara' => $request->input('nomor_berita_acara'),
+            'tanggal' => $request->input('tanggal'),
+            'ulp' => $request->input('ulp'),
+            'no_spbj' => $request->input('no_spbj'),
+            'vendor' => $request->input('vendor'),
+            'name' => $request->input('name'),
+            'location' => $request->input('location'),
+            'latitude' => $request->input('latitude'),
+            'longitude' => $request->input('longitude'),
+            'penyulang' => $request->input('penyulang'),
+            'keypoint' => $request->input('keypoint'),
+            'section' => $request->input('section'),
+            'segment' => $request->input('segment'),
+            'construction' => $request->input('construction'),
+            'phase' => $request->input('phase'),
+            'spec_fabrication' => $request->input('spec_fabrication'),
+            'serial_number' => $request->input('serial_number'),
+            'id_transpower' => $request->input('id_transpower'),
+            'spec_oilweight' => $request->input('spec_oilweight'),
+            'spec_transweight' => $request->input('spec_transweight'),
+            'impedance' => $request->input('impedance'),
+            'spec_wiring' => $request->input('spec_wiring'),
+            'spec_transtap' => $request->input('spec_transtap'),
+            'standar' => $request->input('standar'),
+            'bahan_belitan' => $request->input('bahan_belitan'),
+            'spec_cooling_type' => $request->input('spec_cooling_type'),
+            'spec_transtap1' => $request->input('spec_transtap1'),
+            'spec_current' => $request->input('spec_current'),
+            'spec_voltage' => $request->input('spec_voltage'),
+            'temperature' => $request->input('temperature'),
+            'spec_year' => $request->input('spec_year'),
+            'trafo_load' => $request->input('trafo_load'),
+            'information' => $request->input('information'),
+            'insulation_r_body' => $request->input('insulation_r_body'),
+            'insulation_s_body' => $request->input('insulation_s_body'),
+            'insulation_t_body' => $request->input('insulation_t_body'),
+            'earthneutral' => $request->input('earthneutral'),
+            'earthla' => $request->input('earthla'),
+            'earthbody' => $request->input('earthbody'),
+            'insulation_R_r' => $request->input('insulation_R_r'),
+            'insulation_S_s' => $request->input('insulation_S_s'),
+            'insulation_T_t' => $request->input('insulation_T_t'),
+        ]);
+    }
+        return redirect()->route('BeritaAcaraPengoperasianGD')->with('success','Berita Acara Pengoperasian Gardu Berhasil Diupdate');
     }
 
     /**
@@ -63,6 +300,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data_aset_gardu = BeritaAcaraPengoperasianGD::findOrFail($id);
+        $data_aset_gardu-> delete();
+        return redirect('BeritaPengoperasianGD')->with('success', 'Berita Acara Pengoperasian Gardu Berhasil Dihapus');
     }
 }

@@ -117,199 +117,202 @@
 
                         <div class="card mb-4">
                             <div class="card-header fw-bold">
-                                Detail Berita Acara Pengoperasian Gardu
+                               Perbarui Berita Acara Pengoperasian Gardu
                             </div>
+                            <form action="{{ route('BeritaAcaraPengoperasianGD.update', $data_aset_gardu->id) }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('put')
                             <div class="card-body">
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara" value="{{ $data_aset_gardu->nomor_berita_acara }}" readonly>
+                                  <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara" value="{{ $data_aset_gardu->nomor_berita_acara }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $data_aset_gardu->tanggal }}" readonly>
+                                  <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $data_aset_gardu->tanggal }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_gardu->ulp }}" readonly>
+                                  <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_gardu->ulp }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">No.SBPJ Pelaksana</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj" value="{{ $data_aset_gardu->no_spbj }}" readonly>
+                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj" value="{{ $data_aset_gardu->no_spbj }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Vendor</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="vendor" class="form-control form-control-sm" id="vendor" placeholder="vendor" value="{{ $data_aset_gardu->vendor }}" readonly>
+                                  <input type="text" name="vendor" class="form-control form-control-sm" id="vendor" placeholder="vendor" value="{{ $data_aset_gardu->vendor }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama GD</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="name" class="form-control form-control-sm" id="name" placeholder="name" value="{{ $data_aset_gardu->name }}" readonly>
+                                  <input type="text" name="name" class="form-control form-control-sm" id="name" placeholder="name" value="{{ $data_aset_gardu->name }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Location</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $data_aset_gardu->location }}" readonly>
+                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $data_aset_gardu->location }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Latitude</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="latitude" class="form-control form-control-sm" id="latitude" placeholder="latitude" value="{{ $data_aset_gardu->latitude }}" readonly>
+                                  <input type="text" name="latitude" class="form-control form-control-sm" id="latitude" placeholder="latitude" value="{{ $data_aset_gardu->latitude }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Longitude</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="longitude" class="form-control form-control-sm" id="longitude" placeholder="longitude" value="{{ $data_aset_gardu->longitude }}" readonly>
+                                  <input type="text" name="longitude" class="form-control form-control-sm" id="longitude" placeholder="longitude" value="{{ $data_aset_gardu->longitude }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penyulang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="penyulang" class="form-control form-control-sm" id="penyulang" placeholder="penyulang" value="{{ $data_aset_gardu->penyulang }}" readonly>
+                                  <input type="text" name="penyulang" class="form-control form-control-sm" id="penyulang" placeholder="penyulang" value="{{ $data_aset_gardu->penyulang }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Keypoint</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="keypoint" class="form-control form-control-sm" id="keypoint" placeholder="keypoint" value="{{ $data_aset_gardu->keypoint }}" readonly>
+                                  <input type="text" name="keypoint" class="form-control form-control-sm" id="keypoint" placeholder="keypoint" value="{{ $data_aset_gardu->keypoint }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Section</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="section" class="form-control form-control-sm" id="section" placeholder="section" value="{{ $data_aset_gardu->section }}" readonly>
+                                  <input type="text" name="section" class="form-control form-control-sm" id="section" placeholder="section" value="{{ $data_aset_gardu->section }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment" value="{{ $data_aset_gardu->segment }}" readonly>
+                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment" value="{{ $data_aset_gardu->segment }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Konstruksi</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="construction" class="form-control form-control-sm" id="construction" placeholder="construction" value="{{ $data_aset_gardu->construction }}" readonly>
+                                  <input type="text" name="construction" class="form-control form-control-sm" id="construction" placeholder="construction" value="{{ $data_aset_gardu->construction }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Phasa</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $data_aset_gardu->phase }}" readonly>
+                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $data_aset_gardu->phase }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Merk/Type</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_fabrication" class="form-control form-control-sm" id="spec_fabrication" placeholder="spec_fabrication" value="{{ $data_aset_gardu->spec_fabrication }}" readonly>
+                                  <input type="text" name="spec_fabrication" class="form-control form-control-sm" id="spec_fabrication" placeholder="spec_fabrication" value="{{ $data_aset_gardu->spec_fabrication }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">No.Seri</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="serial_number" class="form-control form-control-sm" id="serial_number" placeholder="serial_number" value="{{ $data_aset_gardu->serial_number }}" readonly>
+                                  <input type="text" name="serial_number" class="form-control form-control-sm" id="serial_number" placeholder="serial_number" value="{{ $data_aset_gardu->serial_number }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Daya</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="id_transpower" class="form-control form-control-sm" id="id_transpower" placeholder="id_transpower" value="{{ $data_aset_gardu->id_transpower }}" readonly>
+                                  <input type="text" name="id_transpower" class="form-control form-control-sm" id="id_transpower" placeholder="id_transpower" value="{{ $data_aset_gardu->id_transpower }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Berat/Vol.Minyak</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_oilweight" class="form-control form-control-sm" id="spec_oilweight" placeholder="spec_oilweight" value="{{ $data_aset_gardu->spec_oilweight }}" readonly>
+                                  <input type="text" name="spec_oilweight" class="form-control form-control-sm" id="spec_oilweight" placeholder="spec_oilweight" value="{{ $data_aset_gardu->spec_oilweight }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Berat Total</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_transweight" class="form-control form-control-sm" id="spec_transweight" placeholder="spec_transweight" value="{{ $data_aset_gardu->spec_transweight }}" readonly>
+                                  <input type="text" name="spec_transweight" class="form-control form-control-sm" id="spec_transweight" placeholder="spec_transweight" value="{{ $data_aset_gardu->spec_transweight }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Impedensi</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="impedance" class="form-control form-control-sm" id="impedance" placeholder="impedance" value="{{ $data_aset_gardu->impedance }}" readonly>
+                                  <input type="text" name="impedance" class="form-control form-control-sm" id="impedance" placeholder="impedance" value="{{ $data_aset_gardu->impedance }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Vektor Group</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_wiring" class="form-control form-control-sm" id="spec_wiring" placeholder="spec_wiring" value="{{ $data_aset_gardu->spec_wiring }}" readonly>
+                                  <input type="text" name="spec_wiring" class="form-control form-control-sm" id="spec_wiring" placeholder="spec_wiring" value="{{ $data_aset_gardu->spec_wiring }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Posisi TAP</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_transtap" class="form-control form-control-sm" id="spec_transtap" placeholder="spec_transtap" value="{{ $data_aset_gardu->spec_transtap }}" readonly>
+                                  <input type="text" name="spec_transtap" class="form-control form-control-sm" id="spec_transtap" placeholder="spec_transtap" value="{{ $data_aset_gardu->spec_transtap }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Standar</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="standar" class="form-control form-control-sm" id="standar" placeholder="standar" value="{{ $data_aset_gardu->standar }}" readonly>
+                                  <input type="text" name="standar" class="form-control form-control-sm" id="standar" placeholder="standar" value="{{ $data_aset_gardu->standar }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan_Belitan</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="bahan_belitan" class="form-control form-control-sm" id="bahan_belitan" placeholder="bahan_belitan" value="{{ $data_aset_gardu->bahan_belitan }}" readonly>
+                                  <input type="text" name="bahan_belitan" class="form-control form-control-sm" id="bahan_belitan" placeholder="bahan_belitan" value="{{ $data_aset_gardu->bahan_belitan }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Sistem Pendingin</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_cooling_type" class="form-control form-control-sm" id="spec_cooling_type" placeholder="spec_cooling_type" value="{{ $data_aset_gardu->spec_cooling_type }}" readonly>
+                                  <input type="text" name="spec_cooling_type" class="form-control form-control-sm" id="spec_cooling_type" placeholder="spec_cooling_type" value="{{ $data_aset_gardu->spec_cooling_type }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Sadapan</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_transtap1" class="form-control form-control-sm" id="spec_transtap1" placeholder="spec_transtap1" value="{{ $data_aset_gardu->spec_transtap1 }}" readonly>
+                                  <input type="text" name="spec_transtap1" class="form-control form-control-sm" id="spec_transtap1" placeholder="spec_transtap1" value="{{ $data_aset_gardu->spec_transtap1 }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Arus Pengenal (A)</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_current" class="form-control form-control-sm" id="spec_current" placeholder="spec_current" value="{{ $data_aset_gardu->spec_current }}" readonly>
+                                  <input type="text" name="spec_current" class="form-control form-control-sm" id="spec_current" placeholder="spec_current" value="{{ $data_aset_gardu->spec_current }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Teg. Pengenal (V)</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_voltage" class="form-control form-control-sm" id="spec_voltage" placeholder="spec_voltage" value="{{ $data_aset_gardu->spec_voltage }}" readonly>
+                                  <input type="text" name="spec_voltage" class="form-control form-control-sm" id="spec_voltage" placeholder="spec_voltage" value="{{ $data_aset_gardu->spec_voltage }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Kenaikan Suhu</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="temperature" class="form-control form-control-sm" id="temperature" placeholder="temperature" value="{{ $data_aset_gardu->temperature }}" readonly>
+                                  <input type="text" name="temperature" class="form-control form-control-sm" id="temperature" placeholder="temperature" value="{{ $data_aset_gardu->temperature }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">THN.Buat</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_year" class="form-control form-control-sm" id="spec_year" placeholder="spec_year" value="{{ $data_aset_gardu->spec_year }}" readonly>
+                                  <input type="text" name="spec_year" class="form-control form-control-sm" id="spec_year" placeholder="spec_year" value="{{ $data_aset_gardu->spec_year }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Beban Trafo</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="trafo_load" class="form-control form-control-sm" id="trafo_load" placeholder="trafo_load" value="{{ $data_aset_gardu->trafo_load }}" readonly>
+                                  <input type="text" name="trafo_load" class="form-control form-control-sm" id="trafo_load" placeholder="trafo_load" value="{{ $data_aset_gardu->trafo_load }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -371,6 +374,11 @@
                                 <div class="col-sm-10">
                                   <input type="text" name="insulation_T_t" class="form-control form-control-sm" id="insulation_T_t" placeholder="insulation_T_t" value="{{ $data_aset_gardu->insulation_T_t }}" readonly>
                                 </div>
+                            </div>
+
+                            <div class="form-group col-sm-2">
+                                <div class="d-grid">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-2" style="background-color: #14A2BA;">PERBARUI</button>
                             </div>
                         </form>
                     </div>
