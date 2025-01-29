@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\BeritaAcaraPengoperasianGD;
 use App\Models\DataAsetGardu;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\BeritaAcaraPengoperasianGDExport;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class BeritaAcaraPengoperasianGDController extends Controller
 {
@@ -298,10 +301,34 @@ class BeritaAcaraPengoperasianGDController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
-        $data_aset_gardu = BeritaAcaraPengoperasianGD::findOrFail($id);
-        $data_aset_gardu-> delete();
-        return redirect('BeritaPengoperasianGD')->with('success', 'Berita Acara Pengoperasian Gardu Berhasil Dihapus');
+        $berita_acara_pengoperasian_gd = BeritaAcaraPengoperasianGD::findOrFail($id);
+        $berita_acara_pengoperasian_gd->delete();
+        $data_aset_gardu = DataAsetGardu::where('nomor_berita_acara',$berita_acara_pengoperasian_gd->nomor_berita_acara)->first();
+        if ($data_aset_gardu){
+            $data_aset_gardu->delete();
+        }
+        return redirect()->route('BeritaAcaraPengoperasianGD')->with('success', 'Berita Acara Pengoperasian Gardu Berhasil Dihapus');
+    }
+
+    public function downloadExcel($id)
+    {
+        $berita_acara_pengoperasian_gd= BeritaAcaraPengoperasianGD::find($id);
+
+        return Excel::download(new BeritaAcaraPengoperasianGDExport($berita_acara_pengoperasian_gd), 'berita_acara_pengoperasian_gd.xlsx');
+    }
+
+    public function downloadPdf($id, Request $request)
+    {
+        $berita_acara_pengoperasian_gd= BeritaAcaraPengoperasianGD::find($id);
+        $berita_acara_pengoperasian_gd->pelaksana = $request->input('pelaksana','........');
+        $berita_acara_pengoperasian_gd->pengawas = $request->input('pengawas','........');
+        $berita_acara_pengoperasian_gd->manager = $request->input('manager','........');
+
+        $pdf = Pdf::loadView('BeritaAcaraPengoperasian_GD.pdf',compact('berita_acara_pengoperasian_gd'));
+
+        return $pdf->download('berita_acara_pengoperasian_gd.pdf');
+       
     }
 }

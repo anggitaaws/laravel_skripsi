@@ -103,20 +103,20 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Pengoperasian Gardu Distribusi PT PLN (Persero) UP3 Pinrang</h1>
+                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Pengoperasian JTR PT PLN (Persero) UP3 Pinrang</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Berita Acara Pengoperasian Gardu Distribusi</li>
+                            <li class="breadcrumb-item active">Berita Acara Pengoperasian JTR</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body fw-semi-bold" style="color: #125D72;">
-                                Halaman berita acara pengoperasian gardu merupakan sekumpulan berita acara pengoperasian gardu yang dimiliki PT PLN (Persero) UP3 Pinrang
+                                Halaman berita acara pengoperasian jtr merupakan sekumpulan berita acara pengoperasian jtr yang dimiliki PT PLN (Persero) UP3 Pinrang
                             </div>
                         </div>
                         <div class="card mb-3">
                             <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
-                                Daftar Berita Acara Pengoperasian Gardu Distribusi
-                                <a href="{{ route('BeritaAcaraPengoperasianGD.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
+                                Daftar Berita Acara Pengoperasian JTR
+                                <a href="#" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
                             </div>
                             @if (Session::has('success'))
                             <div class="alert alert-success" role="alert">
@@ -135,23 +135,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($data_aset_gardu->count() > 0)
-                            @foreach ($data_aset_gardu as $item)
+                            @if ($data_aset_jtr->count() > 0)
+                            @foreach ($data_aset_jtr as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nomor_berita_acara }}</td>
                                     <td>{{ $item->tanggal }}</td>
                                     <td>
                                         <div class = "btn-group" role="group" aria-label="Basic example">
-                                            <a href="{{ route('BeritaAcaraPengoperasianGD.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
-                                            <a href="{{ route('BeritaAcaraPengoperasianGD.edit',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
-                                            <form action ="{{ route('BeritaAcaraPengoperasianGD.destroy',$item->id) }}" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
+                                            <form action ="#" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                 @csrf
                                                 @method('delete')
                                             <button class = "btn btn-group btn-primary rounded submit" style="background-color: #14A2BA;">Hapus</button>
                                             </form>
-                                            <a href="{{ route('BeritaAcaraPengoperasianGD.unduhexcel',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
-                                            <a href="{{ route('BeritaAcaraPengoperasianGD.unduhpdf',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
                                             <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Cetak</a>
                                         </div>
                                     </td>
@@ -159,7 +159,7 @@
                                 @endforeach
                                 @else
                                 <tr>
-                                    <td class="align-middle text-center" colspan="24"> Berita Acara Pengoperasian Gardu Kosong </td>
+                                    <td class="align-middle text-center" colspan="24"> Berita Acara Pengoperasian JTR Kosong </td>
                                     </tr>
                                     @endif
                             </tbody>
@@ -181,10 +181,3 @@
         <script src="{{ asset('halaman_data_aset/js/datatables-simple-demo.js') }}"></script>
     </body>
 </html> 
-
-
-                            
-
-
-
-
