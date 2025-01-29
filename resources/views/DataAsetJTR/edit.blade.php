@@ -145,12 +145,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Fabrication</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_fabrication" class="form-control form-control-sm" id="spec_fabrication" placeholder="spec_fabrication" value="{{ $data_aset_jtr->spec_fabrication }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit (KMS)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="cable_length" class="form-control form-control-sm" id="cable_length" placeholder="cable_length" value="{{ $data_aset_jtr->cable_length }}">
@@ -159,13 +153,13 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penampang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_CableSize" class="form-control form-control-sm" id="spec_CableSize" placeholder="spec_CableSize" value="{{ $data_aset_jtr->spec_CableSize }}">
+                                  <input type="text" name="spec_CableSize" class="form-control form-control-sm" id="spec_CableSize" placeholder="spec_CableSize" value="{{ $data_aset_jtr->spec_cablesize }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jumlah Tiang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="NumberofPole" class="form-control form-control-sm" id="NumberofPole" placeholder="NumberofPole" value="{{ $data_aset_jtr->NumberofPole }}">
+                                  <input type="text" name="sumofpole" class="form-control form-control-sm" id="sumofpole" placeholder="sumofpole" value="{{ $data_aset_jtr->sumofpole }}">
                                 </div>
                             </div>
 

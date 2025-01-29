@@ -116,7 +116,7 @@
                         <div class="card mb-3">
                             <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
                                 Daftar Berita Acara Pengoperasian JTR
-                                <a href="#" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
+                                <a href="{{ route('BeritaAcaraPengoperasianJTR.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
                             </div>
                             @if (Session::has('success'))
                             <div class="alert alert-success" role="alert">

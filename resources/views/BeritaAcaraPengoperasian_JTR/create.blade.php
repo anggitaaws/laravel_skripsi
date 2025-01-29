@@ -104,24 +104,36 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4" style="color: #14a2ba;">Data Aset JTR PT PLN (Persero) UP3 Pinrang</h1>
+                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Pengoperasian JTR PT PLN (Persero) UP3 Pinrang</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Data Aset JTR</li>
+                            <li class="breadcrumb-item active">Berita Acara Pengoperasian JTR</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body fw-semi-bold" style="color: #125D72;">
-                                Halaman data aset merupakan sekumpulan data aset yang dimiliki PT PLN (Persero) UP3 Pinrang
+                                Halaman berita acara merupakan sekumpulan berita acara yang dimiliki PT PLN (Persero) UP3 Pinrang
                             </div>
                         </div>
 
                         <div class="card mb-4">
                             <div class="card-header fw-bold">
-                                Tambah Data Aset JTR
+                                Buat Berita Acara Pengoperasian JTR
                             </div>
                             <div class="card-body">
-                            <form action="{{ route('DataAsetJTR.store') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('BeritaAcaraPengoperasianJTR.create') }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal">
+                              </div>
+                          </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
                                 <div class="col-sm-10">
@@ -129,9 +141,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">No.SBPJ Pelaksana</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="id_CableType" class="form-control form-control-sm" id="id_CableType" placeholder="id_CableType">
+                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Vendor</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="vendor" class="form-control form-control-sm" id="vendor" placeholder="vendor">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -141,27 +159,135 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Koordinat Awal</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="initial_coordinates" class="form-control form-control-sm" id="initial_coordinates" placeholder="initial_coordinates">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Koordinat Akhir</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="final_coordinates" class="form-control form-control-sm" id="final_coordinates" placeholder="final_coordinates">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penyulang</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="penyulang" class="form-control form-control-sm" id="penyulang" placeholder="penyulang">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Keypoint</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="keypoint" class="form-control form-control-sm" id="keypoint" placeholder="keypoint">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Section</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="section" class="form-control form-control-sm" id="section" placeholder="section">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit (KMS)</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama Gardu</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="nama_gardu" class="form-control form-control-sm" id="nama_gardu" placeholder="nama_gardu">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="id_cabletype" class="form-control form-control-sm" id="id_cabletype" placeholder="id_cabletype">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Phasa</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Luas Penampang Kabel</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="cable_length" class="form-control form-control-sm" id="cable_length" placeholder="cable_length">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penampang</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis Tiang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize">
+                                  <input type="text" name="spec_pole" class="form-control form-control-sm" id="spec_pole" placeholder="spec_pole">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="jtr_type" class="form-control form-control-sm" id="jtr_type" placeholder="jtr_type">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jumlah Tiang</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="sumofpole" class="form-control form-control-sm" id="sumofpole" placeholder="sumofpole">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jurusan Dari Gardu</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="jurusan_gardu" class="form-control form-control-sm" id="jurusan_gardu" placeholder="jurusan_gardu">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-Body</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_r_body" class="form-control form-control-sm" id="insulation_r_body" placeholder="insulation_r_body">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">S-Body</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_s_body" class="form-control form-control-sm" id="insulation_s_body" placeholder="insulation_s_body">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">T-Body</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_t_body" class="form-control form-control-sm" id="insulation_t_body" placeholder="insulation_t_body">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-r</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_r_r" class="form-control form-control-sm" id="insulation_r_r" placeholder="insulation_r_r">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">S-s</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_s_s" class="form-control form-control-sm" id="insulation_s_s" placeholder="insulation_s_s">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">T-t</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_t_t" class="form-control form-control-sm" id="insulation_t_t" placeholder="insulation_t_t">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pemeriksaan Tahanan Pentanahan JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="eartneutral" placeholder="earthneutral">
                                 </div>
                             </div>
                             <div class="form-group col-sm-2">

@@ -139,7 +139,6 @@
                                             <th>Bahan</th>
                                             <th>Lokasi</th>
                                             <th>Segment</th>
-                                            <th>Spec_Fabrication</th>
                                             <th>Panjang Sirkit(KMS)</th>
                                             <th>Penampang</th>
                                             <th>Jumlah Tiang</th>
@@ -152,13 +151,12 @@
                                             <tr>
                                                 <td class="align-middle">{{ $loop->iteration }}</td>
                                                 <td class="align-middle">{{ $rs->ulp }}</td>
-                                                <td class="align-middle">{{ $rs->id_CableType }}</td>
+                                                <td class="align-middle">{{ $rs->id_cabletype }}</td>
                                                 <td class="align-middle">{{ $rs->location }}</td>
                                                 <td class="align-middle">{{ $rs->segment }}</td>
-                                                <td class="align-middle">{{ $rs->spec_fabrication }}</td>
                                                 <td class="align-middle">{{ $rs->cable_length }}</td>
-                                                <td class="align-middle">{{ $rs->spec_CableSize }}</td>
-                                                <td class="align-middle">{{ $rs->NumberofPole }}</td>
+                                                <td class="align-middle">{{ $rs->spec_cablesize }}</td>
+                                                <td class="align-middle">{{ $rs->sumofpole }}</td>
                                                 <td class="align-middle">
                                                 <div class = "btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ route('DataAsetJTR.show',$rs->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>

@@ -67,4 +67,6 @@ Route::controller(BeritaAcaraPengoperasianGDController::class)->prefix('berita_a
 
 Route::controller(BeritaAcaraPengoperasianJTRController::class)->prefix('berita_acara_pengoperasian_jtr')->group(function(){
     Route::get('','index')->name('BeritaAcaraPengoperasianJTR');
+    Route::get('/create','create')->name('BeritaAcaraPengoperasianJTR.create');
+    Route::post('/store','store')->name('BeritaAcaraPengoperasianJTR.store');
 });
