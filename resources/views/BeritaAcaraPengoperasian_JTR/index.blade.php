@@ -135,16 +135,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($data_aset_jtr->count() > 0)
-                            @foreach ($data_aset_jtr as $item)
+                            @if ($berita_acara_pengoperasian_jtr->count() > 0)
+                            @foreach ($berita_acara_pengoperasian_jtr as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nomor_berita_acara }}</td>
                                     <td>{{ $item->tanggal }}</td>
                                     <td>
                                         <div class = "btn-group" role="group" aria-label="Basic example">
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
+                                            <a href="{{ route('BeritaAcaraPengoperasianJTR.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                            <a href="{{ route('BeritaAcaraPengoperasianJTR.edit',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
                                             <form action ="#" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                 @csrf
                                                 @method('delete')

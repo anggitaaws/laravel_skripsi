@@ -69,4 +69,7 @@ Route::controller(BeritaAcaraPengoperasianJTRController::class)->prefix('berita_
     Route::get('','index')->name('BeritaAcaraPengoperasianJTR');
     Route::get('/create','create')->name('BeritaAcaraPengoperasianJTR.create');
     Route::post('/store','store')->name('BeritaAcaraPengoperasianJTR.store');
+    Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTR.show');
+    Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianJTR.edit');
+    Route::put('/edit/{id}','update')->name('BeritaAcaraPengoperasianJTR.update');
 });

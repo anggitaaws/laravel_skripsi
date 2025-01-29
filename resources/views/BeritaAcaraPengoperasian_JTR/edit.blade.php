@@ -104,10 +104,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Gardu Distribusi PT PLN (Persero) UP3 Pinrang</h1>
+                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Pengoperasian JTR PT PLN (Persero) UP3 Pinrang</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Berita Acara Gardu Distribusi</li>
+                            <li class="breadcrumb-item active">Berita Acara Pengoperasian JTR</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body fw-semi-bold" style="color: #125D72;">
@@ -117,260 +117,183 @@
 
                         <div class="card mb-4">
                             <div class="card-header fw-bold">
-                                Detail Berita Acara Pengoperasian Gardu
+                                Edit Berita Acara Pengoperasian JTR
                             </div>
+                            <form action="{{ route('BeritaAcaraPengoperasianJTR.update', $berita_acara_pengoperasian_jtr->id) }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                @method('put')
                             <div class="card-body">
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara" value="{{ $berita_acara_pengoperasian_gd->nomor_berita_acara }}" readonly>
+                                  <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara" value="{{ $berita_acara_pengoperasian_jtr->nomor_berita_acara  }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $berita_acara_pengoperasian_gd->tanggal }}" readonly>
-                                </div>
-                            </div>
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $berita_acara_pengoperasian_jtr->tanggal}}">
+                              </div>
+                          </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $berita_acara_pengoperasian_gd->ulp }}" readonly>
+                                  <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $berita_acara_pengoperasian_jtr->ulp }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">No.SBPJ Pelaksana</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj" value="{{ $berita_acara_pengoperasian_gd->no_spbj }}" readonly>
+                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj" value="{{ $berita_acara_pengoperasian_jtr->no_spbj  }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Vendor</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="vendor" class="form-control form-control-sm" id="vendor" placeholder="vendor" value="{{ $berita_acara_pengoperasian_gd->vendor }}" readonly>
+                                  <input type="text" name="vendor" class="form-control form-control-sm" id="vendor" placeholder="vendor" value="{{ $berita_acara_pengoperasian_jtr->vendor  }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama GD</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Lokasi</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="name" class="form-control form-control-sm" id="name" placeholder="name" value="{{ $berita_acara_pengoperasian_gd->name }}" readonly>
+                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $berita_acara_pengoperasian_jtr->location  }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Location</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Koordinat Awal</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $berita_acara_pengoperasian_gd->location }}" readonly>
+                                  <input type="text" name="initial_coordinates" class="form-control form-control-sm" id="initial_coordinates" placeholder="initial_coordinates" value="{{ $berita_acara_pengoperasian_jtr->initial_coordinates  }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Latitude</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Koordinat Akhir</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="latitude" class="form-control form-control-sm" id="latitude" placeholder="latitude" value="{{ $berita_acara_pengoperasian_gd->latitude }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Longitude</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="longitude" class="form-control form-control-sm" id="longitude" placeholder="longitude" value="{{ $berita_acara_pengoperasian_gd->longitude }}" readonly>
+                                  <input type="text" name="final_coordinates" class="form-control form-control-sm" id="final_coordinates" placeholder="final_coordinates" value="{{ $berita_acara_pengoperasian_jtr->final_coordinates  }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penyulang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="penyulang" class="form-control form-control-sm" id="penyulang" placeholder="penyulang" value="{{ $berita_acara_pengoperasian_gd->penyulang }}" readonly>
+                                  <input type="text" name="penyulang" class="form-control form-control-sm" id="penyulang" placeholder="penyulang" value="{{ $berita_acara_pengoperasian_jtr->penyulang   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Keypoint</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="keypoint" class="form-control form-control-sm" id="keypoint" placeholder="keypoint" value="{{ $berita_acara_pengoperasian_gd->keypoint }}" readonly>
+                                  <input type="text" name="keypoint" class="form-control form-control-sm" id="keypoint" placeholder="keypoint" value="{{ $berita_acara_pengoperasian_jtr->nomor_berita_acara  }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Section</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="section" class="form-control form-control-sm" id="section" placeholder="section" value="{{ $berita_acara_pengoperasian_gd->section }}" readonly>
+                                  <input type="text" name="section" class="form-control form-control-sm" id="section" placeholder="section" value="{{ $berita_acara_pengoperasian_jtr->section   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment" value="{{ $berita_acara_pengoperasian_gd->segment }}" readonly>
+                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment" value="{{ $berita_acara_pengoperasian_jtr->segment   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Konstruksi</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama Gardu</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="construction" class="form-control form-control-sm" id="construction" placeholder="construction" value="{{ $berita_acara_pengoperasian_gd->construction }}" readonly>
+                                  <input type="text" name="nama_gardu" class="form-control form-control-sm" id="nama_gardu" placeholder="nama_gardu" value="{{ $berita_acara_pengoperasian_jtr->nama_gardu   }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="id_cabletype" class="form-control form-control-sm" id="id_cabletype" placeholder="id_cabletype" value="{{ $berita_acara_pengoperasian_jtr->id_cabletype   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Phasa</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $berita_acara_pengoperasian_gd->phase }}" readonly>
+                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $berita_acara_pengoperasian_jtr->phase   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Merk/Type</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Luas Penampang Kabel</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_fabrication" class="form-control form-control-sm" id="spec_fabrication" placeholder="spec_fabrication" value="{{ $berita_acara_pengoperasian->spec_fabrication }}" readonly>
+                                  <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize" value="{{ $berita_acara_pengoperasian_jtr->spec_cablesize   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">No.Seri</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="serial_number" class="form-control form-control-sm" id="serial_number" placeholder="serial_number" value="{{ $berita_acara_pengoperasian_gd->serial_number }}" readonly>
+                                  <input type="text" name="cable_length" class="form-control form-control-sm" id="cable_length" placeholder="cable_length" value="{{ $berita_acara_pengoperasian_jtr->cable_length   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Daya</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis Tiang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="id_transpower" class="form-control form-control-sm" id="id_transpower" placeholder="id_transpower" value="{{ $berita_acara_pengoperasian_gd->id_transpower }}" readonly>
+                                  <input type="text" name="spec_pole" class="form-control form-control-sm" id="spec_pole" placeholder="spec_pole" value="{{ $berita_acara_pengoperasian_jtr->spec_pole   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Berat/Vol.Minyak</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis JTR</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_oilweight" class="form-control form-control-sm" id="spec_oilweight" placeholder="spec_oilweight" value="{{ $berita_acara_pengoperasian_gd->spec_oilweight }}" readonly>
+                                  <input type="text" name="jtr_type" class="form-control form-control-sm" id="jtr_type" placeholder="jtr_type" value="{{ $berita_acara_pengoperasian_jtr->jtr_type   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Berat Total</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jumlah Tiang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_transweight" class="form-control form-control-sm" id="spec_transweight" placeholder="spec_transweight" value="{{ $berita_acara_pengoperasian_gd->spec_transweight }}" readonly>
+                                  <input type="text" name="sumofpole" class="form-control form-control-sm" id="sumofpole" placeholder="sumofpole" value="{{ $berita_acara_pengoperasian_jtr->sumofpole   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Impedensi</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jurusan Dari Gardu</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="impedance" class="form-control form-control-sm" id="impedance" placeholder="impedance" value="{{ $berita_acara_pengoperasian_gd->impedance }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Vektor Group</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_wiring" class="form-control form-control-sm" id="spec_wiring" placeholder="spec_wiring" value="{{ $berita_acara_pengoperasian_gd->spec_wiring }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Posisi TAP</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_transtap" class="form-control form-control-sm" id="spec_transtap" placeholder="spec_transtap" value="{{ $berita_acara_pengoperasian_gd->spec_transtap }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Standar</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="standar" class="form-control form-control-sm" id="standar" placeholder="standar" value="{{ $berita_acara_pengoperasian_gd->standar }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan_Belitan</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="bahan_belitan" class="form-control form-control-sm" id="bahan_belitan" placeholder="bahan_belitan" value="{{ $berita_acara_pengoperasian_gd->bahan_belitan }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Sistem Pendingin</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_cooling_type" class="form-control form-control-sm" id="spec_cooling_type" placeholder="spec_cooling_type" value="{{ $berita_acara_pengoperasian_gd->spec_cooling_type }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Sadapan</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_transtap1" class="form-control form-control-sm" id="spec_transtap1" placeholder="spec_transtap1" value="{{ $berita_acara_pengoperasian_gd->spec_transtap1 }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Arus Pengenal (A)</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_current" class="form-control form-control-sm" id="spec_current" placeholder="spec_current" value="{{ $berita_acara_pengoperasian_gd->spec_current }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Teg. Pengenal (V)</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_voltage" class="form-control form-control-sm" id="spec_voltage" placeholder="spec_voltage" value="{{ $berita_acara_pengoperasian_gd->spec_voltage }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Kenaikan Suhu</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="temperature" class="form-control form-control-sm" id="temperature" placeholder="temperature" value="{{ $berita_acara_pengoperasian_gd->temperature }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">THN.Buat</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_year" class="form-control form-control-sm" id="spec_year" placeholder="spec_year" value="{{ $berita_acara_pengoperasian_gd->spec_year }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Beban Trafo</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="trafo_load" class="form-control form-control-sm" id="trafo_load" placeholder="trafo_load" value="{{ $berita_acara_pengoperasian->trafo_load }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Keterangan</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="information" class="form-control form-control-sm" id="information" placeholder="information" value="{{ $berita_acara_pengoperasian->information }}" readonly>
+                                  <input type="text" name="jurusan_gardu" class="form-control form-control-sm" id="jurusan_gardu" placeholder="jurusan_gardu" value="{{ $berita_acara_pengoperasian_jtr->jurusan_gardu   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-Body</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="insulation_r_body" class="form-control form-control-sm" id="insulation_r_body" placeholder="insulation_r_body" value="{{ $berita_acara_pengoperasian_gd->insulation_r_body }}" readonly>
+                                  <input type="text" name="insulation_r_body" class="form-control form-control-sm" id="insulation_r_body" placeholder="insulation_r_body" value="{{ $berita_acara_pengoperasian_jtr->insulation_r_body   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">S-Body</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="insulation_s_body" class="form-control form-control-sm" id="insulation_s_body" placeholder="insulation_s_body" value="{{ $berita_acara_pengoperasian_gd->insulation_s_body }}" readonly >
+                                  <input type="text" name="insulation_s_body" class="form-control form-control-sm" id="insulation_s_body" placeholder="insulation_s_body" value="{{ $berita_acara_pengoperasian_jtr->insulation_s_body   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">T-Body</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="insulation_t_body" class="form-control form-control-sm" id="insulation_t_body" placeholder="insulation_t_body" value="{{ $berita_acara_pengoperasian_gd->insulation_t_body }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Netral Trafo dan Ujung JTR</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="earthneutral" placeholder="earthneutral" value="{{ $berita_acara_pengoperasian_gd->earthneutral }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Lightning Arrester</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthla" class="form-control form-control-sm" id="earthla" placeholder="earthla" value="{{ $berita_acara_pengoperasian_gd->earthla }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Body Trafo</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthbody" class="form-control form-control-sm" id="earthbody" placeholder="earthbody" value="{{ $berita_acara_pengoperasian_gd->earthbody }}" readonly>
+                                  <input type="text" name="insulation_t_body" class="form-control form-control-sm" id="insulation_t_body" placeholder="insulation_t_body" value="{{ $berita_acara_pengoperasian_jtr->insulation_t_body   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-r</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="insulation_R_r" class="form-control form-control-sm" id="insulation_R_r" placeholder="insulation_R_r" value="{{ $berita_acara_pengoperasian_gd->insulation_R_r }}" readonly>
+                                  <input type="text" name="insulation_r_r" class="form-control form-control-sm" id="insulation_r_r" placeholder="insulation_r_r" value="{{ $berita_acara_pengoperasian_jtr->insulation_r_r   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">S-s</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="insulation_S_s" class="form-control form-control-sm" id="insulation_S_s" placeholder="insulation_S_s" value="{{ $berita_acara_pengoperasian_gd->insulation_S_s }}" readonly>
+                                  <input type="text" name="insulation_s_s" class="form-control form-control-sm" id="insulation_s_s" placeholder="insulation_s_s" value="{{ $berita_acara_pengoperasian_jtr->insulation_s_s   }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">T-t</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="insulation_T_t" class="form-control form-control-sm" id="insulation_T_t" placeholder="insulation_T_t" value="{{ $berita_pengoperasian_gd->insulation_T_t }}" readonly>
+                                  <input type="text" name="insulation_t_t" class="form-control form-control-sm" id="insulation_t_t" placeholder="insulation_t_t" value="{{ $berita_acara_pengoperasian_jtr->insulation_t_t   }}">
                                 </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pemeriksaan Tahanan Pentanahan JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="eartneutral" placeholder="earthneutral" value="{{ $berita_acara_pengoperasian_jtr->earthneutral   }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-2">
+                                <div class="d-grid">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-2" style="background-color: #14A2BA;">PERBARUI</button>
                             </div>
                         </form>
                     </div>

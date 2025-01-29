@@ -17,8 +17,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function index()
     {
-        $data_aset_gardu = BeritaAcaraPengoperasianGD::orderBy('created_at','ASC')->get();
-        return view('BeritaAcaraPengoperasian_GD.index',compact('data_aset_gardu'));
+        $berita_acara_pengoperasian_gd = BeritaAcaraPengoperasianGD::orderBy('created_at','ASC')->get();
+        return view('BeritaAcaraPengoperasian_GD.index',compact('berita_acara_pengoperasian_gd'));
     }
 
     /**
@@ -158,8 +158,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function show(string $id)
     {
-        $data_aset_gardu = BeritaAcaraPengoperasianGD::findOrFail($id);
-        return view('BeritaAcaraPengoperasian_GD.show',compact('data_aset_gardu'));
+        $berita_acara_pengoperasian_gd = BeritaAcaraPengoperasianGD::findOrFail($id);
+        return view('BeritaAcaraPengoperasian_GD.show',compact('berita_acara_pengoperasian_gd'));
     }
 
     /**
@@ -167,8 +167,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function edit(string $id)
     {
-        $data_aset_gardu = BeritaAcaraPengoperasianGD::findOrFail($id);
-        return view('BeritaAcaraPengoperasian_GD.edit',compact('data_aset_gardu'));
+        $berita_acara_pengoperasian_gd = BeritaAcaraPengoperasianGD::findOrFail($id);
+        return view('BeritaAcaraPengoperasian_GD.edit',compact('berita_acara_pengoperasian_gd'));
     }
 
     /**

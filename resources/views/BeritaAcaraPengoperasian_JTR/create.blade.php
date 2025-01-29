@@ -120,7 +120,7 @@
                                 Buat Berita Acara Pengoperasian JTR
                             </div>
                             <div class="card-body">
-                            <form action="{{ route('BeritaAcaraPengoperasianJTR.create') }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('BeritaAcaraPengoperasianJTR.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>

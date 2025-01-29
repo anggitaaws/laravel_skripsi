@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('data_aset_jtr', function (Blueprint $table) {
             $table->id();
             $table->string('nomor_berita_acara')->nullable();
+            $table->date('tanggal');
             $table->string('ulp');
             $table->string('no_spbj')->nullable();
             $table->string('vendor')->nullable();
             $table->string('location');
-            $table->decimal('initial_coordinates')->nullable();
-            $table->decimal('final_coordinates')->nullable();
+            $table->string('initial_coordinates')->nullable();
+            $table->string('final_coordinates')->nullable();
             $table->string('penyulang');
             $table->string('keypoint');
             $table->string('section');
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->decimal('spec_cablesize');
             $table->integer('cable_length');
             $table->string('spec_pole');
+            $table->string('jtr_type');
             $table->integer('sumofpole');
             $table->string('jurusan_gardu');
             $table->decimal('insulation_r_body')->nullable();

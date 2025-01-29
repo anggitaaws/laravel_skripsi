@@ -135,8 +135,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($data_aset_gardu->count() > 0)
-                            @foreach ($data_aset_gardu as $item)
+                            @if ($berita_acara_pengoperasian_gd->count() > 0)
+                            @foreach ($berita_acara_pengoperasian_gd as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nomor_berita_acara }}</td>
