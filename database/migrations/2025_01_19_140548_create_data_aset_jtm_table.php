@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('data_aset_jtm', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_berita_acara');
-            $table->date('tanggal');
+            $table->string('nomor_berita_acara')->nullable();
+            $table->date('tanggal')->nullable();
             $table->string('ulp');
-            $table->string('no_spbj');
+            $table->string('no_spbj')->nullable();
             $table->string('vendor')->nullable();
             $table->string('location');
             $table->string('initial_coordinates')->nullable();
             $table->string('final_coordinates')->nullable();
-            $table->string('penyulang');
-            $table->string('keypoint');
+            $table->string('penyulang')->nullable();
+            $table->string('keypoint')->nullable();
             $table->string('section');
             $table->string('segment');
             $table->string('id_cabletype');
@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('spec_circuit');
             $table->string('segment1');
             $table->string('segment2');
-            $table->string('environment');
+            $table->string('environment')->nullable();
             $table->decimal('insulation_r_body')->nullable();
             $table->decimal('insulation_s_body')->nullable();
             $table->decimal('insulation_t_body')->nullable();

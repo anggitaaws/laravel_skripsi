@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('data_aset_gardu', function (Blueprint $table) {
             $table->id();
             $table->string('nomor_berita_acara')->nullable(); // nomor berita acara
-            $table->date('tanggal');
+            $table->date('tanggal')->nullable();
             $table->string('name'); //nama gardu
-            $table->string('no_spbj'); // No.SPBJ Pelaksana
+            $table->string('no_spbj')->nullable(); // No.SPBJ Pelaksana
             $table->string('ulp'); // ulp
-            $table->integer('id_transpower'); // Daya/Phasa
+            $table->integer('id_transpower'); // Daya/Phasa/KVA Internal
             $table->integer('phase'); // Phasa
             $table->string('location'); // Lokasi
             $table->string('penyulang'); // penyulang
@@ -36,12 +36,12 @@ return new class extends Migration
             $table->string('spec_cooling_type')->nullable(); // sistem pendingin
             $table->integer('spec_oilweight')->nullable(); // Berat / Vol. minyak
             $table->integer('spec_transweight')->nullable(); // Berat Total 
-            $table->string('vendor'); //vendor
-            $table->string('construction'); // konstruksi
-            $table->string('serial_number'); // No.Seri
+            $table->string('vendor')->nullable(); //vendor
+            $table->string('construction')->nullable(); // konstruksi
+            $table->string('serial_number')->nullable(); // No.Seri
             $table->integer('impedance')->nullable(); //Impedansi
-            $table->string('standar'); //standar
-            $table->string('bahan_belitan'); //bahan belitan
+            $table->string('standar')->nullable(); //standar
+            $table->string('bahan_belitan')->nullable(); //bahan belitan
             $table->integer('spec_transtap1')->nullable(); //Sadapan
             $table->string('temperature')->nullable(); //Kenaikan Suhu
             $table->integer('trafo_load')->nullable(); //Beban Trafo

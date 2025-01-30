@@ -17,10 +17,15 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar" style="background-color: #14a2ba;">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3 font-inter" href="#" style="color: #fff;">
-            <img src="{{ asset('halaman_data_aset/assets/img/Logo_PLN.png') }}" width="40" height="50" alt="" class="d-inline-block align-text-center">
-            PT PLN (Persero) UP3 Pinrang
-         </a>
+            <a class="navbar-brand ps-3 font-inter d-flex w-100" href="#" style="color: #fff;">
+                <div class="d-flex align-items-center">
+                <img src="{{ asset('halaman_dashboard/dist/assets/img/Logo_PLN.png') }}" width="40" height="50" alt="" class="d-inline-block align-text-center">
+                PT PLN (Persero) UP3 Pinrang
+                </div>
+                <div class="d-flex align-items-center ms-auto" style="font-size: 18px; color:#000;">
+                    <i class="fas fa-clock"></i> <span id="clock"></span> | <span id="date"></span>
+                </div>
+             </a>
            <!-- Sidebar Toggle-->
            <button class="btn btn-link btn-sm order-1 order-lg-0 ms-auto me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         </nav>
@@ -274,6 +279,30 @@
                 </footer>
             </div>
         </div>
+        <script>
+            function updateClock() {
+                const now = new Date();
+                
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+                const timeString = `${hours}:${minutes}:${seconds}`;
+                document.getElementById('clock').textContent = timeString;
+
+                // Format Date
+                const day = now.getDate();
+                const month = now.getMonth() + 1; // Month is 0-based
+                const year = now.getFullYear();
+                const dateString = `${day < 10 ? '0' + day : day}-${month < 10 ? '0' + month : month}-${year}`;
+                document.getElementById('date').textContent = dateString;
+            }
+
+            // Update the clock every second
+            setInterval(updateClock, 1000);
+
+            // Call updateClock immediately to show the time as soon as the page loads
+            updateClock();
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('halaman_data_aset/js/scripts.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
