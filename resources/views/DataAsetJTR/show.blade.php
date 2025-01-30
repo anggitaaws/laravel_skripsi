@@ -56,9 +56,9 @@
                                     </a>
                                     <div class="collapse" id="beritaacaraCollapsePengoperasian" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionBeritaAcara">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#" style="color: #fff;">Gardu</a>
-                                            <a class="nav-link" href="#" style="color: #fff;">JTR</a>
-                                            <a class="nav-link" href="#" style="color: #fff;">JTM</a>
+                                            <a class="nav-link" href="{{ Route('BeritaAcaraPengoperasianGD') }}" style="color: #fff;">Gardu</a>
+                                            <a class="nav-link" href="{{ Route('BeritaAcaraPengoperasianJTR') }}" style="color: #fff;">JTR</a>
+                                            <a class="nav-link" href="{{ Route('BeritaAcaraPengoperasianJTM') }}" style="color: #fff;">JTM</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -70,8 +70,6 @@
                                     <div class="collapse" id="beritaacaraCollapsePenghapusan" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionBeritaAcara">
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="#" style="color: #fff;">Gardu</a>
-                                            <a class="nav-link" href="#" style="color: #fff;">JTR</a>
-                                            <a class="nav-link" href="#" style="color: #fff;">JTM</a>
                                         </nav>
                                     </div>
                                 </nav>
@@ -104,10 +102,10 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4" style="color: #14a2ba;">Data Aset Gardu PT PLN (Persero) UP3 Pinrang</h1>
+                        <h1 class="mt-4" style="color: #14a2ba;">Data Aset JTR PT PLN (Persero) UP3 Pinrang</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Data Aset Gardu</li>
+                            <li class="breadcrumb-item active">Data Aset JTR</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body fw-semi-bold" style="color: #125D72;">
@@ -117,7 +115,7 @@
 
                         <div class="card mb-4">
                             <div class="card-header fw-bold">
-                            Detail Data Aset Gardu
+                            Detail Data Aset JTR
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
