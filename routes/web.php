@@ -86,4 +86,6 @@ Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_
     Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianJTM.edit');
     Route::post('/edit/{id}','update')->name('BeritaAcaraPengoperasianJTM.update');
     Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPengoperasianJTM.destroy');
+    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTM.unduhexcel');
+    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTM.unduhpdf');
 });
