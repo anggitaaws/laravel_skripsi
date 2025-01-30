@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_aset_jtm', function (Blueprint $table) {
+        Schema::create('berita_acara_pengoperasian_jtm', function (Blueprint $table) {
             $table->id();
             $table->string('nomor_berita_acara');
             $table->date('tanggal');
@@ -46,6 +46,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_aset_jtm');
+        Schema::dropIfExists('berita_acara_pengoperasian_jtm');
     }
 };

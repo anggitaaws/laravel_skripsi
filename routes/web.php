@@ -7,6 +7,7 @@ use App\Http\Controllers\DataAsetJTM\DataAsetJTMController;
 use App\Http\Controllers\DataAsetJTR\DataAsetJTRController;
 use App\Http\Controllers\DataAsetGardu\DataAsetGarduController;
 use App\Http\Controllers\BeritaAcaraPengoperasianGD\BeritaAcaraPengoperasianGDController;
+use App\Http\Controllers\BeritaAcaraPengoperasianJTM\BeritaAcaraPengoperasianJTMController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTR\BeritaAcaraPengoperasianJTRController;
 use App\Models\BeritaAcaraPengoperasianJTR;
 
@@ -72,4 +73,11 @@ Route::controller(BeritaAcaraPengoperasianJTRController::class)->prefix('berita_
     Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTR.show');
     Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianJTR.edit');
     Route::put('/edit/{id}','update')->name('BeritaAcaraPengoperasianJTR.update');
+    Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPengoperasianJTR.destroy');
+    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTR.unduhexcel');
+    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTR.unduhpdf');
+});
+
+Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_acara_pengoperasian_jtm')->group(function(){
+    Route::get('','index')->name('BeritaAcaraPengoperasianJTM');
 });

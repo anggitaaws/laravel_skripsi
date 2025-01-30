@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\BeritaAcaraPengoperasianJTR;
 
+use App\Exports\BeritaAcaraPengoperasianJTRExport;
 use App\Http\Controllers\Controller;
 use App\Models\BeritaAcaraPengoperasianJTR;
 use App\Models\DataAsetJTR;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class BeritaAcaraPengoperasianJTRController extends Controller
@@ -239,8 +242,34 @@ class BeritaAcaraPengoperasianJTRController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
-        //
+        $berita_acara_pengoperasian_jtr = BeritaAcaraPengoperasianJTR::findOrFail($id);
+        $berita_acara_pengoperasian_jtr->delete();
+        $data_aset_jtr = DataAsetJTR::where('nomor_berita_acara',$berita_acara_pengoperasian_jtr->nomor_berita_acara)->first();
+        if ($data_aset_jtr){
+            $data_aset_jtr->delete();
+        }
+        return redirect()->route('BeritaAcaraPengoperasianJTR')->with('success', 'Berita Acara Pengoperasian JTR Berhasil Dihapus');
+    }
+
+    public function downloadExcel($id)
+    {
+        $berita_acara_pengoperasian_jtr = BeritaAcaraPengoperasianJTR::find($id);
+
+        return Excel::download(new BeritaAcaraPengoperasianJTRExport($berita_acara_pengoperasian_jtr), 'berita_acara_pengoperasian_jtr.xlsx');
+    }
+
+    public function downloadPdf($id, Request $request)
+    {
+        $berita_acara_pengoperasian_jtr= BeritaAcaraPengoperasianJTR::find($id);
+        $berita_acara_pengoperasian_jtr->pelaksana = $request->input('pelaksana','........');
+        $berita_acara_pengoperasian_jtr->pengawas = $request->input('pengawas','........');
+        $berita_acara_pengoperasian_jtr->manager = $request->input('manager','........');
+
+        $pdf = Pdf::loadView('BeritaAcaraPengoperasian_JTR.pdf',compact('berita_acara_pengoperasian_jtr'));
+
+        return $pdf->download('berita_acara_pengoperasian_jtr.pdf');
+       
     }
 }

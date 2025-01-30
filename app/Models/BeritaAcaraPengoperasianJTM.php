@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class DataAsetJTM extends Model
+class BeritaAcaraPengoperasianJTM extends Model
 {
     use HasFactory;
 
-    public $table = "data_aset_jtm";
+    public $table = "berita_acara_pengoperasian_jtr";
 
     protected $fillable = [
         'nomor_berita_acara',
