@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaAcaraPenghapusanGD\BeritaAcaraPenghapusanGDController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -9,7 +10,6 @@ use App\Http\Controllers\DataAsetGardu\DataAsetGarduController;
 use App\Http\Controllers\BeritaAcaraPengoperasianGD\BeritaAcaraPengoperasianGDController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTM\BeritaAcaraPengoperasianJTMController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTR\BeritaAcaraPengoperasianJTRController;
-use App\Models\BeritaAcaraPengoperasianJTR;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -88,4 +88,10 @@ Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_
     Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPengoperasianJTM.destroy');
     Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTM.unduhexcel');
     Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTM.unduhpdf');
+});
+
+Route::controller(BeritaAcaraPenghapusanGDController::class)->prefix('berita_acara_penghapusan_gd')->group(function(){
+    Route::get('','index')->name('BeritaAcaraPenghapusanGD');
+    Route::get('/create','create')->name('BeritaAcaraPenghapusanGD.create');
+    Route::post('/store','store')->name('BeritaAcaraPenghapusanGD.store');
 });
