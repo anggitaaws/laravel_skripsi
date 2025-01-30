@@ -83,4 +83,7 @@ Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_
     Route::get('/create','create')->name('BeritaAcaraPengoperasianJTM.create');
     Route::post('/store','store')->name('BeritaAcaraPengoperasianJTM.store');
     Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTM.show');
+    Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianJTM.edit');
+    Route::post('/edit/{id}','update')->name('BeritaAcaraPengoperasianJTM.update');
+    Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPengoperasianJTM.destroy');
 });

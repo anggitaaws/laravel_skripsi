@@ -202,10 +202,10 @@ class BeritaAcaraPengoperasianJTRController extends Controller
             'earthneutral' => $request->input('eartneutral'),
             ]);
 
-            //Menyimpan data ke DataAsetGardu
+            //Menyimpan data ke DataAsetJTR
             $data_aset_jtr = DataAsetJTR::where('nomor_berita_acara', $berita_acara_pengoperasian_jtr->nomor_berita_acara)->first();
             if ($data_aset_jtr) {
-            $data_aset_jtr->create([
+            $data_aset_jtr->update([
            'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),
