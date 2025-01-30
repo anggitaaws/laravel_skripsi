@@ -80,4 +80,7 @@ Route::controller(BeritaAcaraPengoperasianJTRController::class)->prefix('berita_
 
 Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_acara_pengoperasian_jtm')->group(function(){
     Route::get('','index')->name('BeritaAcaraPengoperasianJTM');
+    Route::get('/create','create')->name('BeritaAcaraPengoperasianJTM.create');
+    Route::post('/store','store')->name('BeritaAcaraPengoperasianJTM.store');
+    Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTM.show');
 });

@@ -9,7 +9,7 @@ class BeritaAcaraPengoperasianJTM extends Model
 {
     use HasFactory;
 
-    public $table = "berita_acara_pengoperasian_jtr";
+    public $table = "berita_acara_pengoperasian_jtm";
 
     protected $fillable = [
         'nomor_berita_acara',
@@ -21,6 +21,7 @@ class BeritaAcaraPengoperasianJTM extends Model
         'initial_coordinates',
         'final_coordinates',
         'penyulang',
+        'keypoint',
         'section',
         'segment',
         'id_cabletype',

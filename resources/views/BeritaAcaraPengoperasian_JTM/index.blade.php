@@ -116,7 +116,7 @@
                         <div class="card mb-3">
                             <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
                                 Daftar Berita Acara Pengoperasian JTM
-                                <a href="#" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
+                                <a href="{{ Route('BeritaAcaraPengoperasianJTM.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
                             </div>
                             @if (Session::has('success'))
                             <div class="alert alert-success" role="alert">
@@ -143,7 +143,7 @@
                                     <td>{{ $item->tanggal }}</td>
                                     <td>
                                         <div class = "btn-group" role="group" aria-label="Basic example">
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                            <a href="{{ Route('BeritaAcaraPengoperasianJTM.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
                                             <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
                                             <form action ="#" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                 @csrf

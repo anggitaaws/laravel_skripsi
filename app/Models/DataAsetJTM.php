@@ -21,6 +21,7 @@ class DataAsetJTM extends Model
         'initial_coordinates',
         'final_coordinates',
         'penyulang',
+        'keypoint',
         'section',
         'segment',
         'id_cabletype',

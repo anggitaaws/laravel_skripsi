@@ -16,11 +16,13 @@ return new class extends Migration
             $table->string('nomor_berita_acara');
             $table->date('tanggal');
             $table->string('ulp');
-            $table->string('vendor');
+            $table->string('no_spbj');
+            $table->string('vendor')->nullable();
             $table->string('location');
-            $table->decimal('initial_coordinates')->nullable();
-            $table->decimal('final_coordinates')->nullable();
+            $table->string('initial_coordinates')->nullable();
+            $table->string('final_coordinates')->nullable();
             $table->string('penyulang');
+            $table->string('keypoint');
             $table->string('section');
             $table->string('segment');
             $table->string('id_cabletype');
