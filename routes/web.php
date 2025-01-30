@@ -52,6 +52,7 @@ Route::controller(DataAsetJTMController::class)->prefix('data_aset_jtm')->group(
     Route::get('/edit/{id}','edit')->name('DataAsetJTM.edit');
     Route::put('/edit/{id}','update')->name('DataAsetJTM.update');
     Route::delete('/destroy/{id}', 'destroy')->name('DataAsetJTM.destroy');
+    Route::get('/cari','search')->name('DataAsetJTM.search');
 });
 
 Route::controller(BeritaAcaraPengoperasianGDController::class)->prefix('berita_acara_pengoperasian_gd')->group(function(){
@@ -84,7 +85,7 @@ Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_
     Route::post('/store','store')->name('BeritaAcaraPengoperasianJTM.store');
     Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTM.show');
     Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianJTM.edit');
-    Route::post('/edit/{id}','update')->name('BeritaAcaraPengoperasianJTM.update');
+    Route::put('/edit/{id}','update')->name('BeritaAcaraPengoperasianJTM.update');
     Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPengoperasianJTM.destroy');
     Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTM.unduhexcel');
     Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTM.unduhpdf');
@@ -94,4 +95,8 @@ Route::controller(BeritaAcaraPenghapusanGDController::class)->prefix('berita_aca
     Route::get('','index')->name('BeritaAcaraPenghapusanGD');
     Route::get('/create','create')->name('BeritaAcaraPenghapusanGD.create');
     Route::post('/store','store')->name('BeritaAcaraPenghapusanGD.store');
+    Route::get('/show/{id}','show')->name('BeritaAcaraPenghapusanGD.show');
+    Route::get('/edit/{id}','edit')->name('BeritaAcaraPenghapusanGD.edit');
+    Route::put('/edit/{id}','update')->name('BeritaAcaraPenghapusanGD.update');
+    Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPenghapusanGD.destroy');
 });

@@ -120,9 +120,9 @@
                                 {{ Session::get('success') }}
                             </div>
                             @endif
-                            <form action="#" method="get">
+                            <form action="{{ route('DataAsetJTM.search') }}" method="get">
                             <div class="input-group mt-3 mb-4">
-                                <input type="text" name="query" class="form-control" placeholder="Cari Data Aset JTR..." value="">
+                                <input type="text" name="query" class="form-control" placeholder="Cari Data Aset JTM..." value="">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit" style="background-color: #125d72;">Cari</button>
                                 </div>

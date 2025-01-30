@@ -71,4 +71,15 @@ class DataAsetJTMController extends Controller
         $data_aset_jtm->delete();
         return redirect()->route('DataAsetJTM')->with('success', 'Data Aset JTM Berhasil Dihapus');
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+    
+        // Mencari DataAsetGardu berdasarkan nama atau ulp
+        $data_aset_jtm = DataAsetJTM::where('ulp', 'LIKE', "%$query%")
+                        ->orWhere('location', 'LIKE', "%$query%")
+                        ->get();
+        return view('DataAsetJTM.index', compact('data_aset_jtm'));
+    }
 }

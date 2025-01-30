@@ -141,9 +141,9 @@
                                     <td>{{ $item->tanggal }}</td>
                                     <td>
                                         <div class = "btn-group" role="group" aria-label="Basic example">
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
-                                            <form action ="#" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
+                                            <a href="{{ Route('BeritaAcaraPenghapusanGD.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                            <a href="{{ Route('BeritaAcaraPenghapusanGD.edit',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
+                                            <form action ="{{ Route('BeritaAcaraPenghapusanGD.destroy',$item->id) }}" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                 @csrf
                                                 @method('delete')
                                             <button class = "btn btn-group btn-primary rounded submit" style="background-color: #14A2BA;">Hapus</button>

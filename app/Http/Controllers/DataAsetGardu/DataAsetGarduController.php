@@ -81,7 +81,7 @@ class DataAsetGarduController extends Controller
     $data_aset_gardu = DataAsetGardu::where('name', 'LIKE', "%$query%")
                     ->orWhere('ulp', 'LIKE', "%$query%")
                     ->orWhere('location', 'LIKE', "%$query%")
-                    ->orWhere('bulan', 'LIKE', "%$query%")
+                    ->orWhere('tanggal', 'LIKE', "%$query%")
                     ->get();
     return view('DataAsetGardu.index', compact('data_aset_gardu'));
 }
