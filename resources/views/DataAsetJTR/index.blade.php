@@ -139,7 +139,8 @@
                                             <th>Lokasi</th>
                                             <th>Segment</th>
                                             <th>Panjang Sirkit(KMS)</th>
-                                            <th>Penampang</th>
+                                            <th>Luas Penampang (MM2)</th>
+                                            <th>Jenis JTR</th>
                                             <th>Jumlah Tiang</th>
                                             <th>Opsi</th>                                   
                                         </tr>

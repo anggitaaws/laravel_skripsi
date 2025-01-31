@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use function Laravel\Prompts\table;
+
 return new class extends Migration
 {
     /**
@@ -18,17 +20,17 @@ return new class extends Migration
             $table->date('tanggal')->nullable();
             $table->string('name'); //nama gardu
             $table->string('no_spbj')->nullable(); // No.SPBJ Pelaksana
-            $table->string('ulp'); // ulp
+            $table->string('ulp')->nullable(); // ulp
             $table->string('id_transpower'); // Daya/Phasa/KVA Internal
             $table->string('phase'); // Phasa
-            $table->string('location'); // Lokasi
+            $table->string('location')->nullable(); // Lokasi
             $table->string('penyulang'); // penyulang
             $table->string('keypoint'); // keypoint
             $table->string('section'); // section
             $table->string('segment'); // segment
             $table->string('latitude'); // latitude/koordinat
             $table->string('longitude'); // longitude/koordinat
-            $table->string('spec_fabrication'); // Merk / Type
+            $table->string('spec_fabrication')->nullable(); // Merk / Type
             $table->string('spec_transtap')->nullable(); // Posisi TAP
             $table->string('spec_voltage')->nullable(); // Teg. Pengenal (V)
             $table->string('spec_current')->nullable(); // Arus Pengenal (A)
@@ -56,6 +58,8 @@ return new class extends Migration
             $table->string('insulation_R_r')->nullable(); // R-r
             $table->string('insulation_S_s')->nullable(); // S-s
             $table->string('insulation_T_t')->nullable(); //T-t
+            $table->string('asset')->nullable();
+            $table->string('jenis_gd_internal')->nullable();
             $table->timestamps();
         });
     }

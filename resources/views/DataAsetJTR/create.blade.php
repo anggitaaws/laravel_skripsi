@@ -127,7 +127,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama Unit (ULP)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp">
                                 </div>
@@ -135,19 +135,7 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="id_CableType" class="form-control form-control-sm" id="id_CableType" placeholder="id_CableType">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Lokasi</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment">
+                                  <input type="text" name="id_cabletype" class="form-control form-control-sm" id="id_cabletype" placeholder="id_cabletype">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -157,9 +145,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penampang</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Luas Penampang Kabel (MM2)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="jtr_type" class="form-control form-control-sm" id="jtr_type" placeholder="jtr_type">
                                 </div>
                             </div>
                             <div class="form-group row">

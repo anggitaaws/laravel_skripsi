@@ -139,15 +139,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Keterangan</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $data_aset_jtm->location }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penyulang</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="penyulang" class="form-control form-control-sm" id="penyulang" placeholder="penyulang" value="{{ $data_aset_jtm->penyulang }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Keypoint</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="keypoint" class="form-control form-control-sm" id="keypoint" placeholder="keypoint" value="{{ $data_aset_jtm->keypoint }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -163,25 +163,25 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Phase</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Fasa</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $data_aset_jtm->phase }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">(KMS)</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit (KMS)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="cable_length" class="form-control form-control-sm" id="cable_length" placeholder="cable_length" value="{{ $data_aset_jtm->cable_length }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">(MM2)</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Luas Penampang Kabel (MM2)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize" value="{{ $data_aset_jtm->spec_cablesize }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tiang</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis Tiang</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="spec_pole" class="form-control form-control-sm" id="spec_pole" placeholder="spec_pole" value="{{ $data_aset_jtm->spec_pole }}">
                                 </div>
@@ -193,7 +193,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">(M)</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tinggi Tiang (M)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="height_pole" class="form-control form-control-sm" id="height_pole" placeholder="height_pole" value="{{ $data_aset_jtm->height_pole }}">
                                 </div>
@@ -205,15 +205,21 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Antara</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment Awal</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="segment1" class="form-control form-control-sm" id="segment1" placeholder="segment1" value="{{ $data_aset_jtm->segment1 }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Dan</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment Akhir</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="segment2" class="form-control form-control-sm" id="segment2" placeholder="segment2" value="{{ $data_aset_jtm->segment2 }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Main/PERC</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="environment" class="form-control form-control-sm" id="environment" placeholder="environment" value="{{ $data_aset_jtm->environment }}">
                                 </div>
                             </div>
                             <div class="form-group col-sm-2">

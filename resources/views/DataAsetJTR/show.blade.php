@@ -119,51 +119,153 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Id JTR</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="id_jtr" class="form-control form-control-sm" id="id_jtr" placeholder="id_jtr" value="{{ $data_aset_jtr->id_jtr }}" readonly>
+                                  <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara" value="{{ $data_aset_jtr->nomor_berita_acara  }}"readonly>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $data_aset_jtr->tanggal}}"readonly>
+                              </div>
+                          </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_jtr->ulp }}" readonly>
+                                  <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_jtr->ulp }}"readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">No.SBPJ Pelaksana</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="id_CableType" class="form-control form-control-sm" id="id_CableType" placeholder="id_CableType" value="{{ $data_aset_jtr->id_CableType }}" readonly>
+                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj" value="{{ $data_aset_jtr->no_spbj  }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Vendor</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="vendor" class="form-control form-control-sm" id="vendor" placeholder="vendor" value="{{ $data_aset_jtr->vendor  }}"readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Lokasi</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $data_aset_jtr->location }}" readonly>
+                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $data_aset_jtr->location  }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Koordinat Awal</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="initial_coordinates" class="form-control form-control-sm" id="initial_coordinates" placeholder="initial_coordinates" value="{{ $data_aset_jtr->initial_coordinates  }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Koordinat Akhir</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="final_coordinates" class="form-control form-control-sm" id="final_coordinates" placeholder="final_coordinates" value="{{ $data_aset_jtr->final_coordinates  }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penyulang</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="penyulang" class="form-control form-control-sm" id="penyulang" placeholder="penyulang" value="{{ $data_aset_jtr->penyulang   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Keypoint</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="keypoint" class="form-control form-control-sm" id="keypoint" placeholder="keypoint" value="{{ $data_aset_jtr->nomor_berita_acara  }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Section</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="section" class="form-control form-control-sm" id="section" placeholder="section" value="{{ $data_aset_jtr->section   }}"readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment" value="{{ $data_aset_jtr->segment }}" readonly>
+                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment" value="{{ $data_aset_jtr->segment   }}"readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit (KMS)</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama Gardu</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="cable_length" class="form-control form-control-sm" id="cable_length" placeholder="cable_length" value="{{ $data_aset_jtr->cable_length }}" readonly>
+                                  <input type="text" name="nama_gardu" class="form-control form-control-sm" id="nama_gardu" placeholder="nama_gardu" value="{{ $data_aset_jtr->nama_gardu   }}"readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penampang</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize" value="{{ $data_aset_jtr->spec_cablesize }}" readonly>
+                                  <input type="text" name="id_cabletype" class="form-control form-control-sm" id="id_cabletype" placeholder="id_cabletype" value="{{ $data_aset_jtr->id_cabletype   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Phasa</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $data_aset_jtr->phase   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Luas Penampang Kabel</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize" value="{{ $data_aset_jtr->spec_cablesize   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="cable_length" class="form-control form-control-sm" id="cable_length" placeholder="cable_length" value="{{ $data_aset_jtr->cable_length   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis Tiang</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="spec_pole" class="form-control form-control-sm" id="spec_pole" placeholder="spec_pole" value="{{ $data_aset_jtr->spec_pole   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="jtr_type" class="form-control form-control-sm" id="jtr_type" placeholder="jtr_type" value="{{ $data_aset_jtr->jtr_type   }}"readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jumlah Tiang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="sumofpole" class="form-control form-control-sm" id="sumofpole" placeholder="sumofpole" value="{{ $data_aset_jtr->sumofpole }}" readonly>
+                                  <input type="text" name="sumofpole" class="form-control form-control-sm" id="sumofpole" placeholder="sumofpole" value="{{ $data_aset_jtr->sumofpole   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jurusan Dari Gardu</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="jurusan_gardu" class="form-control form-control-sm" id="jurusan_gardu" placeholder="jurusan_gardu" value="{{ $data_aset_jtr->jurusan_gardu   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-Body</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_r_body" class="form-control form-control-sm" id="insulation_r_body" placeholder="insulation_r_body" value="{{ $data_aset_jtr->insulation_r_body   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">S-Body</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_s_body" class="form-control form-control-sm" id="insulation_s_body" placeholder="insulation_s_body" value="{{ $data_aset_jtr->insulation_s_body   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">T-Body</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="insulation_t_body" class="form-control form-control-sm" id="insulation_t_body" placeholder="insulation_t_body" value="{{ $data_aset_jtr->insulation_t_body   }}"readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pemeriksaan Tahanan Pentanahan JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="eartneutral" placeholder="earthneutral" value="{{ $data_aset_jtr->earthneutral   }}"readonly>
                                 </div>
                             </div>
                             <div class="form-group row">

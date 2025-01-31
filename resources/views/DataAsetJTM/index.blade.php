@@ -135,20 +135,21 @@
                                             <th>No</th>
                                             <th>Id JTM</th>
                                             <th>ULP</th>
+                                            <th>Keypoint</th>
                                             <th>Kawat</th>
-                                            <th>Keterangan</th>
                                             <th>Penyulang</th>
                                             <th>Section</th>
-                                            <th>Segment</th>
-                                            <th>Phase</th>
-                                            <th>(KMS)</th>
-                                            <th>(MM2)</th>
-                                            <th>Tiang</th>
+                                            <th>Segmen</th>
+                                            <th>Fasa</th>
+                                            <th>Panjang Sirkit (KMS)</th>
+                                            <th>Luas Penampang Kabel (MM2)</th>
+                                            <th>Jenis Tiang</th>
                                             <th>Konsul</th>
-                                            <th>(M)</th> 
+                                            <th>Tinggi (M)</th> 
                                             <th>(Circuit)</th> 
-                                            <th>Antara</th>  
-                                            <th>Dan</th>
+                                            <th>Segment Awal</th>  
+                                            <th>Segment Akhir</th>
+                                            <th>Main/PERC</th>
                                             <th>Opsi</th>                              
                                         </tr>
                                     </thead>
@@ -159,8 +160,8 @@
                                                 <td class="align-middle">{{ $loop->iteration }}</td>
                                                 <td class="align-middle">{{ $rs->id_jtm }}</td>
                                                 <td class="align-middle">{{ $rs->ulp }}</td>
+                                                <td class="align-middle">{{ $rs->keypoint}}</td>
                                                 <td class="align-middle">{{ $rs->id_cabletype }}</td>
-                                                <td class="align-middle">{{ $rs->location }}</td>
                                                 <td class="align-middle">{{ $rs->penyulang }}</td>
                                                 <td class="align-middle">{{ $rs->section }}</td>
                                                 <td class="align-middle">{{ $rs->segment }}</td>
@@ -173,6 +174,7 @@
                                                 <td class="align-middle">{{ $rs->spec_circuit }}</td>
                                                 <td class="align-middle">{{ $rs->segment1 }}</td>
                                                 <td class="align-middle">{{ $rs->segment2 }}</td>
+                                                <td class="align-middle">{{ $rs->environment }}</td>
                                                 <td class="align-middle">
                                                 <div class = "btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ route('DataAsetJTM.show', $rs->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>

@@ -139,12 +139,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_gardu->ulp }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">KVA Internal</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="id_transpower" class="form-control form-control-sm" id="id_transpower" placeholder="id_transpower" value="{{ $data_aset_gardu->id_transpower }}">
@@ -157,9 +151,9 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Lokasi (APKT)</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Konstruksi</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $data_aset_gardu->location }}">
+                                  <input type="text" name="construction" class="form-control form-control-sm" id="construction" placeholder="construction" value="{{ $data_aset_gardu->construction }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -199,69 +193,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Merk GD</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Asset</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_fabrication" class="form-control form-control-sm" id="spec_fabrication" placeholder="spec_fabrication" value="{{ $data_aset_gardu->spec_fabrication }}">
+                                  <input type="text" name="asset" class="form-control form-control-sm" id="asset" placeholder="asset" value="{{ $data_aset_gardu->asset }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Transtap</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis GD Internal</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_transtap" class="form-control form-control-sm" id="spec_transtap" placeholder="spec_transtap" value="{{ $data_aset_gardu->spec_transtap }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Voltage</label>
-                                <div class="col-sm-10">
-                                  <input type="integer" name="spec_voltage" class="form-control form-control-sm" id="spec_voltage" placeholder="spec_voltage" value="{{ $data_aset_gardu->spec_voltage }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Current</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_current" class="form-control form-control-sm" id="spec_current" placeholder="spec_current" value="{{ $data_aset_gardu->spec_current }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Year</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_year" class="form-control form-control-sm" id="spec_year" placeholder="spec_year" value="{{ $data_aset_gardu->spec_year }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Wiring</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_wiring" class="form-control form-control-sm" id="spec_wiring" placeholder="spec_wiring" value="{{ $data_aset_gardu->spec_wiring }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Mineraloil</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_mineraloil" class="form-control form-control-sm" id="spec_mineraloil" placeholder="spec_mineraloil" value="{{ $data_aset_gardu->spec_mineraloil }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_CoolingType</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_cooling_type" class="form-control form-control-sm" id="spec_cooling_type" placeholder="spec_cooling_type" value="{{ $data_aset_gardu->spec_cooling_type }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Oilweight</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_oilweight" class="form-control form-control-sm" id="spec_oilweight" placeholder="spec_oilweight" value="{{ $data_aset_gardu->spec_oilweight }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Spec_Transweight</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="spec_transweight" class="form-control form-control-sm" id="spec_transweight" placeholder="spec_transweight" value="{{ $data_aset_gardu->spec_transweight }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Test_Earth</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="test_earth" class="form-control form-control-sm" id="test_earth" placeholder="test_earth" value="{{ $data_aset_gardu->test_earth }}">
+                                  <input type="text" name="jenis_gd_internal" class="form-control form-control-sm" id="jenis_gd_internal" placeholder="jenis_gd_internal" value="{{ $data_aset_gardu->jenis_gd_internal }}">
                                 </div>
                             </div>
 

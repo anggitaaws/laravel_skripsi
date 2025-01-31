@@ -141,27 +141,17 @@
                                             <th>No</th>
                                             <th>Id Gardu </th>
                                             <th>Nama Gardu Baru</th>
-                                            <th>ULP</th>
                                             <th>KVA Internal</th>
                                             <th>Phasa Internal</th>
-                                            <th>Lokasi(APKT)</th>
+                                            <th>Konstruksi</th>
                                             <th>Penyulang</th>
                                             <th>Keypoint</th>
                                             <th>Section</th>
                                             <th>Segment</th>
                                             <th>Latitude</th>
                                             <th>Longitude</th>
-                                            <th>Merk GD</th>
-                                            <th>Spec_Transtap</th>
-                                            <th>Spec_Voltage</th>
-                                            <th>Spec_Current</th>
-                                            <th>Spec_Year</th>
-                                            <th>Spec_Wiring</th>
-                                            <th>Spec_Mineraloil</th>
-                                            <th>Spec_CoolingType</th>  
-                                            <th>Spec_Oilweight</th>  
-                                            <th>Spec_Transweight</th>    
-                                            <th>Test Earth</th> 
+                                            <th>Asset</th>
+                                            <th>Jenis GD Internal</th>
                                             <th>Opsi</th>                                   
                                         </tr>
                                     </thead>
@@ -172,27 +162,17 @@
                                                 <td class="align-middle">{{ $loop->iteration }}</td>
                                                 <td class="align-middle">{{ $rs->id_gardu }}</td>
                                                 <td class="align-middle">{{ $rs->name }}</td>
-                                                <td class="align-middle">{{ $rs->ulp }}</td>
                                                 <td class="align-middle">{{ $rs->id_transpower }}</td>
                                                 <td class="align-middle">{{ $rs->phase }}</td>
-                                                <td class="align-middle">{{ $rs->location }}</td>
+                                                <td class="align-middle">{{ $rs->construction }}</td>
                                                 <td class="align-middle">{{ $rs->penyulang }}</td>
                                                 <td class="align-middle">{{ $rs->keypoint }}</td>
                                                 <td class="align-middle">{{ $rs->section }}</td>
                                                 <td class="align-middle">{{ $rs->segment }}</td>
                                                 <td class="align-middle">{{ $rs->latitude }}</td>
                                                 <td class="align-middle">{{ $rs->longitude }}</td>
-                                                <td class="align-middle">{{ $rs->spec_fabrication }}</td>
-                                                <td class="align-middle">{{ $rs->spec_transtap }}</td>
-                                                <td class="align-middle">{{ $rs->spec_voltage }}</td>
-                                                <td class="align-middle">{{ $rs->spec_current }}</td>
-                                                <td class="align-middle">{{ $rs->spec_year }}</td>
-                                                <td class="align-middle">{{ $rs->spec_wiring }}</td>
-                                                <td class="align-middle">{{ $rs->spec_mineraloil }}</td>
-                                                <td class="align-middle">{{ $rs->spec_cooling_type }}</td>
-                                                <td class="align-middle">{{ $rs->spec_oilweight }}</td>
-                                                <td class="align-middle">{{ $rs->spec_transweight }}</td>
-                                                <td class="align-middle">{{ $rs->test_earth }}</td>
+                                                <td class="align-middle">{{ $rs->asset }}</td>
+                                                <td class="align-middle">{{ $rs->jenis_gd_internal }}</td>
                                                 <td class="align-middle">
                                                 <div class = "btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ route('DataAsetGardu.show', $rs->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>

@@ -127,7 +127,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama Unit (ULP)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_jtr->ulp }}">
                                 </div>
@@ -135,21 +135,10 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Bahan</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="id_CableType" class="form-control form-control-sm" id="id_CableType" placeholder="id_CableType" value="{{ $data_aset_jtr->id_CableType }}">
+                                  <input type="text" name="id_cabletype" class="form-control form-control-sm" id="id_cabletype" placeholder="id_cabletype" value="{{ $data_aset_jtr->id_cabletype }}">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Lokasi</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="location" class="form-control form-control-sm" id="location" placeholder="location" value="{{ $data_aset_jtr->location }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Segment</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="segment" class="form-control form-control-sm" id="segment" placeholder="segment" value="{{ $data_aset_jtr->segment }}">
-                                </div>
-                            </div>
+            
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Panjang Sirkit (KMS)</label>
                                 <div class="col-sm-10">
@@ -159,7 +148,7 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penampang</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_CableSize" class="form-control form-control-sm" id="spec_CableSize" placeholder="spec_CableSize" value="{{ $data_aset_jtr->spec_cablesize }}">
+                                  <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize" value="{{ $data_aset_jtr->spec_cablesize }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -168,7 +157,12 @@
                                   <input type="text" name="sumofpole" class="form-control form-control-sm" id="sumofpole" placeholder="sumofpole" value="{{ $data_aset_jtr->sumofpole }}">
                                 </div>
                             </div>
-
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Jenis JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="jtr_type" class="form-control form-control-sm" id="jtr_type" placeholder="jtr_type" value="{{ $data_aset_jtr->jtr_type }}">
+                                </div>
+                            </div>
                             <div class="form-group col-sm-2">
                                 <div class="d-grid">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-2" style="background-color: #14A2BA;">PERBARUI</button>

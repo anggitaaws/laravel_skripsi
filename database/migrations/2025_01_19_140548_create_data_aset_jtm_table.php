@@ -19,11 +19,11 @@ return new class extends Migration
             $table->string('ulp');
             $table->string('no_spbj')->nullable();
             $table->string('vendor')->nullable();
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->string('initial_coordinates')->nullable();
             $table->string('final_coordinates')->nullable();
-            $table->string('penyulang')->nullable();
-            $table->string('keypoint')->nullable();
+            $table->string('penyulang');
+            $table->string('keypoint');
             $table->string('section');
             $table->string('segment');
             $table->string('id_cabletype');
@@ -36,7 +36,7 @@ return new class extends Migration
             $table->string('spec_circuit');
             $table->string('segment1');
             $table->string('segment2');
-            $table->string('environment')->nullable();
+            $table->string('environment');
             $table->string('insulation_r_body')->nullable();
             $table->string('insulation_s_body')->nullable();
             $table->string('insulation_t_body')->nullable();
