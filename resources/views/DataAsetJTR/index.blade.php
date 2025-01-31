@@ -133,6 +133,7 @@
                                     <thead>
                                         <tr class="align-items-center" style="background-color: #e7f6f9; color: #125d72;">
                                             <th>No</th>
+                                            <th>Id JTR</th>
                                             <th>ULP</th>
                                             <th>Bahan</th>
                                             <th>Lokasi</th>
@@ -148,6 +149,7 @@
                                             @foreach ($data_aset_jtr as $rs)
                                             <tr>
                                                 <td class="align-middle">{{ $loop->iteration }}</td>
+                                                <td class="align-middle">{{ $rs->id_jtr }}</td>
                                                 <td class="align-middle">{{ $rs->ulp }}</td>
                                                 <td class="align-middle">{{ $rs->id_cabletype }}</td>
                                                 <td class="align-middle">{{ $rs->location }}</td>

@@ -121,6 +121,12 @@
                             @method('put')
                         <div class="card-body">
                             <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Id JTR</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="id_jtr" class="form-control form-control-sm" id="id_jtr" placeholder="id_jtr" value="{{ $data_aset_jtr->id_jtr }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_jtr->ulp }}">

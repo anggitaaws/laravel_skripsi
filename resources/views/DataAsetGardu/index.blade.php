@@ -139,6 +139,7 @@
                                     <thead>
                                         <tr class="align-items-center" style="background-color: #e7f6f9; color: #125d72;">
                                             <th>No</th>
+                                            <th>Id Gardu </th>
                                             <th>Nama Gardu Baru</th>
                                             <th>ULP</th>
                                             <th>KVA Internal</th>
@@ -169,6 +170,7 @@
                                             @foreach ($data_aset_gardu as $rs)
                                             <tr>
                                                 <td class="align-middle">{{ $loop->iteration }}</td>
+                                                <td class="align-middle">{{ $rs->id_gardu }}</td>
                                                 <td class="align-middle">{{ $rs->name }}</td>
                                                 <td class="align-middle">{{ $rs->ulp }}</td>
                                                 <td class="align-middle">{{ $rs->id_transpower }}</td>
