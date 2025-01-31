@@ -124,6 +124,12 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Id Gardu</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="id_gardu" class="form-control form-control-sm" id="id_gardu" placeholder="id_gardu" value="{{ $data_aset_gardu->id_gardu }}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama GD Baru</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="name" class="form-control form-control-sm" id="name" placeholder="name" value="{{ $data_aset_gardu->name }}" readonly>

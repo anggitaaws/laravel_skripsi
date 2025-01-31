@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('data_aset_jtr', function (Blueprint $table) {
             $table->id();
+            $table->string('id_jtr')->nullable();
             $table->string('nomor_berita_acara')->nullable();
             $table->date('tanggal')->nullable();
             $table->string('ulp');
@@ -27,20 +28,17 @@ return new class extends Migration
             $table->string('segment');
             $table->string('nama_gardu')->nullable();
             $table->string('id_cabletype');
-            $table->integer('phase')->nullable();
-            $table->decimal('spec_cablesize');
-            $table->integer('cable_length');
+            $table->string('phase')->nullable();
+            $table->string('spec_cablesize');
+            $table->string('cable_length');
             $table->string('spec_pole')->nullable();
             $table->string('jtr_type')->nullable();
-            $table->integer('sumofpole');
+            $table->string('sumofpole');
             $table->string('jurusan_gardu')->nullable();
-            $table->decimal('insulation_r_body')->nullable();
-            $table->decimal('insulation_s_body')->nullable();
-            $table->decimal('insulation_t_body')->nullable();
-            $table->decimal('insulation_r_r')->nullable();
-            $table->decimal('insulation_s_s')->nullable();
-            $table->decimal('insulation_t_t')->nullable();
-            $table->decimal('earthenutral')->nullable();
+            $table->string('insulation_r_body')->nullable();
+            $table->string('insulation_s_body')->nullable();
+            $table->string('insulation_t_body')->nullable();
+            $table->string('earthenutral')->nullable();
             $table->timestamps();
         });
     }

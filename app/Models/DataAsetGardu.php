@@ -56,4 +56,9 @@ class DataAsetGardu extends Model
         'insulation_S_s',
         'insulation_T_t',
     ];
+
+    public function beritaAcaraUpdateGd()
+    {
+        return $this->hasMany(BeritaAcaraUpdateGD::class);
+    }
 }

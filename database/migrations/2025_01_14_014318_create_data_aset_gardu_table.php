@@ -19,44 +19,43 @@ return new class extends Migration
             $table->string('name'); //nama gardu
             $table->string('no_spbj')->nullable(); // No.SPBJ Pelaksana
             $table->string('ulp'); // ulp
-            $table->integer('id_transpower'); // Daya/Phasa/KVA Internal
-            $table->integer('phase'); // Phasa
+            $table->string('id_transpower'); // Daya/Phasa/KVA Internal
+            $table->string('phase'); // Phasa
             $table->string('location'); // Lokasi
             $table->string('penyulang'); // penyulang
             $table->string('keypoint'); // keypoint
             $table->string('section'); // section
             $table->string('segment'); // segment
-            $table->decimal('latitude',10,8); // latitude/koordinat
-            $table->decimal('longitude',11,8); // longitude/koordinat
+            $table->string('latitude'); // latitude/koordinat
+            $table->string('longitude'); // longitude/koordinat
             $table->string('spec_fabrication'); // Merk / Type
             $table->string('spec_transtap')->nullable(); // Posisi TAP
             $table->string('spec_voltage')->nullable(); // Teg. Pengenal (V)
             $table->string('spec_current')->nullable(); // Arus Pengenal (A)
-            $table->integer('spec_year')->nullable(); // THN. Buat
+            $table->string('spec_year')->nullable(); // THN. Buat
             $table->string('spec_wiring')->nullable(); // Vektor Group
             $table->string('spec_cooling_type')->nullable(); // sistem pendingin
-            $table->integer('spec_oilweight')->nullable(); // Berat / Vol. minyak
-            $table->integer('spec_transweight')->nullable(); // Berat Total 
+            $table->string('spec_oilweight')->nullable(); // Berat / Vol. minyak
+            $table->string('spec_transweight')->nullable(); // Berat Total 
             $table->string('vendor')->nullable(); //vendor
             $table->string('construction')->nullable(); // konstruksi
             $table->string('serial_number')->nullable(); // No.Seri
-            $table->integer('impedance')->nullable(); //Impedansi
+            $table->string('impedance')->nullable(); //Impedansi
             $table->string('standar')->nullable(); //standar
             $table->string('bahan_belitan')->nullable(); //bahan belitan
-            $table->integer('spec_transtap1')->nullable(); //Sadapan
+            $table->string('spec_transtap1')->nullable(); //Sadapan
             $table->string('temperature')->nullable(); //Kenaikan Suhu
-            $table->integer('trafo_load')->nullable(); //Beban Trafo
+            $table->string('trafo_load')->nullable(); //Beban Trafo
             $table->string('information')->nullable(); // Keterangan
-            $table->decimal('insulation_r_body')->nullable(); // R-body
-            $table->decimal('insulation_s_body')->nullable(); // S-body
-            $table->decimal('insulation_t_body')->nullable(); // T-body
-            $table->decimal('earthneutral')->nullable(); // Tahanan Pentanahan Netral Trafo dan Ujung JTR
-            $table->decimal('earthla')->nullable(); // Tahanan Pentanahan Lightning Arrester 
-            $table->decimal('earthbody')->nullable(); // Tahanan Pentanahan Body Trafo
-            $table->decimal('insulation_R_r')->nullable(); // R-r
-            $table->decimal('insulation_S_s')->nullable(); // S-s
-            $table->decimal('insulation_T_t')->nullable(); //T-t
-            $table->string('status')->nullable();
+            $table->string('insulation_r_body')->nullable(); // R-body
+            $table->string('insulation_s_body')->nullable(); // S-body
+            $table->string('insulation_t_body')->nullable(); // T-body
+            $table->string('earthneutral')->nullable(); // Tahanan Pentanahan Netral Trafo dan Ujung JTR
+            $table->string('earthla')->nullable(); // Tahanan Pentanahan Lightning Arrester 
+            $table->string('earthbody')->nullable(); // Tahanan Pentanahan Body Trafo
+            $table->string('insulation_R_r')->nullable(); // R-r
+            $table->string('insulation_S_s')->nullable(); // S-s
+            $table->string('insulation_T_t')->nullable(); //T-t
             $table->timestamps();
         });
     }

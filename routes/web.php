@@ -104,4 +104,6 @@ Route::controller(BeritaAcaraPenghapusanGDController::class)->prefix('berita_aca
 
 Route::controller(BeritaAcaraUpdateGDController::class)->prefix('berita_acara_update_gd')->group(function(){
     Route::get('','index')->name('BeritaAcaraUpdateGD');
+    Route::get('/create','create')->name('BeritaAcaraUpdateGD.create');
+    Route::post('/store','store')->name('BeritaAcaraUpdateGD.store');
 });

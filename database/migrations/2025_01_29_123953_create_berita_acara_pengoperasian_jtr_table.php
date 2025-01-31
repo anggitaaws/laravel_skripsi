@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('berita_acara_pengoperasian_jtr', function (Blueprint $table) {
             $table->id();
+            $table->string('id_jtr')->nullable();
             $table->string('nomor_berita_acara')->nullable();
             $table->date('tanggal');
             $table->string('ulp');
@@ -27,20 +28,20 @@ return new class extends Migration
             $table->string('segment');
             $table->string('nama_gardu');
             $table->string('id_cabletype');
-            $table->integer('phase');
-            $table->decimal('spec_cablesize');
-            $table->integer('cable_length');
+            $table->string('phase');
+            $table->string('spec_cablesize');
+            $table->string('cable_length');
             $table->string('spec_pole');
             $table->string('jtr_type');
-            $table->integer('sumofpole');
+            $table->string('sumofpole');
             $table->string('jurusan_gardu');
-            $table->decimal('insulation_r_body')->nullable();
-            $table->decimal('insulation_s_body')->nullable();
-            $table->decimal('insulation_t_body')->nullable();
-            $table->decimal('insulation_r_r')->nullable();
-            $table->decimal('insulation_s_s')->nullable();
-            $table->decimal('insulation_t_t')->nullable();
-            $table->decimal('earthenutral')->nullable();
+            $table->string('insulation_r_body')->nullable();
+            $table->string('insulation_s_body')->nullable();
+            $table->string('insulation_t_body')->nullable();
+            $table->string('insulation_r_r')->nullable();
+            $table->string('insulation_s_s')->nullable();
+            $table->string('insulation_t_t')->nullable();
+            $table->string('earthenutral')->nullable();
             $table->timestamps();
         });
     }

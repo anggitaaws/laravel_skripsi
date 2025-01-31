@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('berita_acara_pengoperasian_jtm', function (Blueprint $table) {
             $table->id();
+            $table->string('id_jtm')->nullable();
             $table->string('nomor_berita_acara');
             $table->date('tanggal');
             $table->string('ulp');
@@ -26,19 +27,19 @@ return new class extends Migration
             $table->string('section');
             $table->string('segment');
             $table->string('id_cabletype');
-            $table->integer('phase');
-            $table->decimal('spec_cablesize');
-            $table->decimal('cable_length');
+            $table->string('phase');
+            $table->string('spec_cablesize');
+            $table->string('cable_length');
             $table->string('spec_pole');
             $table->string('spec_consule');
-            $table->integer('height_pole');
+            $table->string('height_pole');
             $table->string('spec_circuit');
             $table->string('segment1');
             $table->string('segment2');
             $table->string('environment');
-            $table->decimal('insulation_r_body')->nullable();
-            $table->decimal('insulation_s_body')->nullable();
-            $table->decimal('insulation_t_body')->nullable();
+            $table->string('insulation_r_body')->nullable();
+            $table->string('insulation_s_body')->nullable();
+            $table->string('insulation_t_body')->nullable();
             $table->timestamps();
         });
     }
