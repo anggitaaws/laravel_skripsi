@@ -10,6 +10,7 @@ use App\Http\Controllers\DataAsetGardu\DataAsetGarduController;
 use App\Http\Controllers\BeritaAcaraPengoperasianGD\BeritaAcaraPengoperasianGDController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTM\BeritaAcaraPengoperasianJTMController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTR\BeritaAcaraPengoperasianJTRController;
+use App\Http\Controllers\BeritaAcaraUpdateGD\BeritaAcaraUpdateGDController;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -99,4 +100,8 @@ Route::controller(BeritaAcaraPenghapusanGDController::class)->prefix('berita_aca
     Route::get('/edit/{id}','edit')->name('BeritaAcaraPenghapusanGD.edit');
     Route::put('/edit/{id}','update')->name('BeritaAcaraPenghapusanGD.update');
     Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraPenghapusanGD.destroy');
+});
+
+Route::controller(BeritaAcaraUpdateGDController::class)->prefix('berita_acara_update_gd')->group(function(){
+    Route::get('','index')->name('BeritaAcaraUpdateGD');
 });

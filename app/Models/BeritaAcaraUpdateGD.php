@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class DataAsetGardu extends Model
+class BeritaAcaraUpdateGD extends Model
 {
     use HasFactory;
 
-    public $table = "data_aset_gardu";
+    public $table = "berita_acara_update_gd";
 
     protected $fillable = [
         'id_gardu',

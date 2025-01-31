@@ -12,6 +12,7 @@ class BeritaAcaraPengoperasianGD extends Model
     public $table = "berita_acara_pengoperasian_gd";
 
     protected $fillable = [
+        'id_gardu',
         'nomor_berita_acara',
         'tanggal',
         'name',
