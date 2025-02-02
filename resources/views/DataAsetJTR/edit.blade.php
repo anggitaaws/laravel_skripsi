@@ -146,7 +146,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Penampang</label>
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Luas Penampang Kabel (MM2)</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="spec_cablesize" class="form-control form-control-sm" id="spec_cablesize" placeholder="spec_cablesize" value="{{ $data_aset_jtr->spec_cablesize }}">
                                 </div>

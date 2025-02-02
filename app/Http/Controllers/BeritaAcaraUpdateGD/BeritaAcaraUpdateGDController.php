@@ -32,6 +32,12 @@ class BeritaAcaraUpdateGDController extends Controller
      */
     public function store(Request $request)
     {
+         // Ambil nilai latitude dan longitude dari request
+    $berita_acara_update_gd = $request->input('latitude');
+    $berita_acara_update_gd= $request->input('longitude');
+
+    // Menghapus angka 0 ekstra setelah desimal
+
         //Validasi request
         $validated = $request->validate([
             'nomor_berita_acara' => 'required',
