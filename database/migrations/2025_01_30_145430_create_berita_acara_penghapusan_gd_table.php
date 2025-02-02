@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('keypoint'); // keypoint
             $table->string('section'); // section
             $table->string('segment'); // segment
-            $table->decimal('latitude',40,30); // latitude/koordinat
-            $table->decimal('longitude',40,30); // longitude/koordinat
+            $table->decimal('latitude',30,20); // latitude/koordinat
+            $table->decimal('longitude',30,20); // longitude/koordinat
             $table->string('spec_fabrication'); // Merk / Type
             $table->string('spec_transtap')->nullable(); // Posisi TAP
             $table->string('spec_voltage')->nullable(); // Teg. Pengenal (V)

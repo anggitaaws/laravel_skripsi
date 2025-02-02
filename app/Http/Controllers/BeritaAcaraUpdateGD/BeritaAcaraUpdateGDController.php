@@ -163,7 +163,9 @@ class BeritaAcaraUpdateGDController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $berita_acara_update_gd = BeritaAcaraUpdateGD::findOrFail($id);
+        $data_aset_gardu = DataAsetGardu::findOrFail($berita_acara_update_gd->id_gardu);
+        return view('BeritaAcaraUpdate_GD.show',compact('berita_acara_update_gd', 'data_aset_gardu'));
     }
 
     /**

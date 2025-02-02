@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('no_spbj')->nullable();
             $table->string('vendor')->nullable();
             $table->string('location')->nullable();
-            $table->decimal('initial_coordinates',40,30)->nullable();
-            $table->decimal('final_coordinates',40,30)->nullable();
+            $table->decimal('initial_coordinates',30,20)->nullable();
+            $table->decimal('final_coordinates',30,20)->nullable();
             $table->string('penyulang');
             $table->string('keypoint');
             $table->string('section');
