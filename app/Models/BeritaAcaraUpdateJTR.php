@@ -42,4 +42,9 @@ class BeritaAcaraUpdateJTR extends Model
         'insulation_t_t',
         'eartneutral',
     ];
+
+    public function dataAsetJTR()
+    {
+        return $this->belongsTo(DataAsetJTR::class, 'id_jtr');
+    }
 }

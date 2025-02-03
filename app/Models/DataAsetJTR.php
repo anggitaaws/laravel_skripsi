@@ -43,4 +43,14 @@ class DataAsetJTR extends Model
         'eartneutral',
 
     ];
+
+    public function beritaAcaraUpdateJTR()
+    {
+        return $this->hasMany(BeritaAcaraUpdateJTR::class);
+    }
+
+    public function beritaAcaraPengoperasianJTR()
+    {
+        return $this->hasMany(BeritaAcaraPengoperasianJTR::class);
+    }
 }
