@@ -26,7 +26,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
      */
     public function create()
     {
-        return view('BeritaAcaraPengoperasian_GD.create');
+        $data_aset_gardu = DataAsetGardu::all();
+        return view('BeritaAcaraPengoperasian_GD.create',compact('data_aset_gardu'));
     }
 
     /**
@@ -61,6 +62,7 @@ class BeritaAcaraPengoperasianGDController extends Controller
 
         //Menyimpan data ke BeritaAcaraPengoperasianGD
         $berita_acara_pengoperasian_gd = BeritaAcaraPengoperasianGD::create([
+        'id_gardu' => $request->input('id_gardu'),
         'nomor_berita_acara' => $request->input('nomor_berita_acara'),
         'tanggal' => $request->input('tanggal'),
         'ulp' => $request->input('ulp'),
@@ -107,6 +109,7 @@ class BeritaAcaraPengoperasianGDController extends Controller
 
         //Menyimpan data ke DataAsetGardu
         DataAsetGardu::create([
+            'id_gardu' => $request->input('id_gardu'),
             'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),
@@ -203,6 +206,7 @@ class BeritaAcaraPengoperasianGDController extends Controller
 
         //Menyimpan data ke BeritaAcaraPengoperasianGD
         $berita_acara_pengoperasian_gd->update([
+            'id_gardu' => $request->input('id_gardu'),
             'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),
@@ -251,6 +255,7 @@ class BeritaAcaraPengoperasianGDController extends Controller
         $data_aset_gardu = DataAsetGardu::where('nomor_berita_acara', $berita_acara_pengoperasian_gd->nomor_berita_acara)->first();
     if ($data_aset_gardu) {
         $data_aset_gardu->update([
+            'id_gardu' => $request->input('id_gardu'),
             'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),

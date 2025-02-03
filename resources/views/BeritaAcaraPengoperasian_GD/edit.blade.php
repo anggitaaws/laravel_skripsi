@@ -214,13 +214,13 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Phasa</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $berita_acara_pengoperasian->phase }}">
+                                  <input type="text" name="phase" class="form-control form-control-sm" id="phase" placeholder="phase" value="{{ $berita_acara_pengoperasian_gd->phase }}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Merk/Type</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="spec_fabrication" class="form-control form-control-sm" id="spec_fabrication" placeholder="spec_fabrication" value="{{ $berita_acara_pengoperasian->spec_fabrication }}">
+                                  <input type="text" name="spec_fabrication" class="form-control form-control-sm" id="spec_fabrication" placeholder="spec_fabrication" value="{{ $berita_acara_pengoperasian_gd->spec_fabrication }}">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -344,24 +344,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Netral Trafo dan Ujung JTR</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="earthneutral" placeholder="earthneutral" value="{{ $berita_acara_pengoperasian_gd->earthneutral }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Lightning Arrester</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthla" class="form-control form-control-sm" id="earthla" placeholder="earthla" value="{{ $berita_acara_pengoperasian_gd->earthla }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Body Trafo</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthbody" class="form-control form-control-sm" id="earthbody" placeholder="earthbody" value="{{ $berita_acara_pengoperasian_gd->earthbody }}" readonly>
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-r</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="insulation_R_r" class="form-control form-control-sm" id="insulation_R_r" placeholder="insulation_R_r" value="{{ $berita_acara_pengoperasian_gd->insulation_R_r }}" readonly>
@@ -379,7 +361,24 @@
                                   <input type="text" name="insulation_T_t" class="form-control form-control-sm" id="insulation_T_t" placeholder="insulation_T_t" value="{{ $berita_acara_pengoperasian_gd->insulation_T_t }}" readonly>
                                 </div>
                             </div>
-
+                            <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Netral Trafo dan Ujung JTR</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="earthneutral" class="form-control form-control-sm" id="earthneutral" placeholder="earthneutral" value="{{ $berita_acara_pengoperasian_gd->earthneutral }}" readonly>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Lightning Arrester</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="earthla" class="form-control form-control-sm" id="earthla" placeholder="earthla" value="{{ $berita_acara_pengoperasian_gd->earthla }}" readonly>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Body Trafo</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="earthbody" class="form-control form-control-sm" id="earthbody" placeholder="earthbody" value="{{ $berita_acara_pengoperasian_gd->earthbody }}" readonly>
+                              </div>
+                          </div>
                             <div class="form-group col-sm-2">
                                 <div class="d-grid">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-2" style="background-color: #14A2BA;">PERBARUI</button>

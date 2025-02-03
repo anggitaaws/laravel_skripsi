@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class DataAsetJTR extends Model
+class BeritaAcaraUpdateJTR extends Model
 {
     use HasFactory;
-
-    public $table = "data_aset_jtr";
+     
+    public $table ="berita_acara_update_jtr";
 
     protected $fillable = [
         'id_jtr',
@@ -41,6 +41,5 @@ class DataAsetJTR extends Model
         'insulation_s_s',
         'insulation_t_t',
         'eartneutral',
-
     ];
 }

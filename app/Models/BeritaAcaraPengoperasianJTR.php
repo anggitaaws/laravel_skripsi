@@ -12,6 +12,7 @@ class BeritaAcaraPengoperasianJTR extends Model
     public $table ="berita_acara_pengoperasian_jtr";
 
     protected $fillable = [
+        'id_jtr',
         'nomor_berita_acara',
         'tanggal',
         'ulp',

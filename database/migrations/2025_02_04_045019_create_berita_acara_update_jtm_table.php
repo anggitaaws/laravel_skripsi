@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('berita_acara_pengoperasian_jtr', function (Blueprint $table) {
+        Schema::create('berita_acara_update_jtm', function (Blueprint $table) {
             $table->id();
-            $table->string('id_jtr')->nullable();
-            $table->string('nomor_berita_acara')->nullable();
+            $table->string('id_jtm')->nullable();
+            $table->string('nomor_berita_acara');
             $table->date('tanggal');
             $table->string('ulp');
-            $table->string('no_spbj')->nullable();
+            $table->string('no_spbj');
             $table->string('vendor')->nullable();
             $table->string('location');
             $table->decimal('initial_coordinates',30,20)->nullable();
@@ -26,19 +26,20 @@ return new class extends Migration
             $table->string('keypoint');
             $table->string('section');
             $table->string('segment');
-            $table->string('nama_gardu');
             $table->string('id_cabletype');
             $table->string('phase');
             $table->string('spec_cablesize');
             $table->string('cable_length');
             $table->string('spec_pole');
-            $table->string('jtr_type');
-            $table->string('sumofpole');
-            $table->string('jurusan_gardu');
+            $table->string('spec_consule');
+            $table->string('height_pole');
+            $table->string('spec_circuit');
+            $table->string('segment1');
+            $table->string('segment2');
+            $table->string('environment');
             $table->string('insulation_r_body')->nullable();
             $table->string('insulation_s_body')->nullable();
             $table->string('insulation_t_body')->nullable();
-            $table->string('earthenutral')->nullable();
             $table->timestamps();
         });
     }
@@ -48,6 +49,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('berita_acara_pengoperasian_jtr');
+        Schema::dropIfExists('berita_acara_update_jtm');
     }
 };

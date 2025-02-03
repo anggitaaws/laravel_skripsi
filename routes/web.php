@@ -107,4 +107,9 @@ Route::controller(BeritaAcaraUpdateGDController::class)->prefix('berita_acara_up
     Route::get('/create','create')->name('BeritaAcaraUpdateGD.create');
     Route::post('/store','store')->name('BeritaAcaraUpdateGD.store');
     Route::get('/show/{id}','show')->name('BeritaAcaraUpdateGD.show');
+    Route::get('/edit/{id}','edit')->name('BeritaAcaraUpdateGD.edit');
+    Route::put('/edit/{id}','update')->name('BeritaAcaraUpdateGD.update');
+    Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraUpdateGD.destroy');
+    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateGD.unduhexcel');
+    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateGD.unduhpdf');
 });

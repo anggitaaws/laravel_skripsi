@@ -56,4 +56,9 @@ class BeritaAcaraPengoperasianGD extends Model
         'insulation_S_s',
         'insulation_T_t',
     ];
+
+    public function dataAsetGardu()
+    {
+        return $this->belongsTo(DataAsetGardu::class, 'id_gardu');
+    }
 }

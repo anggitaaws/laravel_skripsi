@@ -266,24 +266,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-r</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="insulation_r_r" class="form-control form-control-sm" id="insulation_r_r" placeholder="insulation_r_r" value="{{ $berita_acara_pengoperasian_jtr->insulation_r_r   }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">S-s</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="insulation_s_s" class="form-control form-control-sm" id="insulation_s_s" placeholder="insulation_s_s" value="{{ $berita_acara_pengoperasian_jtr->insulation_s_s   }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">T-t</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="insulation_t_t" class="form-control form-control-sm" id="insulation_t_t" placeholder="insulation_t_t" value="{{ $berita_acara_pengoperasian_jtr->insulation_t_t   }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pemeriksaan Tahanan Pentanahan JTR</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="earthneutral" class="form-control form-control-sm" id="eartneutral" placeholder="earthneutral" value="{{ $berita_acara_pengoperasian_jtr->earthneutral   }}">

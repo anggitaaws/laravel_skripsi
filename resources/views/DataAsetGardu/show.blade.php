@@ -150,7 +150,7 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">No.SBPJ Pelaksana</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj" value="{{ $sata_aset_gardu->no_spbj }}" readonly>
+                                  <input type="text" name="no_spbj" class="form-control form-control-sm" id="no_spbj" placeholder="no_spbj" value="{{ $data_aset_gardu->no_spbj }}" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">

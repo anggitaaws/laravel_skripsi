@@ -63,4 +63,9 @@ class DataAsetGardu extends Model
     {
         return $this->hasMany(BeritaAcaraUpdateGD::class);
     }
+
+    public function beritaAcaraPengoperasianGd()
+    {
+        return $this->hasMany(BeritaAcaraPengoperasianGD::class);
+    }
 }

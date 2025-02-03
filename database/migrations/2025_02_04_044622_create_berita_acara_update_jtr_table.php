@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('berita_acara_pengoperasian_jtr', function (Blueprint $table) {
+        Schema::create('berita_acara_update_jtr', function (Blueprint $table) {
             $table->id();
             $table->string('id_jtr')->nullable();
             $table->string('nomor_berita_acara')->nullable();
@@ -38,6 +38,9 @@ return new class extends Migration
             $table->string('insulation_r_body')->nullable();
             $table->string('insulation_s_body')->nullable();
             $table->string('insulation_t_body')->nullable();
+            $table->string('insulation_r_r')->nullable();
+            $table->string('insulation_s_s')->nullable();
+            $table->string('insulation_t_t')->nullable();
             $table->string('earthenutral')->nullable();
             $table->timestamps();
         });
@@ -48,6 +51,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('berita_acara_pengoperasian_jtr');
+        Schema::dropIfExists('berita_acara_update_jtr');
     }
 };

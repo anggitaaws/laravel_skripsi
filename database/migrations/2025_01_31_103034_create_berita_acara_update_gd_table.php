@@ -50,12 +50,12 @@ return new class extends Migration
             $table->string('insulation_r_body')->nullable(); // R-body
             $table->string('insulation_s_body')->nullable(); // S-body
             $table->string('insulation_t_body')->nullable(); // T-body
-            $table->string('earthneutral')->nullable(); // Tahanan Pentanahan Netral Trafo dan Ujung JTR
-            $table->string('earthla')->nullable(); // Tahanan Pentanahan Lightning Arrester 
-            $table->string('earthbody')->nullable(); // Tahanan Pentanahan Body Trafo
             $table->string('insulation_R_r')->nullable(); // R-r
             $table->string('insulation_S_s')->nullable(); // S-s
             $table->string('insulation_T_t')->nullable(); //T-t
+            $table->string('earthneutral')->nullable(); // Tahanan Pentanahan Netral Trafo dan Ujung JTR
+            $table->string('earthla')->nullable(); // Tahanan Pentanahan Lightning Arrester 
+            $table->string('earthbody')->nullable(); // Tahanan Pentanahan Body Trafo
             $table->timestamps();
         });
     }

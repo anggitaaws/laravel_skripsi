@@ -343,24 +343,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Netral Trafo dan Ujung JTR</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="earthneutral" placeholder="earthneutral">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Lightning Arrester</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthla" class="form-control form-control-sm" id="earthla" placeholder="earthla">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Body Trafo</label>
-                                <div class="col-sm-10">
-                                  <input type="text" name="earthbody" class="form-control form-control-sm" id="earthbody" placeholder="earthbody">
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">R-r</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="insulation_R_r" class="form-control form-control-sm" id="insulation_R_r" placeholder="insulation_R_r">
@@ -378,6 +360,24 @@
                                   <input type="text" name="insulation_T_t" class="form-control form-control-sm" id="insulation_T_t" placeholder="insulation_T_t">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Netral Trafo dan Ujung JTR</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="earthneutral" class="form-control form-control-sm" id="earthneutral" placeholder="earthneutral">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Lightning Arrester</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="earthla" class="form-control form-control-sm" id="earthla" placeholder="earthla">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tahanan Pentanahan Body Trafo</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="earthbody" class="form-control form-control-sm" id="earthbody" placeholder="earthbody">
+                              </div>
+                          </div>
                             <div class="form-group col-sm-2">
                                 <div class="d-grid">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-2" style="background-color: #14A2BA;">SIMPAN</button>
