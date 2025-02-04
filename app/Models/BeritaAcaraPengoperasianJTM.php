@@ -12,6 +12,7 @@ class BeritaAcaraPengoperasianJTM extends Model
     public $table = "berita_acara_pengoperasian_jtm";
 
     protected $fillable = [
+        'id_jtm',
         'nomor_berita_acara',
         'tanggal',
         'ulp',

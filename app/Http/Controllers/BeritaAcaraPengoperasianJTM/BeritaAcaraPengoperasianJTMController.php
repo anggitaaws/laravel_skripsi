@@ -60,7 +60,7 @@ class BeritaAcaraPengoperasianJTMController extends Controller
 
              //Menyimpan data ke BeritaAcaraPengoperasianJTM
          $berita_acara_pengoperasian_jtm = BeritaAcaraPengoperasianJTM::create([
-            'id_jtr' => $request->input('id_jtr'),
+            'id_jtm' => $request->input('id_jtm'),
             'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),
@@ -90,7 +90,7 @@ class BeritaAcaraPengoperasianJTMController extends Controller
             ]);
 
             DataAsetJTM::create([
-            'id_jtr' => $request->input('id_jtr'),
+            'id_jtm' => $request->input('id_jtm'),
             'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),
@@ -173,7 +173,7 @@ class BeritaAcaraPengoperasianJTMController extends Controller
 
             //Menyimpan data ke BeritaAcaraPengoperasianJTM
          $berita_acara_pengoperasian_jtm->update([
-            'id_jtr' => $request->input('id_jtr'),
+            'id_jtm' => $request->input('id_jtm'),
             'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),
@@ -206,7 +206,7 @@ class BeritaAcaraPengoperasianJTMController extends Controller
              $data_aset_jtm = DataAsetJTM::where('nomor_berita_acara', $berita_acara_pengoperasian_jtm->nomor_berita_acara)->first();
              if ($data_aset_jtm) {
                 $data_aset_jtm->update([
-                    'id_jtr' => $request->input('id_jtr'),
+                    'id_jtm' => $request->input('id_jtm'),
                     'nomor_berita_acara' => $request->input('nomor_berita_acara'),
                     'tanggal' => $request->input('tanggal'),
                     'ulp' => $request->input('ulp'),

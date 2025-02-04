@@ -112,7 +112,7 @@
                                 Halaman berita acara merupakan sekumpulan berita acara yang dimiliki PT PLN (Persero) UP3 Pinrang
                             </div>
                         </div>
-                        <form action="{{ Route('BeritaAcaraPengoperasianJTM.update') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ Route('BeritaAcaraPengoperasianJTM.update',$berita_acara_pengoperasian_jtm->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                         <div class="card mb-4">
@@ -120,6 +120,12 @@
                                 Edit Berita Acara Pengoperasian JTM
                             </div>
                             <div class="card-body">
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Id JTM</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="id_jtm" class="form-control form-control-sm" id="id_jtm" placeholder="id_jtm" value="{{ $berita_acara_pengoperasian_jtm->id_jtm }}">
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>
                                 <div class="col-sm-10">

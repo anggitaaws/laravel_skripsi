@@ -101,20 +101,20 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Penggantian JTR PT PLN (Persero) UP3 Pinrang</h1>
+                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Perubahan JTR PT PLN (Persero) UP3 Pinrang</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Berita Acara Penggantian Jaringan Tegangan Rendah</li>
+                            <li class="breadcrumb-item active">Berita Acara Perubahan Jaringan Tegangan Menengah</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body fw-semi-bold" style="color: #125D72;">
-                                Halaman berita acara penggantian jtr merupakan sekumpulan berita acara penggantian jtr yang dimiliki PT PLN (Persero) UP3 Pinrang
+                                Halaman berita acara perubahan jtm merupakan sekumpulan berita acara perubahan jtm yang dimiliki PT PLN (Persero) UP3 Pinrang
                             </div>
                         </div>
                         <div class="card mb-3">
                             <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
-                                Daftar Berita Acara Penggantian Jaringan Tegangan Rendah
-                                <a href="{{ Route('BeritaAcaraUpdateJTR.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
+                                Daftar Berita Acara Perubahan Jaringan Tegangan Menengah
+                                <a href="{{ Route('BeritaAcaraUpdateJTM.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
                             </div>
                             @if (Session::has('success'))
                             <div class="alert alert-success" role="alert">
@@ -133,23 +133,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($berita_acara_update_jtr->count() > 0)
-                            @foreach ($berita_acara_update_jtr as $item)
+                            @if ($berita_acara_update_jtm->count() > 0)
+                            @foreach ($berita_acara_update_jtm as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->nomor_berita_acara }}</td>
                                     <td>{{ $item->tanggal }}</td>
                                     <td>
                                         <div class = "btn-group" role="group" aria-label="Basic example">
-                                            <a href="{{ Route('BeritaAcaraUpdateJTR.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
-                                            <a href="{{ Route('BeritaAcaraUpdateJTR.edit',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
-                                            <form action ="{{ Route('BeritaAcaraUpdateJTR.destroy',$item->id) }}" method="post" type="button" class="btn btn-primary rounded submit px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
+                                            <form action ="#" method="post" type="button" class="btn btn-primary rounded submit px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                 @csrf
                                                 @method('delete')
                                             <button class = "btn btn-primary submit" style="background-color: #14A2BA;">Hapus</button>
                                             </form>
-                                            <a href="{{ Route('BeritaAcaraUpdateJTR.unduhexcel',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
-                                            <a href="{{ Route('BeritaAcaraUpdateJTR.unduhpdf',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
+                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
                                             <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Cetak</a>
                                         </div>
                                     </td>
@@ -157,7 +157,7 @@
                                 @endforeach
                                 @else
                                 <tr>
-                                    <td class="align-middle text-center" colspan="24"> Berita Acara Penggantian JTR Kosong </td>
+                                    <td class="align-middle text-center" colspan="24"> Berita Acara Perubahan JTM Kosong </td>
                                     </tr>
                                     @endif
                             </tbody>

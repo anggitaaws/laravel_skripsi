@@ -12,6 +12,7 @@ class DataAsetJTM extends Model
     public $table = "data_aset_jtm";
 
     protected $fillable = [
+        'id_jtm',
         'nomor_berita_acara',
         'tanggal',
         'ulp',
@@ -39,4 +40,14 @@ class DataAsetJTM extends Model
         'insulation_s_body',
         'insulation_t_body',
     ];
+
+    public function beritaAcaraUpdateJTM()
+    {
+        return $this->hasMany(BeritaAcaraUpdateJTM::class);
+    }
+
+    public function beritaAcaraPengoperasianJTM()
+    {
+        return $this->hasMany(BeritaAcaraPengoperasianJTM::class);
+    }
 }
