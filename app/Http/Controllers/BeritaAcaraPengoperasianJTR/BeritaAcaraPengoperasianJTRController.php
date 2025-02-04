@@ -86,7 +86,7 @@ class BeritaAcaraPengoperasianJTRController extends Controller
             'insulation_r_r' => $request->input('insulation_r_r'),
             'insulation_s_s' => $request->input('insulation_s_s'),
             'insulation_t_t' => $request->input('insulation_t_t'),
-            'earthneutral' => $request->input('eartneutral'),
+            'earthneutral' => $request->input('earthneutral'),
             ]);
 
             //Menyimpan data ke DataAsetGardu
@@ -119,7 +119,7 @@ class BeritaAcaraPengoperasianJTRController extends Controller
             'insulation_r_r' => $request->input('insulation_r_r'),
             'insulation_s_s' => $request->input('insulation_s_s'),
             'insulation_t_t' => $request->input('insulation_t_t'),
-            'earthneutral' => $request->input('eartneutral'),
+            'earthneutral' => $request->input('earthneutral'),
         ]);
 
         return redirect()->route('BeritaAcaraPengoperasianJTR')->with('success','Data Berhasil Disimpan');
@@ -201,7 +201,7 @@ class BeritaAcaraPengoperasianJTRController extends Controller
             'insulation_r_r' => $request->input('insulation_r_r'),
             'insulation_s_s' => $request->input('insulation_s_s'),
             'insulation_t_t' => $request->input('insulation_t_t'),
-            'earthneutral' => $request->input('eartneutral'),
+            'earthneutral' => $request->input('earthneutral'),
             ]);
 
             //Menyimpan data ke DataAsetJTR
@@ -232,10 +232,7 @@ class BeritaAcaraPengoperasianJTRController extends Controller
             'insulation_r_body' => $request->input('insulation_r_body'),
             'insulation_s_body' => $request->input('insulation_s_body'),
             'insulation_t_body' => $request->input('insulation_t_body'),
-            'insulation_r_r' => $request->input('insulation_r_r'),
-            'insulation_s_s' => $request->input('insulation_s_s'),
-            'insulation_t_t' => $request->input('insulation_t_t'),
-            'earthneutral' => $request->input('eartneutral'),
+            'earthneutral' => $request->input('earthneutral'),
         ]);
         return redirect()->route('BeritaAcaraPengoperasianJTR')->with('success','Data Berhasil Diupdate');
     }

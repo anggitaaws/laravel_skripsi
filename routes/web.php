@@ -119,4 +119,10 @@ Route::controller(BeritaAcaraUpdateJTRController::class)->prefix('berita_acara_u
     Route::get('','index')->name('BeritaAcaraUpdateJTR');
     Route::get('/create','create')->name('BeritaAcaraUpdateJTR.create');
     Route::post('/store', 'store')->name('BeritaAcaraUpdateJTR.store');
+    Route::get('/show/{id}','show')->name('BeritaAcaraUpdateJTR.show');
+    Route::get('/edit/{id}','edit')->name('BeritaAcaraUpdateJTR.edit');
+    Route::put('/edit/{id}','update')->name('BeritaAcaraUpdateJTR.update');
+    Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraUpdateJTR.destroy');
+    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateJTR.unduhpdf');
+    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateJTR.unduhexcel');
 });

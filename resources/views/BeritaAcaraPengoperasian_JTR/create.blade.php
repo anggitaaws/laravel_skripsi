@@ -273,7 +273,7 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pemeriksaan Tahanan Pentanahan JTR</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="eartneutral" placeholder="earthneutral">
+                                  <input type="text" name="earthneutral" class="form-control form-control-sm" id="earthneutral" placeholder="earthneutral">
                                 </div>
                             </div>
                             <div class="form-group col-sm-2">

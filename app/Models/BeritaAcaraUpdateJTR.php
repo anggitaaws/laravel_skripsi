@@ -37,10 +37,7 @@ class BeritaAcaraUpdateJTR extends Model
         'insulation_r_body',
         'insulation_s_body',
         'insulation_t_body',
-        'insulation_r_r',
-        'insulation_s_s',
-        'insulation_t_t',
-        'eartneutral',
+        'earthneutral',
     ];
 
     public function dataAsetJTR()

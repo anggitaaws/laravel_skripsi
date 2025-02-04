@@ -118,7 +118,7 @@
                                 Buat Berita Acara Penggantian JTR
                             </div>
                             <div class="card-body">
-                            <form action="#" method="post" enctype="multipart/form-data">
+                            <form action="{{ Route('BeritaAcaraUpdateJTR.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pilih Data Aset JTR</label>

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('no_spbj')->nullable();
             $table->string('vendor')->nullable();
             $table->string('location')->nullable();
-            $table->decimal('initial_coordinates',30,20)->nullable();
-            $table->decimal('final_coordinates',30,20)->nullable();
+            $table->string('initial_coordinates')->nullable();
+            $table->string('final_coordinates')->nullable();
             $table->string('penyulang')->nullable();
             $table->string('keypoint')->nullable();
             $table->string('section')->nullable();
@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('insulation_r_body')->nullable();
             $table->string('insulation_s_body')->nullable();
             $table->string('insulation_t_body')->nullable();
-            $table->string('earthenutral')->nullable();
+            $table->string('earthneutral')->nullable();
             $table->timestamps();
         });
     }

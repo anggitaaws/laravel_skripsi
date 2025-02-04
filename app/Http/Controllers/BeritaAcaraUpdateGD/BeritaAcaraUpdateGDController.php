@@ -311,7 +311,10 @@ class BeritaAcaraUpdateGDController extends Controller
     {
         $berita_acara_update_gd = BeritaAcaraUpdateGD::findOrFail($id);
         $berita_acara_update_gd->delete();
-        $data_aset_gardu = DataAsetGardu::where('nomor_berita_acara',$berita_acara_update_gd->nomor_berita_acara)->first();
+        $data_aset_gardu = DataAsetGardu::where('nomor_berita_acara',$berita_acara_update_gd->nomor_berita_acara)
+        ->oldest('updated_at')
+        ->oldest('created_at')
+        ->first();
         if ($data_aset_gardu){
             $data_aset_gardu->delete();
         }
@@ -328,7 +331,10 @@ class BeritaAcaraUpdateGDController extends Controller
     public function downloadPdf($id, Request $request)
     {
         $berita_acara_update_gd= BeritaAcaraUpdateGD::find($id);
-        $data_aset_gardu = DataAsetGardu::where('id_gardu', $berita_acara_update_gd->id_gardu)->first();
+        $data_aset_gardu = DataAsetGardu::where('id_gardu', $berita_acara_update_gd->id_gardu)
+        ->oldest('updated_at')
+        ->oldest('created_at')
+        ->first();
 
         $berita_acara_update_gd->pelaksana = $request->input('pelaksana','........');
         $berita_acara_update_gd->pengawas = $request->input('pengawas','........');
