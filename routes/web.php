@@ -132,4 +132,8 @@ Route::controller(BeritaAcaraUpdateJTMController::class)->prefix('berita_acara_u
     Route::get('','index')->name('BeritaAcaraUpdateJTM');
     Route::get('/create','create')->name('BeritaAcaraUpdateJTM.create');
     Route::post('/store','store')->name('BeritaAcaraUpdateJTM.store');
+    Route::get('/show/{id}','show')->name('BeritaAcaraUpdateJTM.show');
+    Route::get('/edit/{id}','edit')->name('BeritaAcaraUpdateJTM.edit');
+    Route::put('/edit/{id}','update')->name('BeritaAcaraUpdateJTM.update');
+    Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraUpdateJTM.destroy');
 });
