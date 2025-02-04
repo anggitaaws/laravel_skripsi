@@ -86,7 +86,7 @@
                                             <div class="collapse" id="beritaacaraCollapseUpdate" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionBeritaAcara">
                                                 <nav class="sb-sidenav-menu-nested nav">
                                                     <a class="nav-link" href="{{ Route('BeritaAcaraUpdateGD') }}" style="color: #fff;">Gardu</a>
-                                                    <a class="nav-link" href="#" style="color: #fff;">JTR</a>
+                                                    <a class="nav-link" href="{{ Route('BeritaAcaraUpdateJTR') }}" style="color: #fff;">JTR</a>
                                                     <a class="nav-link" href="#" style="color: #fff;">JTM</a>
                                                 </nav>
                                             </div>

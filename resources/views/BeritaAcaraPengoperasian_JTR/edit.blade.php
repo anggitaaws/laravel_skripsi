@@ -122,6 +122,12 @@
                                 @method('put')
                             <div class="card-body">
                             <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Id JTR</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="id_jtr" class="form-control form-control-sm" id="id_jtr" placeholder="id_jtr">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nomor Berita Acara</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="nomor_berita_acara" class="form-control form-control-sm" id="nomor_berita_acara" placeholder="nomor_berita_acara" value="{{ $berita_acara_pengoperasian_jtr->nomor_berita_acara  }}">

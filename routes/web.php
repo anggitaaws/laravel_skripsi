@@ -11,6 +11,7 @@ use App\Http\Controllers\BeritaAcaraPengoperasianGD\BeritaAcaraPengoperasianGDCo
 use App\Http\Controllers\BeritaAcaraPengoperasianJTM\BeritaAcaraPengoperasianJTMController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTR\BeritaAcaraPengoperasianJTRController;
 use App\Http\Controllers\BeritaAcaraUpdateGD\BeritaAcaraUpdateGDController;
+use App\Http\Controllers\BeritaAcaraUpdateJTR\BeritaAcaraUpdateJTRController;
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -112,4 +113,8 @@ Route::controller(BeritaAcaraUpdateGDController::class)->prefix('berita_acara_up
     Route::delete('/destroy/{id}','destroy')->name('BeritaAcaraUpdateGD.destroy');
     Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateGD.unduhexcel');
     Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateGD.unduhpdf');
+});
+
+Route::controller(BeritaAcaraUpdateJTRController::class)->prefix('berita_acara_update_jtr')->group(function(){
+    Route::get('','index')->name('BeritaAcaraUpdateJTR');
 });
