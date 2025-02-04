@@ -58,6 +58,7 @@ class BeritaAcaraPengoperasianJTRController extends Controller
 
          //Menyimpan data ke BeritaAcaraPengoperasianJTR
          $berita_acara_pengoperasian_jtr = BeritaAcaraPengoperasianJTR::create([
+            'id_jtr' => $request->input('id_jtr'),
             'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),
@@ -90,6 +91,7 @@ class BeritaAcaraPengoperasianJTRController extends Controller
 
             //Menyimpan data ke DataAsetGardu
         DataAsetJTR::create([
+            'id_jtr' => $request->input('id_jtr'),
            'nomor_berita_acara' => $request->input('nomor_berita_acara'),
             'tanggal' => $request->input('tanggal'),
             'ulp' => $request->input('ulp'),

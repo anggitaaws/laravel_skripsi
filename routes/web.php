@@ -117,4 +117,6 @@ Route::controller(BeritaAcaraUpdateGDController::class)->prefix('berita_acara_up
 
 Route::controller(BeritaAcaraUpdateJTRController::class)->prefix('berita_acara_update_jtr')->group(function(){
     Route::get('','index')->name('BeritaAcaraUpdateJTR');
+    Route::get('/create','create')->name('BeritaAcaraUpdateJTR.create');
+    Route::post('/store', 'store')->name('BeritaAcaraUpdateJTR.store');
 });
