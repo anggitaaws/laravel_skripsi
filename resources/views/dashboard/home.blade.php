@@ -118,32 +118,60 @@
                             <li class="breadcrumb-item active">Data Aset PT PLN (Persero) UP3 Pinrang</li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-3 col-md-6">
+                            <div class="col-xl-4 col-md-6">
                                 <div class="card mb-4" style="background-color:#EFE62F; color:#14A2BA;">
-                                    <div class="card-body fw-bold">Data Aset Gardu</div>
+                                    <div class="card-body fw-bold fs-3">Data Aset Gardu</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white" style="text-decoration: none;">Jumlah: {{ $garduCount }}</a>
+                                        <a class="medium text-black" style="text-decoration: none;">Jumlah: {{ $garduCount }}</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                            <div class="col-xl-4 col-md-6">
                                 <div class="card mb-4" style="background-color:#EFE62F; color:#14A2BA;">
-                                    <div class="card-body fw-bold">Data Aset JTR</div>
+                                    <div class="card-body fw-bold fs-3">Data Aset JTR</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white" style="text-decoration: none;">Jumlah: {{ $jtrCount }} </a>
+                                        <a class="medium text-black" style="text-decoration: none;">Jumlah: {{ $jtrCount }} </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                            <div class="col-xl-4 col-md-6">
                                 <div class="card mb-4" style="background-color:#EFE62F; color:#14A2BA;">
-                                    <div class="card-body fw-bold">Data Aset JTM</div>
+                                    <div class="card-body fw-bold fs-3">Data Aset JTM</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white" style="text-decoration: none;">Jumlah: {{ $jtmCount }} </a>
+                                        <a class="medium text-black" style="text-decoration: none;">Jumlah: {{ $jtmCount }} </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
+                        <div id="lokasi-kami" class="card mt-5">
+                            <div class="card-header" style="background-color: #14a2ba; color: white;">
+                            <h5>Lokasi Kami</h5>
+                            <div class="ratio ratio-21x9">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.0315901648337!2d119.64671907497416!3d-3.80324629617059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d944d1e308ae079%3A0x3ff1908f442fc0b2!2sPT%20PLN%20(Persero)%20Area%20PINRANG!5e0!3m2!1sen!2sid!4v1738734410857!5m2!1sen!2sid"
+                                    width="50%" 
+                                    height="90" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div id="about-us" class="card mt-5">
+                            <div class="card-header" style="background-color: #14a2ba; color: white;">
+                                <h3 class="align-items-center">About Us</h3>
+                            </div>
+                            <div class="card-body">
+                                <h4>Selamat Datang di Sistem Manajemen Data Aset PLN</h4>
+                                <p>
+                                    Sistem ini dikembangkan untuk mempermudah pengelolaan data aset gardu, JTR, dan JTM.
+                                    Dengan adanya sistem ini, diharapkan proses pencatatan dan monitoring aset menjadi lebih efisien.
+                                </p>
+                                <p>Jika Anda memiliki pertanyaan, silakan hubungi tim IT PLN UP3 Pinrang.</p>
+                            </div>
+                        </div>
                 </main>
                 <footer class="py-3 mt-auto" style="background-color: #D9D9D9; color: black;">
                     <div class="container-fluid px-3">

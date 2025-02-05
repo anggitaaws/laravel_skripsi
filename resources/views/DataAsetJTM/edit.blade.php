@@ -17,7 +17,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar" style="background-color: #14a2ba;">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3 font-inter d-flex w-100" href="#" style="color: #fff;">
+            <a class="navbar-brand ps-3 font-inter d-flex w-100" href="{{ Route('home') }}" style="color: #fff;">
             <div class="d-flex align-items-center">
             <img src="{{ asset('halaman_data_aset/assets/img/Logo_PLN.png') }}" width="40" height="50" alt="" class="d-inline-block align-text-center">
             PT PLN (Persero) UP3 Pinrang
