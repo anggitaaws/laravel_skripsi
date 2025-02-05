@@ -167,10 +167,12 @@ body {
                     <td> VENDOR </td>
                     <td> {{ $berita_acara_pengoperasian_gd->vendor }}</td>
                 </tr>
-                <tr><td> NAMA GD</td>
+                <tr>
+                    <td> NAMA GD</td>
                     <td> {{ $berita_acara_pengoperasian_gd->name }}</td>
                 </tr>
-                <tr><td> LOKASI </td>
+                <tr>
+                    <td> LOKASI </td>
                     <td>  {{ $berita_acara_pengoperasian_gd->location }}</td>
                 </tr>
                 <tr>
