@@ -153,12 +153,14 @@
                                     <td>
                                         <div class = "btn-group" role="group" aria-label="Basic example">
                                             <a href="{{ route('BeritaAcaraPengoperasianGD.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                            @if(auth()->user()->role === 'superadmin')
                                             <a href="{{ route('BeritaAcaraPengoperasianGD.edit',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
                                             <form action ="{{ route('BeritaAcaraPengoperasianGD.destroy',$item->id) }}" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                 @csrf
                                                 @method('delete')
                                             <button class = "btn btn-group btn-primary rounded submit" style="background-color: #14A2BA;">Hapus</button>
                                             </form>
+                                            @endif
                                             <a href="{{ route('BeritaAcaraPengoperasianGD.unduhexcel',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
                                             <a href="{{ route('BeritaAcaraPengoperasianGD.unduhpdf',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
                                         </div>

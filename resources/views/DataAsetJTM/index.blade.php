@@ -190,12 +190,14 @@
                                                 <td class="align-middle">
                                                 <div class = "btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ route('DataAsetJTM.show', $rs->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                                    @if(auth()->user()->role === 'superadmin')
                                                     <a href="{{ route('DataAsetJTM.edit',$rs->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
                                                     <form action ="{{ route('DataAsetJTM.destroy',$rs->id) }}" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                         @csrf
                                                         @method('delete')
                                                     <button class = "btn btn-group btn-primary rounded submit" style="background-color: #14A2BA;">Hapus</button>
                                                     </form>
+                                                    @endif
                                                 </div>
                                             </td>
                                             </tr> 
