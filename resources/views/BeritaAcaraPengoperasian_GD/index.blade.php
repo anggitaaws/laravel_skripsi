@@ -161,7 +161,6 @@
                                             </form>
                                             <a href="{{ route('BeritaAcaraPengoperasianGD.unduhexcel',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
                                             <a href="{{ route('BeritaAcaraPengoperasianGD.unduhpdf',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Cetak</a>
                                         </div>
                                     </td>
                                 </tr>
