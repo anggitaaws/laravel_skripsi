@@ -5,21 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BA Penghapusan Gardu </title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; font-size: 10pt; }
-       
-       /* Center the title and nomor */
-       .header {
-           text-align: center; /* Centering the entire header */
-           margin-bottom: 20px; /* Space below the header */
-       }
-       
-       /* Title Style */
-       .title {
-           font-size: 12pt; /* Reduced font size */
-           font-weight: bold;
-           margin: 10px 0;
-       }
-       
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+}
+
+
+.header-table {
+                width: 100%;
+                border: none;
+                margin-bottom: 20px;
+            }
+
+            .header-table td {
+                vertical-align: middle;
+                padding: 0;
+            }
+
+            .header-table img {
+                height: 60px; /* Sesuaikan ukuran logo */
+            }
+
+            .header-table .text-container {
+                padding-left: 10px;
+            }
+
+            .header-table .title {
+                font-weight: bold;
+                font-size: 12pt;
+                color: purple;
+                margin: 0;
+            }
+
+            .header-table .subtitle {
+                font-weight: bold;
+                font-size: 10pt;
+                color: purple;
+                margin: 0;
+            }
+
+/* Judul */
+.title {
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
        /* Nomor Style */
        .nomor {
            font-size: 10pt; /* Reduced font size */
@@ -106,31 +140,73 @@
            </style>
     </head>
     <body>
-        <div class="header">
-            <div class="logo">
-                <img src="#" alt="Logo PLN" style="height: 80px;">
-            </div>
-            <p>UID SULSELRABAR</p>
-            <p>UP3 PINRANG</p>
+        <table class="header">
+        <tr>
+            <td> <img src="{{ public_path('Logo_PLN.png') }}" alt="Logo PLN" style="height: 80px;"></td>
+            <td class="text-container">
+                <p class="title">UID SULSELRABAR</p>
+                <p class="subtitle">UP3 PINRANG</p>
+            </td>
+        </tr>
+    </table>
             <h2 class="title"> BERITA ACARA PEMBONGKARAN GARDU DISTRIBUSI </h2> 
-            @if(@isset($berita_acara_penghapusan_gd->nomor_berita_acara))
+            @if(isset($berita_acara_penghapusan_gd->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_penghapusan_gd->nomor_berita_acara }}</p>   
             @endif
             <p class="hari-ini-text">Pada Hari ini {{ $berita_acara_penghapusan_gd->tanggal }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pengoperasian baru trafo Distribusi dengan data-data sebagai berikut: </p>
             <table class="info-table-no-border">
-                <tr><td> ULP: {{ $berita_acara_penghapusan_gd->ulp }}</td></tr>
-                <tr><td> NO SPBJ PELAKSANA: {{ $berita_acara_penghapusan_gd->no_spbj }}</td></tr>
-                <tr><td> VENDOR: {{ $berita_acara_penghapusan_gd->vendor }}</td></tr>
-                <tr><td> NAMA GD: {{ $berita_acara_penghapusan_gd->name }}</td></tr>
-                <tr><td> LOKASI: {{ $berita_acara_penghapusan_gd->location }}</td></tr>
-                <tr><td> KOORDINAT LATITUDE: {{ $berita_acara_penghapusan_gd->latitude }}</td></tr>
-                <tr><td> KOORDINAT LONGITUDE: {{ $berita_acara_penghapusan_gd->longitude }}</td></tr>
-                <tr><td> PENYULANG: {{ $berita_acara_penghapusan_gd->penyulang }}</td></tr>
-                <tr><td> KEYPOINT: {{ $berita_acara_penghapusan_gd->keypoint }}</td></tr>
-                <tr><td> SECTION: {{ $berita_acara_penghapusan_gd->section }}</td></tr>
-                <tr><td> SEGMENT: {{ $berita_acara_penghapusan_gd->segment }}</td></tr>
-                <tr><td> KONSTRUKSI: {{ $berita_acara_penghapusan_gd->construction }}</td></tr>
-                <tr><td> PHASA: {{ $berita_acara_penghapusan_gd->phase }}</td></tr>
+                <tr>
+                    <td> ULP </td>
+                    <td> {{ $berita_acara_penghapusan_gd->ulp }}</td>
+                </tr>
+                <tr>
+                    <td> NO SPBJ PELAKSANA </td>
+                    <td> {{ $berita_acara_penghapusan_gd->no_spbj }}</td>
+                </tr>
+                <tr>
+                    <td> VENDOR </td>
+                    <td> {{ $berita_acara_penghapusan_gd->vendor }}</td>
+                </tr>
+                <tr>
+                    <td> NAMA GD </td>
+                    <td> {{ $berita_acara_penghapusan_gd->name }}</td>
+                </tr>
+                <tr>
+                    <td> LOKASI </td>
+                    <td> {{ $berita_acara_penghapusan_gd->location }}</td>
+                </tr>
+                <tr>
+                    <td> KOORDINAT LATITUDE </td>
+                    <td> {{ $berita_acara_penghapusan_gd->latitude }}</td>
+                </tr>
+                <tr>
+                    <td> KOORDINAT LONGITUDE
+                    <td> {{ $berita_acara_penghapusan_gd->longitude }}</td>
+                </tr>
+                <tr>
+                    <td> PENYULANG </td>
+                    <td> {{ $berita_acara_penghapusan_gd->penyulang }}</td>
+                </tr>
+                <tr>
+                    <td> KEYPOINT </td>
+                    <td> {{ $berita_acara_penghapusan_gd->keypoint }}</td>
+                </tr>
+                <tr>
+                    <td> SECTION </td>
+                    <td> {{ $berita_acara_penghapusan_gd->section }}</td>
+                </tr>
+                <tr>
+                    <td> SEGMENT </td>
+                    <td> {{ $berita_acara_penghapusan_gd->segment }}</td>
+                </tr>
+                <tr>
+                    <td> KONSTRUKSI </td>
+                    <td> {{ $berita_acara_penghapusan_gd->construction }}</td>
+                </tr>
+                <tr>
+                    <td> PHASA </td>
+                    <td> {{ $berita_acara_penghapusan_gd->phase }}</td>
+                </tr>
             </table> 
         </div>
         <div class="content">

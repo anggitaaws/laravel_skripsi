@@ -19,7 +19,7 @@
     </head>
     <body>
         <div class="logo">
-            <img src="#" alt="Logo PLN" style="height: 80px;">
+            <img src="{{ public_path('Logo_PLN.png') }}" alt="Logo PLN" style="height: 80px;">
         </div>
         <div class="header">
             <p>UID SULSELRABAR</p>

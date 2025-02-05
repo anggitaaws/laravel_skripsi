@@ -5,102 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BA Pengoperasian JTR </title>
     <style>
- body { font-family: Arial, sans-serif; margin: 0; padding: 20px; font-size: 8pt; }
-
-/* Center the title and nomor */
-.header {
-    text-align: center; /* Centering the entire header */
-    margin-bottom: 20px; /* Space below the header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
 }
 
-/* Title Style */
+
+.header-table {
+                width: 100%;
+                border: none;
+                margin-bottom: 20px;
+            }
+
+            .header-table td {
+                vertical-align: middle;
+                padding: 0;
+            }
+
+            .header-table img {
+                height: 60px; /* Sesuaikan ukuran logo */
+            }
+
+            .header-table .text-container {
+                padding-left: 10px;
+            }
+
+            .header-table .title {
+                font-weight: bold;
+                font-size: 12pt;
+                color: purple;
+                margin: 0;
+            }
+
+            .header-table .subtitle {
+                font-weight: bold;
+                font-size: 10pt;
+                color: purple;
+                margin: 0;
+            }
+
+/* Judul */
 .title {
-    font-size: 12pt; /* Reduced font size */
+    font-size: 12pt;
     font-weight: bold;
+    text-align: center;
     margin: 10px 0;
 }
 
-/* Nomor Style */
-.nomor {
-    font-size: 10pt; /* Reduced font size */
-    font-weight: normal;
-    text-align: center; /* Centering the NO text */
+       /* Nomor Style */
+       .nomor {
+           font-size: 10pt; /* Reduced font size */
+           font-weight: normal;
+           text-align: center; /* Centering the NO text */
+       }
+       
+       /* Left and right align for the "Pada Hari ini" text */
+       .hari-ini-text {
+           text-align: justify; /* Left and right justification */
+           margin: 10px 0; /* Margin for spacing */
+       }
+       
+       /* Table style */
+    .info-table, .info-table-no-border {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        table-layout: auto;
+    }
+    
+    /* Table with border */
+    .info-table td, .info-table th {
+        padding: 8px;
+        border: 1px solid #000;
+        vertical-align: top;
+        word-wrap: break-word;
+    }
+
+    /* Table without border */
+    .info-table-no-border td {
+        padding: 6px; /* Reduced padding */
+        font-size: 10pt; /* Smaller font size */
+    }
+
+    /* Menjadikan titik dua sejajar */
+    .info-table td:first-child, .info-table-no-border td:first-child {
+        font-weight: normal;
+        width: 30%;
+        text-align: left;
+        white-space: nowrap; /* Mencegah teks label terpotong */
+        position: relative;
+        padding-right: 20px; /* Memberi ruang untuk titik dua */
+    }
+
+    .info-table-no-border td:first-child::after {
+    content: ":"; /* Tambahkan titik dua */
+    position: absolute;
+    right: 10px; /* Menjaga agar titik dua sejajar */
 }
 
-/* Left and right align for the "Pada Hari ini" text */
-.hari-ini-text {
-    text-align: justify; /* Left and right justification */
-    margin: 10px 0; /* Margin for spacing */
-}
-
-/* Specific border for the second table */
-.info-table {
-    width: 80%; /* Set table width */
-    margin: 10px auto; /* Center the second table */
-    border-collapse: collapse; /* Ensure borders are collapsed */
-}
-
-.info-table th, .info-table td {
-    padding: 6px; /* Reduced padding */
-    border: 1px solid #000; /* Border around each cell */
-    text-align: left;
-    font-size: 8pt; /* Smaller font size */
-}
-
-th {
-    font-weight: bold;
-}
-
-/* The first table has no borders and is not centered */
-.info-table-no-border td {
-    padding: 6px; /* Reduced padding */
-    font-size: 8pt; /* Smaller font size */
-}
-.footer-container {
-    display: flex;
-    justify-content: space-between; /* Memisahkan Pelaksana & Pengawas ke kiri dan kanan */
-    align-items: flex-start; /* Menyusun elemen sejajar di atas */
-    width: 100%;
+/* Pastikan kolom NO tidak memiliki titik dua */
+.info-table th:first-child, .info-table td:first-child {
+    width: auto;
     text-align: center;
-    margin-top: 40px;
-    padding: 0 10%; /* Memberi ruang dari tepi */
+    padding: 6px;
 }
 
-.footer-container div {
-    flex: 1; /* Membagi ruang secara adil */
-}
-
-.mengetahui {
-    text-align: center;
-    margin-top: 40px;
-    width: 100%;
-}
+    .info-table td:last-child, .info-table-no-border td:last-child {
+        width: auto;
+        text-align: left;
+        padding-left: 15px;
+    }
+       .footer-container {
+           display: flex;
+           justify-content: space-between; /* Memisahkan Pelaksana & Pengawas ke kiri dan kanan */
+           align-items: flex-start; /* Menyusun elemen sejajar di atas */
+           width: 100%;
+           text-align: center;
+           margin-top: 40px;
+           padding: 0 10%; /* Memberi ruang dari tepi */
+       }
+       
+       .footer-container div {
+           flex: 1; /* Membagi ruang secara adil */
+       }
+       
+       .mengetahui {
+           text-align: center;
+           margin-top: 40px;
+           width: 100%;
+       }
     </style>
     </head>
     <body>
-        <div class="header">
-            <div class="logo">
-                <img src="#" alt="Logo PLN" style="height: 80px;">
-            </div>
-            <p>UID SULSELRABAR</p>
-            <p>UP3 PINRANG</p>
+        <table class="header">
+            <tr>
+            <td>    <img src="{{ public_path('Logo_PLN.png') }}" alt="Logo PLN" style="height: 80px;"> </td>
+                <td class = "text-container">
+                    <p class="title">UID SULSELRABAR</p>
+                    <p class="subtitle">UP3 PINRANG</p>
+                </td>
+            </tr>
+        </table>    
             <h2 class="title"> BERITA ACARA PENGOPERASIAN JARINGAN TEGANGAN RENDAH </h2> 
-            @if(@isset($berita_acara_pengoperasian_jtr->nomor_berita_acara))
+            @if(isset($berita_acara_pengoperasian_jtr->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_pengoperasian_jtr->nomor_berita_acara }}</p>   
             @endif
             <p class="hari-ini-text">Pada Hari ini {{ $berita_acara_pengoperasian_jtr->tanggal }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pengoperasian baru trafo Distribusi dengan data-data sebagai berikut: </p>
             <table class="info-table-no-border">
-                <tr><td> ULP: {{ $berita_acara_pengoperasian_jtr->ulp }}</td></tr>
-                <tr><td> NO SPBJ PELAKSANA: {{ $berita_acara_pengoperasian_jtr->no_spbj }}</td></tr>
-                <tr><td> VENDOR: {{ $berita_acara_pengoperasian_jtr->vendor }}</td></tr>
-                <tr><td> LOKASI: {{ $berita_acara_pengoperasian_jtr->location }}</td></tr>
-                <tr><td> KOORDINAT AWAL: {{ $berita_acara_pengoperasian_jtr->initial_coordinates }}</td></tr>
-                <tr><td> KOORDINAT AKHIR: {{ $berita_acara_pengoperasian_jtr->final_coordinates }}</td></tr>
-                <tr><td> PENYULANG: {{ $berita_acara_pengoperasian_jtr->penyulang }}</td></tr>
-                <tr><td> KEYPOINT: {{ $berita_acara_pengoperasian_jtr->keypoint }}</td></tr>
-                <tr><td> SECTION: {{ $berita_acara_pengoperasian_jtr->section }}</td></tr>
-                <tr><td> SEGMENT: {{ $berita_acara_pengoperasian_jtr->segment }}</td></tr> 
-                <tr><td> NAMA GARDU: {{ $berita_acara_pengoperasian_jtr->nama_gardu }}</td></tr>
+                <tr>
+                    <td> ULP </td>
+                    <td>{{ $berita_acara_pengoperasian_jtr->ulp }}</td>
+                </tr>
+                <tr>
+                    <td> NO SPBJ PELAKSANA </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->no_spbj }}</td>
+                </tr>
+                <tr>
+                    <td> VENDOR </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->vendor }}</td>
+                </tr>
+                <tr>
+                    <td> LOKASI </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->location }}</td>
+                </tr>
+                <tr>
+                    <td> KOORDINAT AWAL </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->initial_coordinates }}</td>
+                </tr>
+                <tr>
+                    <td> KOORDINAT AKHIR </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->final_coordinates }}</td>
+                </tr>
+                <tr>
+                    <td> PENYULANG </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->penyulang }}</td>
+                </tr>
+                <tr>
+                    <td> KEYPOINT </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->keypoint }}</td>
+                </tr>
+                <tr>
+                    <td> SECTION </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->section }}</td>
+                </tr>
+                <tr>
+                    <td> SEGMENT </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->segment }}</td>
+                </tr> 
+                <tr>
+                    <td> NAMA GARDU </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->nama_gardu }}</td>
+                </tr>
             </table> 
         </div>
         <div class="content">

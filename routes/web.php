@@ -24,17 +24,16 @@ Route::post('/',[UserController::class,'doLogin'])->name('login.post');
 Route::get('user/logout',[UserController::class,'logout'])->name('logout');
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('home')->middleware(['auth']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('home')->middleware('auth');
 
 Route::controller(DataAsetGarduController::class)->prefix('data_aset_gardu')->group(function() {
-    Route::get('','index')->name('DataAsetGardu')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('DataAsetGardu.show')->middleware('role:admin');
-    Route::get('/cari','search')->name('DataAsetGardu.search')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:access-data-gardu'])->group(function(){
         Route::get('','index')->name('DataAsetGardu');
         Route::get('/show/{id}','show')->name('DataAsetGardu.show');
         Route::get('/cari','search')->name('DataAsetGardu.search');
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('DataAsetGardu.create');
         Route::post('/store','store')->name('DataAsetGardu.store');
         Route::get('/edit/{id}','edit')->name('DataAsetGardu.edit');
@@ -45,13 +44,14 @@ Route::controller(DataAsetGarduController::class)->prefix('data_aset_gardu')->gr
 });
 
 Route::controller(DataAsetJTRController::class)->prefix('data_aset_jtr')->group(function() {
-    Route::get('','index')->name('DataAsetJTR')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('DataAsetJTR.show')->middleware('role:admin');
-    Route::get('/cari','search')->name('DataAsetJTR.search')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:access-data-jtr'])->group(function(){
         Route::get('','index')->name('DataAsetJTR');
         Route::get('/show/{id}','show')->name('DataAsetJTR.show');
+        Route::get('/cari','search')->name('DataAsetJTR.search');
+
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('DataAsetJTR.create');
         Route::post('/store','store')->name('DataAsetJTR.store');
         Route::get('/edit/{id}','edit')->name('DataAsetJTR.edit');
@@ -62,14 +62,13 @@ Route::controller(DataAsetJTRController::class)->prefix('data_aset_jtr')->group(
 });
 
 Route::controller(DataAsetJTMController::class)->prefix('data_aset_jtm')->group(function() {
-    Route::get('','index')->name('DataAsetJTM')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('DataAsetJTM.show')->middleware('role:admin');
-    Route::get('/cari','search')->name('DataAsetJTM.search')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:access-data-jtm'])->group(function(){
         Route::get('','index')->name('DataAsetJTM');
         Route::get('/show/{id}','show')->name('DataAsetJTM.show');
         Route::get('/cari','search')->name('DataAsetJTM.search');
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('DataAsetJTM.create');
         Route::post('/store','store')->name('DataAsetJTM.store');
         Route::get('/edit/{id}','edit')->name('DataAsetJTM.edit');
@@ -80,16 +79,15 @@ Route::controller(DataAsetJTMController::class)->prefix('data_aset_jtm')->group(
 });
 
 Route::controller(BeritaAcaraPengoperasianGDController::class)->prefix('berita_acara_pengoperasian_gd')->group(function(){
-    Route::get('','index')->name('BeritaAcaraPengoperasianGD')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianGD.show')->middleware('role:admin');
-    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianGD.unduhexcel')->middleware('role:admin');
-    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianGD.unduhpdf')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:ba-pengoperasian-gd'])->group(function(){
         Route::get('','index')->name('BeritaAcaraPengoperasianGD');
         Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianGD.show');
         Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianGD.unduhexcel');
         Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianGD.unduhpdf');
+
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('BeritaAcaraPengoperasianGD.create');
         Route::post('/store','store')->name('BeritaAcaraPengoperasianGD.store');
         Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianGD.edit');
@@ -100,16 +98,15 @@ Route::controller(BeritaAcaraPengoperasianGDController::class)->prefix('berita_a
 });
 
 Route::controller(BeritaAcaraPengoperasianJTRController::class)->prefix('berita_acara_pengoperasian_jtr')->group(function(){
-    Route::get('','index')->name('BeritaAcaraPengoperasianJTR')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTR.show')->middleware('role:admin');
-    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTR.unduhexcel')->middleware('role:admin');
-    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTR.unduhpdf')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:ba-pengoperasian-jtr'])->group(function(){
         Route::get('','index')->name('BeritaAcaraPengoperasianJTR');
         Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTR.show');
         Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTR.unduhexcel');
         Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTR.unduhpdf');
+
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('BeritaAcaraPengoperasianJTR.create');
         Route::post('/store','store')->name('BeritaAcaraPengoperasianJTR.store');
         Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianJTR.edit');
@@ -120,16 +117,15 @@ Route::controller(BeritaAcaraPengoperasianJTRController::class)->prefix('berita_
 });
 
 Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_acara_pengoperasian_jtm')->group(function(){
-    Route::get('','index')->name('BeritaAcaraPengoperasianJTM')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTM.show')->middleware('role:admin');
-    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTM.unduhexcel')->middleware('role:admin');
-    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTM.unduhpdf')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:ba-pengoperasian-jtm'])->group(function(){
         Route::get('','index')->name('BeritaAcaraPengoperasianJTM');
         Route::get('/show/{id}','show')->name('BeritaAcaraPengoperasianJTM.show');
         Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPengoperasianJTM.unduhexcel');
         Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPengoperasianJTM.unduhpdf');
+
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('BeritaAcaraPengoperasianJTM.create');
         Route::post('/store','store')->name('BeritaAcaraPengoperasianJTM.store');
         Route::get('/edit/{id}','edit')->name('BeritaAcaraPengoperasianJTM.edit');
@@ -139,16 +135,15 @@ Route::controller(BeritaAcaraPengoperasianJTMController::class)->prefix('berita_
 });
 
 Route::controller(BeritaAcaraPenghapusanGDController::class)->prefix('berita_acara_penghapusan_gd')->group(function(){
-    Route::get('','index')->name('BeritaAcaraPenghapusanGD')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('BeritaAcaraPenghapusanGD.show')->middleware('role:admin');
-    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPenghapusanGD.unduhpdf')->middleware('role:admin');
-    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPenghapusanGD.unduhexcel')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:ba-penghapusan-gd'])->group(function(){
         Route::get('','index')->name('BeritaAcaraPenghapusanGD');
         Route::get('/show/{id}','show')->name('BeritaAcaraPenghapusanGD.show');
         Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraPenghapusanGD.unduhpdf');
         Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraPenghapusanGD.unduhexcel');
+
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('BeritaAcaraPenghapusanGD.create');
         Route::post('/store','store')->name('BeritaAcaraPenghapusanGD.store');
         Route::get('/edit/{id}','edit')->name('BeritaAcaraPenghapusanGD.edit');
@@ -158,16 +153,15 @@ Route::controller(BeritaAcaraPenghapusanGDController::class)->prefix('berita_aca
 });
 
 Route::controller(BeritaAcaraUpdateGDController::class)->prefix('berita_acara_update_gd')->group(function(){
-    Route::get('','index')->name('BeritaAcaraUpdateGD')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('BeritaAcaraUpdateGD.show')->middleware('role:admin');
-    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateGD.unduhexcel')->middleware('role:admin');
-    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateGD.unduhpdf')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:ba-update-gd'])->group(function(){
         Route::get('','index')->name('BeritaAcaraUpdateGD');
         Route::get('/show/{id}','show')->name('BeritaAcaraUpdateGD.show');
         Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateGD.unduhexcel');
         Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateGD.unduhpdf');
+
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('BeritaAcaraUpdateGD.create');
         Route::post('/store','store')->name('BeritaAcaraUpdateGD.store');
         Route::get('/edit/{id}','edit')->name('BeritaAcaraUpdateGD.edit');
@@ -177,16 +171,15 @@ Route::controller(BeritaAcaraUpdateGDController::class)->prefix('berita_acara_up
 });
 
 Route::controller(BeritaAcaraUpdateJTRController::class)->prefix('berita_acara_update_jtr')->group(function(){
-    Route::get('','index')->name('BeritaAcaraUpdateJTR')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('BeritaAcaraUpdateJTR.show')->middleware('role:admin');
-    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateJTR.unduhpdf')->middleware('role:admin');
-    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateJTR.unduhexcel')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:ba-update-jtr'])->group(function(){
         Route::get('','index')->name('BeritaAcaraUpdateJTR');
         Route::get('/show/{id}','show')->name('BeritaAcaraUpdateJTR.show');
         Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateJTR.unduhpdf');
         Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateJTR.unduhexcel');
+
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('BeritaAcaraUpdateJTR.create');
         Route::post('/store', 'store')->name('BeritaAcaraUpdateJTR.store');
         Route::get('/edit/{id}','edit')->name('BeritaAcaraUpdateJTR.edit');
@@ -196,16 +189,14 @@ Route::controller(BeritaAcaraUpdateJTRController::class)->prefix('berita_acara_u
 });
 
 Route::controller(BeritaAcaraUpdateJTMController::class)->prefix('berita_acara_update_jtm')->group(function(){
-    Route::get('','index')->name('BeritaAcaraUpdateJTM')->middleware('role:admin');
-    Route::get('/show/{id}','show')->name('BeritaAcaraUpdateJTM.show')->middleware('role:admin');
-    Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateJTM.unduhpdf')->middleware('role:admin');
-    Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateJTM.unduhexcel')->middleware('role:admin');
-
-    Route::middleware(['role:superadmin'])->group(function(){
+    Route::middleware(['auth','can:ba-update-jtm'])->group(function(){
         Route::get('','index')->name('BeritaAcaraUpdateJTM');
         Route::get('/show/{id}','show')->name('BeritaAcaraUpdateJTM.show');
         Route::get('/unduh/pdf/{id}','downloadPdf')->name('BeritaAcaraUpdateJTM.unduhpdf');
         Route::get('/unduh/excel/{id}','downloadExcel')->name('BeritaAcaraUpdateJTM.unduhexcel');
+    });
+
+    Route::middleware(['role:superadmin'])->group(function(){
         Route::get('/create','create')->name('BeritaAcaraUpdateJTM.create');
         Route::post('/store','store')->name('BeritaAcaraUpdateJTM.store');
         Route::get('/edit/{id}','edit')->name('BeritaAcaraUpdateJTM.edit');

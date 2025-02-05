@@ -5,21 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BA Update JTM </title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; font-size: 10pt; }
-       
-       /* Center the title and nomor */
-       .header {
-           text-align: center; /* Centering the entire header */
-           margin-bottom: 20px; /* Space below the header */
-       }
-       
-       /* Title Style */
-       .title {
-           font-size: 12pt; /* Reduced font size */
-           font-weight: bold;
-           margin: 10px 0;
-       }
-       
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+}
+
+
+.header-table {
+                width: 100%;
+                border: none;
+                margin-bottom: 20px;
+            }
+
+            .header-table td {
+                vertical-align: middle;
+                padding: 0;
+            }
+
+            .header-table img {
+                height: 60px; /* Sesuaikan ukuran logo */
+            }
+
+            .header-table .text-container {
+                padding-left: 10px;
+            }
+
+            .header-table .title {
+                font-weight: bold;
+                font-size: 12pt;
+                color: purple;
+                margin: 0;
+            }
+
+            .header-table .subtitle {
+                font-weight: bold;
+                font-size: 10pt;
+                color: purple;
+                margin: 0;
+            }
+
+/* Judul */
+.title {
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
        /* Nomor Style */
        .nomor {
            font-size: 10pt; /* Reduced font size */
@@ -106,12 +140,15 @@
            </style>
     </head>
     <body>
-        <div class="logo">
-            <img src="#" alt="Logo PLN" style="height: 80px;">
-        </div>
-        <div class="header">
-            <p>UID SULSELRABAR</p>
-            <p>UP3 PINRANG</p>
+        <table class="header">
+            <tr>
+                <td><img src="{{ public_path('Logo_PLN.png') }}" alt="Logo PLN" style="height: 80px;"> </td>
+            <td class = "text-container">
+                <p class="title">UID SULSELRABAR</p>
+                <p class="subtitle">UP3 PINRANG</p>
+            </td>
+        </tr>
+    </table>
             <h2 class="title"> BERITA ACARA PERUBAHAN JARINGAN TEGANGAN MENENGAH </h2> 
             @if(isset($berita_acara_update_jtm->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_update_jtm->nomor_berita_acara }}</p>   

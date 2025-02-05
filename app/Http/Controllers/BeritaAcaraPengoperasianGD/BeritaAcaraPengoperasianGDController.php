@@ -326,6 +326,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
 
     public function downloadPdf($id, Request $request)
     {
+        set_time_limit(300); // Mengatur batas waktu eksekusi menjadi 300 detik
+        
         $berita_acara_pengoperasian_gd= BeritaAcaraPengoperasianGD::find($id);
         $berita_acara_pengoperasian_gd->pelaksana = $request->input('pelaksana','........');
         $berita_acara_pengoperasian_gd->pengawas = $request->input('pengawas','........');
