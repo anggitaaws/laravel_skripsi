@@ -331,7 +331,7 @@ class BeritaAcaraPengoperasianGDController extends Controller
         $berita_acara_pengoperasian_gd->pengawas = $request->input('pengawas','........');
         $berita_acara_pengoperasian_gd->manager = $request->input('manager','........');
 
-        $pdf = Pdf::loadView('BeritaAcaraPengoperasian',compact('berita_acara_pengoperasian_gd'));
+        $pdf = Pdf::loadView('BeritaAcaraPengoperasian_GD.pdf',compact('berita_acara_pengoperasian_gd'));
 
         return $pdf->download('berita_acara_pengoperasian_gd.pdf');
        
