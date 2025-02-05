@@ -148,8 +148,8 @@
                                                 @method('delete')
                                             <button class = "btn btn-primary submit" style="background-color: #14A2BA;">Hapus</button>
                                             </form>
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
-                                            <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
+                                            <a href="{{ Route('BeritaAcaraUpdateJTM.unduhexcel',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
+                                            <a href="{{ Route('BeritaAcaraUpdateJTM.unduhpdf',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh PDF</a>
                                             <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Cetak</a>
                                         </div>
                                     </td>

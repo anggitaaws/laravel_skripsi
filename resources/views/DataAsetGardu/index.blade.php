@@ -91,16 +91,22 @@
                                                 </nav>
                                             </div>
                                 </div>
-                                
+                                @if(auth()->user()->role === 'superadmin')
+                                <a class="nav-link" href="{{ Route('Pengguna') }}" style="color: #fff;">
+                                    Daftar Pengguna 
+                                </a>
+                                @endif
                             <a class="nav-link" href="{{ route('logout') }}" style="color: #fff;">
                                 Log out
                             </a>
                         </div>
                     </div>
-                    <!--<div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div-->
+                    <div class="sb-sidenav-footer">
+                        <div class="small text-white">Logged in as:</div>
+                        <div class="fw-bold text-white">
+                            {{ Auth::user()->name }}
+                        </div>
+                    </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
@@ -176,12 +182,14 @@
                                                 <td class="align-middle">
                                                 <div class = "btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ route('DataAsetGardu.show', $rs->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
+                                                    @if(auth()->user()->role === 'superadmin')
                                                     <a href="{{ route('DataAsetGardu.edit',$rs->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
                                                     <form action ="{{ route('DataAsetGardu.destroy',$rs->id) }}" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                         @csrf
                                                         @method('delete')
                                                     <button class = "btn btn-group btn-primary rounded submit" style="background-color: #14A2BA;">Hapus</button>
                                                     </form>
+                                                    @endif
                                                 </div>
                                             </td>
                                             </tr> 

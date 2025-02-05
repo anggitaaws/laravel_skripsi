@@ -91,16 +91,22 @@
                                                 </nav>
                                             </div>
                                 </div>
+                                @if(auth()->user()->role === 'superadmin')
+                                <a class="nav-link" href="{{ Route('Pengguna') }}" style="color: #fff;">
+                                    Daftar Pengguna 
+                                </a>
+                                @endif
                             <a class="nav-link" href="{{ route('logout') }}" style="color: #fff;">
                                 Log out
                             </a>
                         </div>
                     </div>
-                    <!--<div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div-->
-                    
+                    <div class="sb-sidenav-footer">
+                    <div class="small text-white">Logged in as:</div>
+                    <div class="fw-bold text-white">
+                        {{ Auth::user()->name }}
+                    </div>
+                </div>
                 </nav>
             </div>
 

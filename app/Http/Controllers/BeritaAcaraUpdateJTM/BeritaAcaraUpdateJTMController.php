@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\BeritaAcaraUpdateJTM;
 
-use App\Http\Controllers\Controller;
-use App\Models\BeritaAcaraUpdateJTM;
 use App\Models\DataAsetJTM;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Controllers\Controller;
+use App\Models\BeritaAcaraUpdateJTM;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\BeritaAcaraUpdateJTMExport;
 
 class BeritaAcaraUpdateJTMController extends Controller
 {
@@ -249,5 +252,29 @@ class BeritaAcaraUpdateJTMController extends Controller
             $data_aset_jtm->delete();
         }
         return redirect()->route('BeritaAcaraUpdateJTM')->with('success', 'Berita Acara Perubahan JTM Berhasil Dihapus');
+    }
+
+    public function downloadPdf($id, Request $request)
+    {
+        $berita_acara_update_jtm= BeritaAcaraUpdateJTM::find($id);
+        $data_aset_jtm = DataAsetJTM::where('id_jtm', $berita_acara_update_jtm->id_jtm)
+        ->oldest('updated_at')
+        ->oldest('created_at')
+        ->first();
+
+        $berita_acara_sebelum_edit = clone $berita_acara_update_jtm;
+
+        $berita_acara_update_jtm->pelaksana = $request->input('pelaksana','........');
+        $berita_acara_update_jtm->pengawas = $request->input('pengawas','........');
+        $berita_acara_update_jtm->manager = $request->input('manager','........');
+
+        $pdf = Pdf::loadView('BeritaAcaraUpdate_JTM.pdf',compact('berita_acara_update_jtm','data_aset_jtm'));
+        
+        return $pdf->download('berita_acara_perubahan_jtm.pdf');
+    }
+
+    public function downloadExcel($id)
+    {
+        return Excel::download(new BeritaAcaraUpdateJTMExport($id), 'berita_acara_perubahan_jtm.xlsx');
     }
 }

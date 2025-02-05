@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\BeritaAcaraPenghapusanGD;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\BeritaAcaraPenghapusanGD;
 use App\Models\DataAsetGardu;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\BeritaAcaraPenghapusanGD;
+use App\Exports\BeritaAcaraPenghapusanGDExport;
 
 class BeritaAcaraPenghapusanGDController extends Controller
 {
@@ -210,5 +213,25 @@ class BeritaAcaraPenghapusanGDController extends Controller
         $berita_acara_penghapusan_gd = BeritaAcaraPenghapusanGD::findOrFail($id);
         $berita_acara_penghapusan_gd->delete();
         return redirect()->route('BeritaAcaraPenghapusanGD')->with('success', 'Berita Acara Pembongkaran Gardu Berhasil Dihapus');
+    }
+
+    public function downloadPdf($id, Request $request)
+    {
+        $berita_acara_penghapusan_gd= BeritaAcaraPenghapusanGD::find($id);
+        $berita_acara_penghapusan_gd->pelaksana = $request->input('pelaksana','........');
+        $berita_acara_penghapusan_gd->pengawas = $request->input('pengawas','........');
+        $berita_acara_penghapusan_gd->manager = $request->input('manager','........');
+
+        $pdf = Pdf::loadView('BeritaAcaraPenghapusan_GD.pdf',compact('berita_acara_penghapusan_gd'));
+
+        return $pdf->download('berita_acara_penghapusan_gd.pdf');
+       
+    }
+
+    public function downloadExcel($id)
+    {
+        $berita_acara_penghapusan_gd= BeritaAcaraPenghapusanGD::find($id);
+
+        return Excel::download(new BeritaAcaraPenghapusanGDExport($berita_acara_penghapusan_gd), 'berita_acara_pembongkaran_gd.xlsx');
     }
 }
