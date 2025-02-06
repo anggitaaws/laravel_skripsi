@@ -167,7 +167,7 @@
             @if(isset($berita_acara_penghapusan_gd->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_penghapusan_gd->nomor_berita_acara }}</p>   
             @endif
-            <p class="hari-ini-text">Pada Hari ini {{ $berita_acara_penghapusan_gd->tanggal }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pembongkaran trafo Distribusi dengan data-data sebagai berikut: </p>
+            <p class="hari-ini-text">Pada Hari ini {{ \Carbon\Carbon::parse($berita_acara_penghapusan_gd->tanggal)->translatedFormat('l, d F Y') }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pembongkaran trafo Distribusi dengan data-data sebagai berikut: </p>
             <table class="info-table-no-border">
                 <tr>
                     <td> ULP </td>
