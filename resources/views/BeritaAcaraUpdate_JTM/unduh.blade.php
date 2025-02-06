@@ -35,11 +35,11 @@
                     <td>{{ $berita_acara_update_jtm->ulp }}</td>
                 </tr>
                 <tr>
-                    <td> NO SPBJ PELAKSANA</td>
+                    <td> NO SPBJ</td>
                     <td> {{ $berita_acara_update_jtm->no_spbj }}</td>
                 </tr>
                 <tr>
-                    <td> VENDOR </td>
+                    <td> PELAKSANA VENDOR </td>
                     <td> {{ $berita_acara_update_jtm->vendor }}</td>
                 </tr>
                 <tr>
@@ -146,6 +146,20 @@
                     <td>JENIS MAIN/PERC</td>
                     <td>{{ $data_aset_jtm->environment }} </td>   
                     <td>{{ $berita_acara_update_jtm->environment}} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="additional-info" style="margin-top: 30px;">
+            <p>Pemeriksaan Nilai Tahanan Kabel yang terpasang:</p>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td>R-Body: {{ $berita_acara_update_jtm->insulation_r_body }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>S-Body: {{ $berita_acara_update_jtm->insulation_s_body }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>T-Body: {{ $berita_acara_update_jtm->insulation_t_body }} GΩ</td>
                 </tr>
             </table>
         </div>

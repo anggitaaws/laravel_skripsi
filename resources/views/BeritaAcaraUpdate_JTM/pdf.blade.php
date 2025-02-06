@@ -174,11 +174,11 @@ body {
                     <td>{{ $berita_acara_update_jtm->ulp }}</td>
                 </tr>
                 <tr>
-                    <td> NO SPBJ PELAKSANA</td>
+                    <td> NO SPBJ</td>
                     <td> {{ $berita_acara_update_jtm->no_spbj }}</td>
                 </tr>
                 <tr>
-                    <td> VENDOR </td>
+                    <td> PELAKSANA VENDOR </td>
                     <td> {{ $berita_acara_update_jtm->vendor }}</td>
                 </tr>
                 <tr>
