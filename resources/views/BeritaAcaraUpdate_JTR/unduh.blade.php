@@ -124,8 +124,8 @@
                 <tr>
                     <td>7</td>
                     <td>JUMLAH TIANG</td>
-                    <td>{{ $data_aset_jtr->sumofpole }} </td>
-                    <td>{{ $berita_acara_update_jtr->sumofpole}} </td>
+                    <td>{{ $data_aset_jtr->sumofpole }} BATANG</td>
+                    <td>{{ $berita_acara_update_jtr->sumofpole}} BATANG </td>
                 </tr>
                 <tr>
                     <td>8</td>
