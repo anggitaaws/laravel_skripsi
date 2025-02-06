@@ -29,19 +29,19 @@
             <p class="nomor"> NO: {{ $berita_acara_update_gd->nomor_berita_acara }}</p>   
             @endif
             <table class="info-table">
-                <tr><td> ULP                    : {{ $berita_acara_update_gd->ulp }}</td></tr>
-                <tr><td> NO SPBJ PELAKSANA      : {{ $berita_acara_update_gd->no_spbj }}</td></tr>
-                <tr><td> VENDOR                 : {{ $berita_acara_update_gd->vendor }}</td></tr>
-                <tr><td> NAMA GD                : {{ $berita_acara_update_gd->name }}</td></tr>
-                <tr><td> LOKASI                 : {{ $berita_acara_update_gd->location }}</td></tr>
-                <tr><td> KOORDINAT LATITUDE     : {{ $berita_acara_update_gd->latitude }}</td></tr>
-                <tr><td> KOORDINAT LONGITUDE    : {{ $berita_acara_update_gd->longitude }}</td></tr>
-                <tr><td> PENYULANG              : {{ $berita_acara_update_gd->penyulang }}</td></tr>
-                <tr><td> KEYPOINT               : {{ $berita_acara_update_gd->keypoint }}</td></tr>
-                <tr><td> SECTION                : {{ $berita_acara_update_gd->section }}</td></tr>
-                <tr><td> SEGMENT                : {{ $berita_acara_update_gd->segment }}</td></tr>
-                <tr><td> KONSTRUKSI             : {{ $berita_acara_update_gd->construction }}</td></tr>
-                <tr><td> PHASA                  : {{ $berita_acara_update_gd->phase }}</td></tr>
+                <tr><td> ULP: {{ $berita_acara_update_gd->ulp }}</td></tr>
+                <tr><td> NO SPBJ: {{ $berita_acara_update_gd->no_spbj }}</td></tr>
+                <tr><td> PELAKSANA VENDOR: {{ $berita_acara_update_gd->vendor }}</td></tr>
+                <tr><td> NAMA GD: {{ $berita_acara_update_gd->name }}</td></tr>
+                <tr><td> LOKASI: {{ $berita_acara_update_gd->location }}</td></tr>
+                <tr><td> KOORDINAT LATITUDE: {{ $berita_acara_update_gd->latitude }}</td></tr>
+                <tr><td> KOORDINAT LONGITUDE: {{ $berita_acara_update_gd->longitude }}</td></tr>
+                <tr><td> PENYULANG: {{ $berita_acara_update_gd->penyulang }}</td></tr>
+                <tr><td> KEYPOINT: {{ $berita_acara_update_gd->keypoint }}</td></tr>
+                <tr><td> SECTION: {{ $berita_acara_update_gd->section }}</td></tr>
+                <tr><td> SEGMENT: {{ $berita_acara_update_gd->segment }}</td></tr>
+                <tr><td> KONSTRUKSI: {{ $berita_acara_update_gd->construction }}</td></tr>
+                <tr><td> PHASA: {{ $berita_acara_update_gd->phase }}</td></tr>
             </table> 
         </div>
         <div class="content">
@@ -160,6 +160,32 @@
                     <td>KETERANGAN</td>
                     <td>{{ $data_aset_gardu->information }} </td>
                     <td>{{ $berita_acara_update_gd->information}} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="additional-info" style="margin-top: 30px;">
+            <p>Pemeriksaan Tahanan Isolasi Trafo yang terpasang:</p>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td>R-Body: {{ $berita_acara_update_gd->insulation_r_body }} GΩ</td>
+                    <td>R-r: {{ $berita_acara_update_gd->insulation_R_r }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>S-Body: {{ $berita_acara_update_gd->insulation_s_body }} GΩ</td>
+                    <td>S-s: {{ $berita_acara_update_gd->insulation_S_s }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>T-Body: {{ $berita_acara_update_gd->insulation_t_body }}GΩ</td>
+                    <td>T-T:{{ $berita_acara_update_gd->insulation_T_t }} GΩ</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Tahanan Pentanahan Netral Trafo Dan Ujung JTR: {{ $berita_acara_update_gd->earthneutral }} GΩ</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Tahanan Pentanahan Lightning Arrester: {{ $berita_acara_update_gd->earthla }} GΩ</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Tahanan Pentanahan Body Trafo: {{ $berita_acara_update_gd->earthbody }} GΩ</td>
                 </tr>
             </table>
         </div>

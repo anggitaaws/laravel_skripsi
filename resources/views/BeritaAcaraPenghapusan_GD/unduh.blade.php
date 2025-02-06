@@ -144,7 +144,7 @@
             </table>
         </div>
         <div class="additional-info" style="margin-top: 30px;">
-            <p>Pemeriksaan Tahanan Isolasi Trafo yang terpasang:</p>
+            <p>Pemeriksaan Tahanan Isolasi Trafo yang dibongkar:</p>
             <table style="width: 100%; border-collapse: collapse;">
                 <tr>
                     <td>R-Body: {{ $berita_acara_penghapusan_gd->insulation_r_body }} GΩ</td>
