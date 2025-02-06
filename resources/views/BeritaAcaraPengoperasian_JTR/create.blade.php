@@ -147,7 +147,8 @@
                             <div class="form-group row">
                               <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
                               <div class="col-sm-10">
-                                <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal">
+                                <input type="date" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal">
+                                <small id="formatted-date" class="text-muted"></small>
                               </div>
                           </div>
                             <div class="form-group row">
@@ -329,6 +330,19 @@
 
             // Call updateClock immediately to show the time as soon as the page loads
             updateClock();
+        </script>
+         <script>
+            document.getElementById('tanggal').addEventListener('change', function() {
+                let inputTanggal = this.value;
+                if (inputTanggal) {
+                    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    let formattedDate = new Date(inputTanggal).toLocaleDateString('id-ID', options);
+        
+                    document.getElementById('formatted-date').innerText = "Tanggal dipilih: " + formattedDate;
+                } else {
+                    document.getElementById('formatted-date').innerText = "";
+                }
+            });
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('halaman_data_aset/js/scripts.js') }}"></script>

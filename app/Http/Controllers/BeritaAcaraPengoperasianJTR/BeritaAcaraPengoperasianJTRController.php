@@ -8,6 +8,7 @@ use App\Models\BeritaAcaraPengoperasianJTR;
 use App\Models\DataAsetJTR;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BeritaAcaraPengoperasianJTRController extends Controller
@@ -256,6 +257,8 @@ class BeritaAcaraPengoperasianJTRController extends Controller
     {
         $berita_acara_pengoperasian_jtr = BeritaAcaraPengoperasianJTR::find($id);
 
+        Carbon::setLocale('id');
+
         return Excel::download(new BeritaAcaraPengoperasianJTRExport($berita_acara_pengoperasian_jtr), 'berita_acara_pengoperasian_jtr.xlsx');
     }
 
@@ -265,6 +268,8 @@ class BeritaAcaraPengoperasianJTRController extends Controller
         $berita_acara_pengoperasian_jtr->pelaksana = $request->input('pelaksana','........');
         $berita_acara_pengoperasian_jtr->pengawas = $request->input('pengawas','........');
         $berita_acara_pengoperasian_jtr->manager = $request->input('manager','........');
+
+        Carbon::setLocale('id'); 
 
         $pdf = Pdf::loadView('BeritaAcaraPengoperasian_JTR.pdf',compact('berita_acara_pengoperasian_jtr'));
 
