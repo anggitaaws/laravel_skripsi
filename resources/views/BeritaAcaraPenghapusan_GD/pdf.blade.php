@@ -174,11 +174,11 @@
                     <td> {{ $berita_acara_penghapusan_gd->ulp }}</td>
                 </tr>
                 <tr>
-                    <td> NO SPBJ PELAKSANA </td>
+                    <td> NO SPBJ </td>
                     <td> {{ $berita_acara_penghapusan_gd->no_spbj }}</td>
                 </tr>
                 <tr>
-                    <td> VENDOR </td>
+                    <td> PELAKSANA VENDOR </td>
                     <td> {{ $berita_acara_penghapusan_gd->vendor }}</td>
                 </tr>
                 <tr>
