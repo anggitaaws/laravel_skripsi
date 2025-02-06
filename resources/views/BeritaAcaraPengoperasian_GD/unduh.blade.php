@@ -27,6 +27,8 @@
             @if(isset($berita_acara_pengoperasian_gd->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_pengoperasian_gd->nomor_berita_acara }}</p>   
             @endif
+            <p class="hari-ini-text">Pada Hari ini {{ \Carbon\Carbon::parse($berita_acara_pengoperasian_gd->tanggal)->translatedFormat('l, d F Y') }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pengoperasian baru trafo Distribusi dengan data-data sebagai berikut: </p>
+            <br>
             <table class="info-table">
                 <tr><td> ULP: {{ $berita_acara_pengoperasian_gd->ulp }}</td></tr>
                 <tr><td> NO SPBJ: {{ $berita_acara_pengoperasian_gd->no_spbj }}</td></tr>

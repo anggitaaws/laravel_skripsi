@@ -14,14 +14,25 @@ use App\Http\Controllers\BeritaAcaraPenghapusanGD\BeritaAcaraPenghapusanGDContro
 use App\Http\Controllers\BeritaAcaraPengoperasianGD\BeritaAcaraPengoperasianGDController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTM\BeritaAcaraPengoperasianJTMController;
 use App\Http\Controllers\BeritaAcaraPengoperasianJTR\BeritaAcaraPengoperasianJTRController;
+use App\Http\Controllers\Register\RegisterController;
 
 /*Route::get('/', function () {
     return view('welcome');
 });*/
 
-Route::get('/',[UserController::class,'login'])->name('login');
-Route::post('/',[UserController::class,'doLogin'])->name('login.post');
-Route::get('user/logout',[UserController::class,'logout'])->name('logout');
+Route::middleware('guest')->group(function(){
+    Route::get('/',[UserController::class,'login'])->name('login');
+    Route::post('/',[UserController::class,'doLogin'])->name('login.post');
+});
+
+Route::controller(RegisterController::class)->prefix('register')->group(function(){
+    Route::middleware('guest')->group(function(){
+        Route::get('/create','create')->name('Register.create');
+        Route::post('/store','store')->name('Register.store');
+    });
+});
+
+Route::get('user/logout',[UserController::class,'logout'])->name('logout')->middleware('auth');
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('home')->middleware('auth');
@@ -206,11 +217,11 @@ Route::controller(BeritaAcaraUpdateJTMController::class)->prefix('berita_acara_u
 });
 
 Route::controller(PenggunaController::class)->prefix('pengguna')->group(function(){
+    Route::post('/store','store')->name('Pengguna.store');
 
     Route::middleware(['role:superadmin'])->group(function(){
         Route::get('','index')->name('Pengguna');
         Route::get('/create','create')->name('Pengguna.create');
-        Route::post('/store','store')->name('Pengguna.store');
         Route::get('/edit/{id}','edit')->name('Pengguna.edit');
         Route::put('/edit/{id}','update')->name('Pengguna.update');
         Route::delete('/destroy/{id}','destroy')->name('Pengguna.destroy');

@@ -55,6 +55,7 @@
 		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3" style="background-color: #14A2BA;">LOGIN</button>
 						</a>
 		            </div>
+					<a href="{{ Route('Register.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Akun</a>
 		          </form>
 		        </div>
 		      </div>

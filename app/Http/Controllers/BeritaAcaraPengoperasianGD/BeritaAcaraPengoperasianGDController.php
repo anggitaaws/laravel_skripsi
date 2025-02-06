@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\BeritaAcaraPengoperasianGD;
 
-use App\Http\Controllers\Controller;
-use App\Models\BeritaAcaraPengoperasianGD;
-use App\Models\DataAsetGardu;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\BeritaAcaraPengoperasianGDExport;
+use App\Models\DataAsetGardu;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\BeritaAcaraPengoperasianGD;
+use App\Exports\BeritaAcaraPengoperasianGDExport;
 
 class BeritaAcaraPengoperasianGDController extends Controller
 {
@@ -320,6 +321,7 @@ class BeritaAcaraPengoperasianGDController extends Controller
     public function downloadExcel($id)
     {
         $berita_acara_pengoperasian_gd= BeritaAcaraPengoperasianGD::find($id);
+        Carbon::setLocale('id');
 
         return Excel::download(new BeritaAcaraPengoperasianGDExport($berita_acara_pengoperasian_gd), 'berita_acara_pengoperasian_gd.xlsx');
     }
@@ -332,6 +334,8 @@ class BeritaAcaraPengoperasianGDController extends Controller
         $berita_acara_pengoperasian_gd->pelaksana = $request->input('pelaksana','........');
         $berita_acara_pengoperasian_gd->pengawas = $request->input('pengawas','........');
         $berita_acara_pengoperasian_gd->manager = $request->input('manager','........');
+
+        Carbon::setLocale('id');
 
         $pdf = Pdf::loadView('BeritaAcaraPengoperasian_GD.pdf',compact('berita_acara_pengoperasian_gd'));
 

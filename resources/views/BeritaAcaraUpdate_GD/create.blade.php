@@ -138,7 +138,7 @@
                                 <select name="id_aset_gardu" id="id_aset_gardu" class="form-control" required>
                                     <option value="" disabled selected>Pilih Aset Gardu</option>
                                     @foreach($data_aset_gardu as $aset_gardu)
-                                        <option value="{{ $aset_gardu->id_gardu }}">{{ $aset_gardu->name }}</option>
+                                        <option value="{{ $aset_gardu->id_gardu }}">{{ $aset_gardu->id_gardu }}</option>
                                     @endforeach
                                 </select>
                             </div>

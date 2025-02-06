@@ -145,7 +145,8 @@
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $berita_acara_pengoperasian_gd->tanggal }}" readonly>
+                                  <input type="date" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $berita_acara_pengoperasian_gd->tanggal }}" readonly>
+                                  <small id="formatted-date" class="text-muted"></small>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -388,6 +389,18 @@
                                 <input type="text" name="earthbody" class="form-control form-control-sm" id="earthbody" placeholder="earthbody" value="{{ $berita_acara_pengoperasian_gd->earthbody }}" readonly>
                               </div>
                           </div>
+                          <div class="form-group row">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Created At</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="created_at" class="form-control form-control-sm" id="created_at" placeholder="created_at" value="{{ $berita_acara_pengoperasian_gd->created_at }}" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Updated At</label>
+                          <div class="col-sm-10">
+                            <input type="text" name="updated_at" class="form-control form-control-sm" id="updated_at" placeholder="updated_at" value="{{ $berita_acara_pengoperasian_gd->updated_at }}" readonly>
+                          </div>
+                      </div>
                         </form>
                     </div>
                         </div>
@@ -402,6 +415,43 @@
                 </footer>
             </div>
         </div>
+        <script>
+          function updateClock() {
+              const now = new Date();
+              
+              const hours = now.getHours().toString().padStart(2, '0');
+              const minutes = now.getMinutes().toString().padStart(2, '0');
+              const seconds = now.getSeconds().toString().padStart(2, '0');
+              const timeString = `${hours}:${minutes}:${seconds}`;
+              document.getElementById('clock').textContent = timeString;
+
+              // Format Date
+              const day = now.getDate();
+              const month = now.getMonth() + 1; // Month is 0-based
+              const year = now.getFullYear();
+              const dateString = `${day < 10 ? '0' + day : day}-${month < 10 ? '0' + month : month}-${year}`;
+              document.getElementById('date').textContent = dateString;
+          }
+
+          // Update the clock every second
+          setInterval(updateClock, 1000);
+
+          // Call updateClock immediately to show the time as soon as the page loads
+          updateClock();
+      </script>
+        <script>
+          document.getElementById('tanggal').addEventListener('change', function() {
+            let inputTanggal = this.value;
+            if (inputTanggal) {
+                let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                let formattedDate = new Date(inputTanggal).toLocaleDateString('id-ID', options);
+    
+                document.getElementById('formatted-date').innerText = "Tanggal dipilih: " + formattedDate;
+            } else {
+                document.getElementById('formatted-date').innerText = "";
+            }
+        });
+    </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('halaman_data_aset/js/scripts.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>

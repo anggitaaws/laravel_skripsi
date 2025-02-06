@@ -332,8 +332,8 @@ class BeritaAcaraUpdateGDController extends Controller
     {
         $berita_acara_update_gd= BeritaAcaraUpdateGD::find($id);
         $data_aset_gardu = DataAsetGardu::where('id_gardu', $berita_acara_update_gd->id_gardu)
-        ->oldest('updated_at')
         ->oldest('created_at')
+        ->oldest('updated_at')
         ->first();
 
         $berita_acara_update_gd->pelaksana = $request->input('pelaksana','........');
