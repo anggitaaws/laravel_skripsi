@@ -257,7 +257,7 @@ body {
                 <tr>
                     <td>7</td>
                     <td>JUMLAH TIANG</td>
-                    <td> {{ $berita_acara_pengoperasian_jtr->sumofpole }} </td>
+                    <td> {{ $berita_acara_pengoperasian_jtr->sumofpole }} BATANG </td>
                 </tr>
                 <tr>
                     <td>8</td>
