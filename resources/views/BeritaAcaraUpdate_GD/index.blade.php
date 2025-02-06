@@ -112,19 +112,19 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Pembongkaran Gardu Distribusi PT PLN (Persero) UP3 Pinrang</h1>
+                        <h1 class="mt-4" style="color: #14a2ba;">Berita Acara Penggantian Gardu Distribusi PT PLN (Persero) UP3 Pinrang</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Berita Acara Pembongkaran Gardu Distribusi</li>
+                            <li class="breadcrumb-item active">Berita Acara Penggantian Gardu Distribusi</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body fw-semi-bold" style="color: #125D72;">
-                                Halaman berita acara pembongkaran gardu merupakan sekumpulan berita acara pembongkaran gardu yang dimiliki PT PLN (Persero) UP3 Pinrang
+                                Halaman berita acara penggantian gardu merupakan sekumpulan berita acara penggantian gardu yang dimiliki PT PLN (Persero) UP3 Pinrang
                             </div>
                         </div>
                         <div class="card mb-3">
                             <div class="card-header d-flex  align-items-center justify-content-between fw-bold">
-                                Daftar Berita Acara Pembongkaran Gardu Distribusi
+                                Daftar Berita Acara Penggantian Gardu Distribusi
                                 <a href="{{ Route('BeritaAcaraUpdateGD.create') }}" class="btn btn-group btn-primary rounded submit px-1 float-end" margin="right" style="background-color:#14A2BA; color:#fff;">Tambah Data</a>
                             </div>
                             @if (Session::has('success'))

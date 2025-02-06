@@ -165,7 +165,7 @@ body {
             </td>
         </tr>
     </table>
-            <h2 class="title"> BERITA ACARA PEMBONGKARAN GARDU DISTRIBUSI </h2> 
+            <h2 class="title"> BERITA ACARA PENGGANTIAN GARDU DISTRIBUSI </h2> 
             @if(isset($berita_acara_update_gd->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_update_gd->nomor_berita_acara }}</p>   
             @endif
