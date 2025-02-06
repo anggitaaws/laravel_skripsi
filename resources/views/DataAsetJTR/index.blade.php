@@ -148,10 +148,8 @@
                                             <th>Id JTR</th>
                                             <th>ULP</th>
                                             <th>Bahan</th>
-                                            <th>Lokasi</th>
-                                            <th>Segment</th>
                                             <th>Panjang Sirkit(KMS)</th>
-                                            <th>Luas Penampang (MM2)</th>
+                                            <th>Luas Penampang Kabel (MM2)</th>
                                             <th>Jenis JTR</th>
                                             <th>Jumlah Tiang</th>
                                             <th>Opsi</th>                                   
@@ -165,10 +163,9 @@
                                                 <td class="align-middle">{{ $rs->id_jtr }}</td>
                                                 <td class="align-middle">{{ $rs->ulp }}</td>
                                                 <td class="align-middle">{{ $rs->id_cabletype }}</td>
-                                                <td class="align-middle">{{ $rs->location }}</td>
-                                                <td class="align-middle">{{ $rs->segment }}</td>
                                                 <td class="align-middle">{{ $rs->cable_length }}</td>
                                                 <td class="align-middle">{{ $rs->spec_cablesize }}</td>
+                                                <td class="align-middle">{{ $rs->jtr_type }}</td>
                                                 <td class="align-middle">{{ $rs->sumofpole }}</td>
                                                 <td class="align-middle">
                                                 <div class = "btn-group" role="group" aria-label="Basic example">

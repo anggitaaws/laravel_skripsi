@@ -11,8 +11,6 @@
     padding: 0;
     font-size: 10pt;
 }
-
-
 .header-table {
                 width: 100%;
                 border: none;
@@ -118,6 +116,22 @@
         text-align: left;
         padding-left: 15px;
     }
+    .info-table-no-border td:nth-child(3) {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    position: relative;
+    padding-right: 20px; /* Space for the colon */
+}
+
+.info-table-no-border td:nth-child(3)::after {
+    content: ":"; /* Add colon after the text */
+    position: absolute;
+    right: 10px; /* Position colon */
+}
+.ohm-symbol {
+    font-family: 'DejaVu Sans', sans-serif; /* Pastikan font yang mendukung Unicode */
+}
        .footer-container {
            display: flex;
            justify-content: space-between; /* Memisahkan Pelaksana & Pengawas ke kiri dan kanan */
@@ -153,7 +167,7 @@
             @if(isset($berita_acara_penghapusan_gd->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_penghapusan_gd->nomor_berita_acara }}</p>   
             @endif
-            <p class="hari-ini-text">Pada Hari ini {{ $berita_acara_penghapusan_gd->tanggal }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pengoperasian baru trafo Distribusi dengan data-data sebagai berikut: </p>
+            <p class="hari-ini-text">Pada Hari ini {{ $berita_acara_penghapusan_gd->tanggal }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pembongkaran trafo Distribusi dengan data-data sebagai berikut: </p>
             <table class="info-table-no-border">
                 <tr>
                     <td> ULP </td>
@@ -308,6 +322,41 @@
                 </tr>
             </table>
         </div>
+        <h3 class="title" style="font-weight: normal; text-align: left;">Pemeriksaan Tahanan Isolasi Trafo yang Dibongkar </h3>
+        <table class="info-table-no-border" style="width: 100%; text-align: center;">
+            <tr>
+                <td>R-Body</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->insulation_r_body }} GΩ</td>
+                <td>R-r</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->insulation_R_r }} GΩ</td>
+            </tr>
+            <tr>
+                <td>S-Body</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->insulation_s_body }} GΩ</td>
+                <td>S-s</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->insulation_S_s }} GΩ</td>
+            </tr>
+            <tr>
+                <td>T-Body</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->insulation_t_body }} GΩ</td>
+                <td>T-T</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->insulation_T_t }} GΩ</td>
+            </tr>
+            <tr>
+                <td>Tahanan Pentanahan Netral Trafo Dan Ujung JTR</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->earthneutral}} GΩ</td>
+            </tr>
+            <tr>
+                <td>Tahanan Pentanahan Lightning Arrester</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->earthla}} GΩ</td>
+            </tr>
+            <tr>
+                <td>Tahanan Pentanahan Body Trafo</td>
+                <td class="ohm-symbol">{{ $berita_acara_penghapusan_gd->earthbody }} GΩ</td>
+            </tr>
+        </table>
+
+    <p> Demikian Berita Acara ini dibuat untuk dipergunakan sebagaimana mestinya </p>
 <!-- Footer dengan tabel untuk layout yang lebih stabil -->
 <table style="width: 100%; text-align: center; margin-top: 40px;">
     <tr>

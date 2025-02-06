@@ -105,6 +105,20 @@
                 </tr>
             </table>
         </div>
+        <div class="additional-info" style="margin-top: 30px;">
+            <p>Pemeriksaan Nilai Tahanan Kabel yang terpasang:</p>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td>R-Body: {{ $berita_acara_pengoperasian_jtm->insulation_r_body }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>S-Body: {{ $berita_acara_pengoperasian_jtm->insulation_s_body }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>T-Body: {{ $berita_acara_pengoperasian_jtm->insulation_t_body }} GΩ</td>
+                </tr>
+            </table>
+        </div>
         <div class="footer" style="margin-top: 30px; text-align: center;">
             <p> Demikian Berita Acara ini dibuat untuk dipergunakan sebagaimana mestinya </p>
             <br><br>

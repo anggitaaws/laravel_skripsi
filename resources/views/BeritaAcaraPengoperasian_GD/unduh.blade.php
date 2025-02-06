@@ -14,24 +14,23 @@
         .info-table td { border: none; text-align: left; padding: 5px; }
         .title { font-size: 16px; font-weight: bold; text-align: center; }
         .subtitle { text-align: center; font-weight: bold; }
-        .logo { text-align: center; margin-bottom: 10px; }
     </style>
     </head>
     <body>
         <div class="logo">
-            <img src="{{ public_path('Logo_PLN.png') }}" alt="Logo PLN" style="height: 80px;">
+            <img src="#" alt="Logo PLN">
         </div>
         <div class="header">
             <p>UID SULSELRABAR</p>
             <p>UP3 PINRANG</p>
             <h2 class="title"> BERITA ACARA PENGOPERASIAN GARDU DISTRIBUSI </h2> 
-            @if(@isset($berita_acara_pengoperasian_gd->nomor_berita_acara))
+            @if(isset($berita_acara_pengoperasian_gd->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_pengoperasian_gd->nomor_berita_acara }}</p>   
             @endif
             <table class="info-table">
                 <tr><td> ULP: {{ $berita_acara_pengoperasian_gd->ulp }}</td></tr>
-                <tr><td> NO SPBJ PELAKSANA: {{ $berita_acara_pengoperasian_gd->no_spbj }}</td></tr>
-                <tr><td> VENDOR: {{ $berita_acara_pengoperasian_gd->vendor }}</td></tr>
+                <tr><td> NO SPBJ: {{ $berita_acara_pengoperasian_gd->no_spbj }}</td></tr>
+                <tr><td> PELAKSANA VENDOR: {{ $berita_acara_pengoperasian_gd->vendor }}</td></tr>
                 <tr><td> NAMA GD: {{ $berita_acara_pengoperasian_gd->name }}</td></tr>
                 <tr><td> LOKASI: {{ $berita_acara_pengoperasian_gd->location }}</td></tr>
                 <tr><td> KOORDINAT LATITUDE: {{ $berita_acara_pengoperasian_gd->latitude }}</td></tr>
@@ -140,6 +139,32 @@
                     <td>18</td>
                     <td>KETERANGAN</td>
                     <td> {{ $berita_acara_pengoperasian_gd->information }} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="additional-info" style="margin-top: 30px;">
+            <p>Pemeriksaan Tahanan Isolasi Trafo yang terpasang:</p>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td>R-Body: {{ $berita_acara_pengoperasian_gd->insulation_r_body }} GΩ</td>
+                    <td>R-r: {{ $berita_acara_pengoperasian_gd->insulation_R_r }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>S-Body: {{ $berita_acara_pengoperasian_gd->insulation_s_body }} GΩ</td>
+                    <td>S-s: {{ $berita_acara_pengoperasian_gd->insulation_S_s }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>T-Body: {{ $berita_acara_pengoperasian_gd->insulation_t_body }}GΩ</td>
+                    <td>T-T:{{ $berita_acara_pengoperasian_gd->insulation_T_t }} GΩ</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Tahanan Pentanahan Netral Trafo Dan Ujung JTR: {{ $berita_acara_pengoperasian_gd->earthneutral }} GΩ</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Tahanan Pentanahan Lightning Arrester: {{ $berita_acara_pengoperasian_gd->earthla }} GΩ</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Tahanan Pentanahan Body Trafo: {{ $berita_acara_pengoperasian_gd->earthbody }} GΩ</td>
                 </tr>
             </table>
         </div>

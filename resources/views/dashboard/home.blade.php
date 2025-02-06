@@ -161,12 +161,12 @@
                         </div>
                         <div id="about-us" class="card mt-5">
                             <div class="card-header" style="background-color: #14a2ba; color: white;">
-                                <h3 class="align-items-center">About Us</h3>
+                                <h3 class="align-items-center">Tentang Kami</h3>
                             </div>
                             <div class="card-body">
-                                <h4>Selamat Datang di Sistem Manajemen Data Aset PLN</h4>
+                                <h4>Selamat Datang di Sistem Dokumen Digital Aset PT PLN (PERSERO) UP3 PINRANG</h4>
                                 <p>
-                                    Sistem ini dikembangkan untuk mempermudah pengelolaan data aset gardu, JTR, dan JTM.
+                                    Sistem ini dikembangkan untuk mempermudah pengelolaan Data Aset Gardu, JTR, dan JTM.<br>
                                     Dengan adanya sistem ini, diharapkan proses pencatatan dan monitoring aset menjadi lebih efisien.
                                 </p>
                                 <p>Jika Anda memiliki pertanyaan, silakan hubungi tim IT PLN UP3 Pinrang.</p>

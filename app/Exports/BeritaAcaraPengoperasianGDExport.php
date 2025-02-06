@@ -21,4 +21,5 @@ class BeritaAcaraPengoperasianGDExport implements FromView
     {
         return view('BeritaAcaraPengoperasian_GD.unduh', ['berita_acara_pengoperasian_gd' => $this->data]);
     }
+
 }
