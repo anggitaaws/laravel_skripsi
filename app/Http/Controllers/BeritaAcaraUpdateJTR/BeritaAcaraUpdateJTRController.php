@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BeritaAcaraUpdateJTR;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\BeritaAcaraUpdateJTRExport;
+use Carbon\Carbon;
 
 class BeritaAcaraUpdateJTRController extends Controller
 {
@@ -264,6 +265,8 @@ class BeritaAcaraUpdateJTRController extends Controller
         $berita_acara_update_jtr->pengawas = $request->input('pengawas','........');
         $berita_acara_update_jtr->manager = $request->input('manager','........');
 
+        Carbon::setLocale('id');
+
         $pdf = Pdf::loadView('BeritaAcaraUpdate_JTR.pdf',compact('berita_acara_update_jtr','data_aset_jtr'));
         
 
@@ -273,6 +276,7 @@ class BeritaAcaraUpdateJTRController extends Controller
 
     public function downloadExcel($id)
     {
+        Carbon::setLocale('id');
         return Excel::download(new BeritaAcaraUpdateJTRExport($id), 'berita_acara_penggantian_jtr.xlsx');
     }
 }

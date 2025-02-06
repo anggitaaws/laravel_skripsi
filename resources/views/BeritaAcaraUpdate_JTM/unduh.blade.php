@@ -28,7 +28,7 @@
             @if(isset($berita_acara_update_jtm->nomor_berita_acara))
             <p class="nomor"> NO: {{ $berita_acara_update_jtm->nomor_berita_acara }}</p>   
             @endif
-            <p class="hari-ini-text">Pada Hari ini {{ $berita_acara_update_jtm->tanggal }}, Kami yang bertanda tangan di bawah ini telah melaksanakan pengoperasian baru trafo Distribusi dengan data-data sebagai berikut: </p>
+            <p class="hari-ini-text">Pada Hari ini {{ \Carbon\Carbon::parse($berita_acara_update_jtm->tanggal)->translatedFormat('l, d F Y') }}, Kami yang bertanda tangan di bawah ini telah melaksanakan perubahan konstruksi Jaringan Tegangan Menengah dengan data-data sebagai berikut: </p>
             <table class="info-table-no-border">
                 <tr>
                     <td> ULP </td>

@@ -9,6 +9,7 @@ use App\Models\BeritaAcaraUpdateGD;
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\BeritaAcaraUpdateGDExport;
+use Carbon\Carbon;
 
 class BeritaAcaraUpdateGDController extends Controller
 {
@@ -323,6 +324,7 @@ class BeritaAcaraUpdateGDController extends Controller
 
     public function downloadExcel($id)
     {
+        Carbon::setLocale('id');
         return Excel::download(new BeritaAcaraUpdateGDExport($id), 'berita_acara_pembongkaran_gardu.xlsx');
     }
 
@@ -339,6 +341,8 @@ class BeritaAcaraUpdateGDController extends Controller
         $berita_acara_update_gd->pelaksana = $request->input('pelaksana','........');
         $berita_acara_update_gd->pengawas = $request->input('pengawas','........');
         $berita_acara_update_gd->manager = $request->input('manager','........');
+
+        Carbon::setLocale('id');
 
         $pdf = Pdf::loadView('BeritaAcaraUpdate_GD.pdf',compact('berita_acara_update_gd','data_aset_gardu'));
         
