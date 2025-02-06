@@ -30,8 +30,8 @@
             @endif
             <table class="info-table">
                 <tr><td> ULP: {{ $berita_acara_pengoperasian_jtm->ulp }}</td></tr>
-                <tr><td> NO SPBJ PELAKSANA: {{ $berita_acara_pengoperasian_jtm->no_spbj }}</td></tr>
-                <tr><td> VENDOR: {{ $berita_acara_pengoperasian_jtm->vendor }}</td></tr>
+                <tr><td> NO SPBJ: {{ $berita_acara_pengoperasian_jtm->no_spbj }}</td></tr>
+                <tr><td> PELAKSANA VENDOR: {{ $berita_acara_pengoperasian_jtm->vendor }}</td></tr>
                 <tr><td> LOKASI: {{ $berita_acara_pengoperasian_jtm->location }}</td></tr>
                 <tr><td> KOORDINAT AWAL: {{ $berita_acara_pengoperasian_jtm->initial_coordinates }}</td></tr>
                 <tr><td> KOORDINAT AKHIR: {{ $berita_acara_pengoperasian_jtm->final_coordinates }}</td></tr>
