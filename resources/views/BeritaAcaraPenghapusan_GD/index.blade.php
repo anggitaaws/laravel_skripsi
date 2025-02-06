@@ -155,10 +155,10 @@
                                             <a href="{{ Route('BeritaAcaraPenghapusanGD.show',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Detail</a>
                                             @if(auth()->user()->role === 'superadmin')
                                             <a href="{{ Route('BeritaAcaraPenghapusanGD.edit',$item->id) }}" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Edit</a>
-                                            <form action ="{{ Route('BeritaAcaraPenghapusanGD.destroy',$item->id) }}" method="post" type="button" class="btn btn-primary px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
+                                            <form action ="{{ Route('BeritaAcaraPenghapusanGD.destroy',$item->id) }}" method="post" type="button" class="btn btn-primary rounded submit px-1" style="background-color: #14A2BA;" onsubmit="return confirm('Delete?')">
                                                 @csrf
                                                 @method('delete')
-                                            <button class = "btn btn-group btn-primary rounded submit" style="background-color: #14A2BA;">Hapus</button>
+                                            <button class = "btn btn-primary submit" style="background-color: #14A2BA;">Hapus</button>
                                             </form>
                                             @endif
                                             <a href="#" type="button" class="btn btn-primary rounded submit px-1 btn-gap" style="background-color: #14A2BA;">Unduh Excel</a>
