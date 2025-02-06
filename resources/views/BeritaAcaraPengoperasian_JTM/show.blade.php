@@ -293,6 +293,18 @@
                                   <input type="text" name="insulation_t_body" class="form-control form-control-sm" id="insulation_t_body" placeholder="insulation_t_body" value="{{ $berita_acara_pengoperasian_jtm->insulation_t_body }}" readonly>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Created At</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="created_at" class="form-control form-control-sm" id="created_at" placeholder="created_at" value="{{ $berita_acara_pengoperasian_jtm->created_at }}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Updated At</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="updated_at" class="form-control form-control-sm" id="updated_at" placeholder="updated_at" value="{{ $berita_acara_pengoperasian_jtm->updated_at }}" readonly>
+                                </div>
+                            </div>
                         </form>
                     </div>
                         </div>
