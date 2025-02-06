@@ -145,7 +145,8 @@
                             <div class="form-group row">
                               <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Tanggal</label>
                               <div class="col-sm-10">
-                                <input type="text" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $berita_acara_update_gd->tanggal }}" readonly>
+                                <input type="date" name="tanggal" class="form-control form-control-sm" id="tanggal" placeholder="tanggal" value="{{ $berita_acara_update_gd->tanggal }}" readonly>
+                                <small id="formatted-date" class="text-muted"></small>
                               </div>
                           </div>
                             <div class="form-group row">
@@ -388,6 +389,18 @@
                                   <input type="text" name="earthbody" class="form-control form-control-sm" id="earthbody" placeholder="earthbody" value="{{ $berita_acara_update_gd->earthbody }}" readonly>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                              <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Created At</label>
+                              <div class="col-sm-10">
+                                <input type="text" name="created_at" class="form-control form-control-sm" id="created_at" placeholder="created_at" value="{{ $berita_acara_update_gd->created_at }}" readonly>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Updated At</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="updated_at" class="form-control form-control-sm" id="updated_at" placeholder="updated_at" value="{{ $berita_acara_update_gd->updated_at }}" readonly>
+                            </div>
+                        </div>
                     </div>
                         </div>
                     </div>
@@ -425,6 +438,19 @@
           // Call updateClock immediately to show the time as soon as the page loads
           updateClock();
       </script>
+      <script>
+        document.getElementById('tanggal').addEventListener('change', function() {
+            let inputTanggal = this.value;
+            if (inputTanggal) {
+                let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                let formattedDate = new Date(inputTanggal).toLocaleDateString('id-ID', options);
+    
+                document.getElementById('formatted-date').innerText = "Tanggal dipilih: " + formattedDate;
+            } else {
+                document.getElementById('formatted-date').innerText = "";
+            }
+        });
+    </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('halaman_data_aset/js/scripts.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
