@@ -118,7 +118,7 @@
                 <tr>
                     <td>14</td>
                     <td>TEG. PENGENAL (V)</td>
-                    <td> {{ $berita_acara_pengoperasian_gd->spec_voltage }} </td>
+                    <td> {{ $berita_acara_pengoperasian_gd->spec_voltage }} V</td>
                 </tr>
                 <tr>
                     <td>15</td>
@@ -133,7 +133,7 @@
                 <tr>
                     <td>17</td>
                     <td>BEBAN TRAFO</td>
-                    <td> {{ $berita_acara_pengoperasian_gd->trafo_load }} % </td>
+                    <td> {{ $berita_acara_pengoperasian_gd->trafo_load }} KVA </td>
                 </tr>
                 <tr>
                     <td>18</td>

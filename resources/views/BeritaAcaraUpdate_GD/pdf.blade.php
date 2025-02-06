@@ -254,21 +254,21 @@ body {
                 <tr>
                     <td>4</td>
                     <td>BERAT/VOL.MINYAK</td>
-                    <td>{{ $data_aset_gardu->spec_oilweight }} </td>
-                    <td>{{ $berita_acara_update_gd->spec_oilweight}} </td>
+                    <td>{{ $data_aset_gardu->spec_oilweight }} L</td>
+                    <td>{{ $berita_acara_update_gd->spec_oilweight}} L</td>
  
                 </tr>
                 <tr>
                     <td>5</td>
                     <td>BERAT TOTAL</td>
-                    <td>{{ $data_aset_gardu->spec_transweight }} </td>
-                    <td>{{ $berita_acara_update_gd->spec_transweight}} </td>
+                    <td>{{ $data_aset_gardu->spec_transweight }} Kg</td>
+                    <td>{{ $berita_acara_update_gd->spec_transweight}} Kg</td>
                 </tr>
                 <tr>
                     <td>6</td>
                     <td>IMPEDENSI</td>
-                    <td>{{ $data_aset_gardu->impedance }} </td>
-                    <td>{{ $berita_acara_update_gd->impedance}} </td>
+                    <td>{{ $data_aset_gardu->impedance }} %</td>
+                    <td>{{ $berita_acara_update_gd->impedance}} %</td>
                 </tr>
                 <tr>
                     <td>7</td>
@@ -315,8 +315,8 @@ body {
                 <tr>
                     <td>14</td>
                     <td>TEG. PENGENAL (V)</td>
-                    <td>{{ $data_aset_gardu->spec_voltage }} </td>
-                    <td>{{ $berita_acara_update_gd->spec_voltage }} </td>
+                    <td>{{ $data_aset_gardu->spec_voltage }} V</td>
+                    <td>{{ $berita_acara_update_gd->spec_voltage }} V</td>
                 </tr>
                 <tr>
                     <td>15</td>
@@ -333,8 +333,8 @@ body {
                 <tr>
                     <td>17</td>
                     <td>BEBAN TRAFO</td>
-                    <td>{{ $data_aset_gardu->trafo_load }} % </td>
-                    <td>{{ $berita_acara_update_gd->trafo_load }} % </td>
+                    <td>{{ $data_aset_gardu->trafo_load }} KVA </td>
+                    <td>{{ $berita_acara_update_gd->trafo_load }} KVA </td>
                 </tr>
                 <tr>
                     <td>18</td>
