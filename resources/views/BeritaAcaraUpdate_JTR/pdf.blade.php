@@ -176,11 +176,11 @@
                     <td>{{ $berita_acara_update_jtr->ulp }}</td>
                 </tr>
                 <tr>
-                    <td> NO SPBJ PELAKSANA</td>
+                    <td> NO SPBJ</td>
                     <td> {{ $berita_acara_update_jtr->no_spbj }}</td>
                 </tr>
                 <tr>
-                    <td> VENDOR </td>
+                    <td> PELAKSANA VENDOR </td>
                     <td> {{ $berita_acara_update_jtr->vendor }}</td>
                 </tr>
                 <tr>

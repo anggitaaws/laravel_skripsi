@@ -35,11 +35,11 @@
                     <td>{{ $berita_acara_update_jtr->ulp }}</td>
                 </tr>
                 <tr>
-                    <td> NO SPBJ PELAKSANA</td>
+                    <td> NO SPBJ</td>
                     <td> {{ $berita_acara_update_jtr->no_spbj }}</td>
                 </tr>
                 <tr>
-                    <td> VENDOR </td>
+                    <td> PELAKSANA VENDOR </td>
                     <td> {{ $berita_acara_update_jtr->vendor }}</td>
                 </tr>
                 <tr>
@@ -132,6 +132,23 @@
                     <td>JURUSAN DARI GARDU</td>
                     <td>{{ $data_aset_jtr->jurusan_gardu }} </td>   
                     <td>{{ $berita_acara_update_jtr->jurusan_gardu}} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="additional-info" style="margin-top: 30px;">
+            <p>Pemeriksaan Tahanan Kabel yang terpasang:</p>
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td>R-Body: {{ $berita_acara_update_jtr->insulation_r_body }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>S-Body: {{ $berita_acara_update_jtr->insulation_s_body }} GΩ</td>
+                </tr>
+                <tr>
+                    <td>T-Body: {{ $berita_acara_update_jtr->insulation_t_body }} GΩ</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Tahanan Pentanahan Netral Trafo Dan Ujung JTR: {{ $berita_acara_update_jtr->earthneutral }} GΩ</td>
                 </tr>
             </table>
         </div>
