@@ -29,6 +29,7 @@
             <p class="nomor"> NO: {{ $berita_acara_update_jtr->nomor_berita_acara }}</p>   
             @endif
             <p class="hari-ini-text">Pada Hari ini {{ \Carbon\Carbon::parse($berita_acara_update_jtr->tanggal)->translatedFormat('l, d F Y') }}, Kami yang bertanda tangan di bawah ini telah melaksanakan penggantian konstruksi Jaringan Tegangan Rendah dengan data-data sebagai berikut: </p>
+            <br>
             <table class="info-table-no-border">
                 <tr>
                     <td> ULP </td>
