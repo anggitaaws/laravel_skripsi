@@ -51,7 +51,7 @@
                 <tr>
                     <th> NO </th>
                     <th> DATA </th>
-                    <th> DIPASANG </th> 
+                    <th> DIBONGKAR </th> 
                 </tr>
                 <tr>
                     <td>1</td>
