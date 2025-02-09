@@ -294,6 +294,24 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pengawas</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="pengawas" class="form-control form-control-sm" id="pengawas" placeholder="pengawas" value="{{ $berita_acara_update_jtm->pengawas }}" readonly>
+                                </div>
+                            </div>
+                              <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pelaksana</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="pelaksana" class="form-control form-control-sm" id="pelaksana" placeholder="pelaksana" value="{{ $berita_acara_update_jtm->pelaksana }}" readonly>
+                                </div>
+                            </div>
+                              <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Manager ULP</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="manager_ulp" class="form-control form-control-sm" id="manager_ulp" placeholder="manager_ulp" value="{{ $berita_acara_update_jtm->manager_ulp }}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Created At</label>
                                 <div class="col-sm-10">
                                   <input type="text" name="created_at" class="form-control form-control-sm" id="created_at" placeholder="created_at" value="{{ $berita_acara_update_jtm->created_at }}" readonly>

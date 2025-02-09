@@ -306,6 +306,24 @@
                                   <input type="text" name="insulation_t_body" class="form-control form-control-sm" id="insulation_t_body" placeholder="insulation_t_body">
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pengawas</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="pengawas" class="form-control form-control-sm" id="pengawas" placeholder="pengawas">
+                                </div>
+                            </div>
+                             <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Pelaksana</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="pelaksana" class="form-control form-control-sm" id="pelaksana" placeholder="pelaksana">
+                                </div>
+                            </div>
+                             <div class="form-group row">
+                                <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Manager ULP</label>
+                                <div class="col-sm-10">
+                                  <input type="text" name="manager_ulp" class="form-control form-control-sm" id="manager_ulp" placeholder="manager_ulp">
+                                </div>
+                            </div>
                             <div class="form-group col-sm-2">
                                 <div class="d-grid">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-2" style="background-color: #14A2BA;">SIMPAN</button>
