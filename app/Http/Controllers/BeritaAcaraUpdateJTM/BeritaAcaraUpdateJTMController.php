@@ -89,6 +89,9 @@ class BeritaAcaraUpdateJTMController extends Controller
         'insulation_r_body' => $request->input('insulation_r_body'),
         'insulation_s_body' => $request->input('insulation_s_body'),
         'insulation_t_body' => $request->input('insulation_t_body'),
+        'pengawas' => $request->input('pengawas'),
+        'pelaksana' => $request->input('pelaksana'),
+        'manager_ulp' => $request->input('manager_ulp'),
         ]);
 
         DataAsetJTM::create([
@@ -202,6 +205,9 @@ class BeritaAcaraUpdateJTMController extends Controller
             'insulation_r_body' => $request->input('insulation_r_body'),
             'insulation_s_body' => $request->input('insulation_s_body'),
             'insulation_t_body' => $request->input('insulation_t_body'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
              //Menyimpan data ke DataAsetJTM
@@ -262,12 +268,6 @@ class BeritaAcaraUpdateJTMController extends Controller
         ->oldest('updated_at')
         ->oldest('created_at')
         ->first();
-
-        $berita_acara_sebelum_edit = clone $berita_acara_update_jtm;
-
-        $berita_acara_update_jtm->pelaksana = $request->input('pelaksana','........');
-        $berita_acara_update_jtm->pengawas = $request->input('pengawas','........');
-        $berita_acara_update_jtm->manager = $request->input('manager','........');
 
         Carbon::setLocale('id');
 

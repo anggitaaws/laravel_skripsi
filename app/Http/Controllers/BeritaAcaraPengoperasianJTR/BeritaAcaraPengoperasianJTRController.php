@@ -88,6 +88,9 @@ class BeritaAcaraPengoperasianJTRController extends Controller
             'insulation_s_s' => $request->input('insulation_s_s'),
             'insulation_t_t' => $request->input('insulation_t_t'),
             'earthneutral' => $request->input('earthneutral'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             //Menyimpan data ke DataAsetGardu
@@ -203,6 +206,9 @@ class BeritaAcaraPengoperasianJTRController extends Controller
             'insulation_s_s' => $request->input('insulation_s_s'),
             'insulation_t_t' => $request->input('insulation_t_t'),
             'earthneutral' => $request->input('earthneutral'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             //Menyimpan data ke DataAsetJTR
@@ -265,9 +271,6 @@ class BeritaAcaraPengoperasianJTRController extends Controller
     public function downloadPdf($id, Request $request)
     {
         $berita_acara_pengoperasian_jtr= BeritaAcaraPengoperasianJTR::find($id);
-        $berita_acara_pengoperasian_jtr->pelaksana = $request->input('pelaksana','........');
-        $berita_acara_pengoperasian_jtr->pengawas = $request->input('pengawas','........');
-        $berita_acara_pengoperasian_jtr->manager = $request->input('manager','........');
 
         Carbon::setLocale('id'); 
 

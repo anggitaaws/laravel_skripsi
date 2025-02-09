@@ -89,6 +89,9 @@ class BeritaAcaraUpdateJTRController extends Controller
             'insulation_s_s' => $request->input('insulation_s_s'),
             'insulation_t_t' => $request->input('insulation_t_t'),
             'earthneutral' => $request->input('earthneutral'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             //Menyimpan data ke DataAsetGardu
@@ -201,6 +204,9 @@ class BeritaAcaraUpdateJTRController extends Controller
             'insulation_s_s' => $request->input('insulation_s_s'),
             'insulation_t_t' => $request->input('insulation_t_t'),
             'earthneutral' => $request->input('earthneutral'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             //Menyimpan data ke DataAsetJTR
@@ -258,12 +264,6 @@ class BeritaAcaraUpdateJTRController extends Controller
         ->oldest('updated_at')
         ->oldest('created_at')
         ->first();
-
-        $berita_acara_sebelum_edit = clone $berita_acara_update_jtr;
-
-        $berita_acara_update_jtr->pelaksana = $request->input('pelaksana','........');
-        $berita_acara_update_jtr->pengawas = $request->input('pengawas','........');
-        $berita_acara_update_jtr->manager = $request->input('manager','........');
 
         Carbon::setLocale('id');
 

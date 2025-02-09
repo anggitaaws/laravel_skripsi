@@ -107,6 +107,9 @@ class BeritaAcaraUpdateGDController extends Controller
         'insulation_R_r' => $request->input('insulation_R_r'),
         'insulation_S_s' => $request->input('insulation_S_s'),
         'insulation_T_t' => $request->input('insulation_T_t'),
+        'pengawas' => $request->input('pengawas'),
+        'pelaksana' => $request->input('pelaksana'),
+        'manager_ulp' => $request->input('manager_ulp'),
         ]);
 
         //Menyimpan data ke DataAsetGardu
@@ -251,6 +254,9 @@ class BeritaAcaraUpdateGDController extends Controller
             'insulation_R_r' => $request->input('insulation_R_r'),
             'insulation_S_s' => $request->input('insulation_S_s'),
             'insulation_T_t' => $request->input('insulation_T_t'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             // Optional: Jika juga ingin update di DataAsetGardu
@@ -338,9 +344,6 @@ class BeritaAcaraUpdateGDController extends Controller
         ->oldest('updated_at')
         ->first();
 
-        $berita_acara_update_gd->pelaksana = $request->input('pelaksana','........');
-        $berita_acara_update_gd->pengawas = $request->input('pengawas','........');
-        $berita_acara_update_gd->manager = $request->input('manager','........');
 
         Carbon::setLocale('id');
 

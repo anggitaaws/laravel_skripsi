@@ -88,6 +88,9 @@ class BeritaAcaraPengoperasianJTMController extends Controller
             'insulation_r_body' => $request->input('insulation_r_body'),
             'insulation_s_body' => $request->input('insulation_s_body'),
             'insulation_t_body' => $request->input('insulation_t_body'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             DataAsetJTM::create([
@@ -201,6 +204,9 @@ class BeritaAcaraPengoperasianJTMController extends Controller
             'insulation_r_body' => $request->input('insulation_r_body'),
             'insulation_s_body' => $request->input('insulation_s_body'),
             'insulation_t_body' => $request->input('insulation_t_body'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
              //Menyimpan data ke DataAsetJTM
@@ -266,9 +272,6 @@ class BeritaAcaraPengoperasianJTMController extends Controller
     public function downloadPdf($id, Request $request)
     {
         $berita_acara_pengoperasian_jtm= BeritaAcaraPengoperasianJTM::find($id);
-        $berita_acara_pengoperasian_jtm->pelaksana = $request->input('pelaksana','........');
-        $berita_acara_pengoperasian_jtm->pengawas = $request->input('pengawas','........');
-        $berita_acara_pengoperasian_jtm->manager = $request->input('manager','........');
 
         Carbon::setLocale('id');
 

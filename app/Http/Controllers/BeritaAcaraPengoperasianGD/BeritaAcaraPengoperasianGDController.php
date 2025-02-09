@@ -106,6 +106,9 @@ class BeritaAcaraPengoperasianGDController extends Controller
         'insulation_R_r' => $request->input('insulation_R_r'),
         'insulation_S_s' => $request->input('insulation_S_s'),
         'insulation_T_t' => $request->input('insulation_T_t'),
+        'pengawas' => $request->input('pengawas'),
+        'pelaksana' => $request->input('pelaksana'),
+        'manager_ulp' => $request->input('manager_ulp'),
         ]);
 
         //Menyimpan data ke DataAsetGardu
@@ -250,6 +253,9 @@ class BeritaAcaraPengoperasianGDController extends Controller
             'insulation_R_r' => $request->input('insulation_R_r'),
             'insulation_S_s' => $request->input('insulation_S_s'),
             'insulation_T_t' => $request->input('insulation_T_t'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             // Optional: Jika juga ingin update di DataAsetGardu
@@ -331,9 +337,6 @@ class BeritaAcaraPengoperasianGDController extends Controller
         set_time_limit(300); // Mengatur batas waktu eksekusi menjadi 300 detik
         
         $berita_acara_pengoperasian_gd= BeritaAcaraPengoperasianGD::find($id);
-        $berita_acara_pengoperasian_gd->pelaksana = $request->input('pelaksana','........');
-        $berita_acara_pengoperasian_gd->pengawas = $request->input('pengawas','........');
-        $berita_acara_pengoperasian_gd->manager = $request->input('manager','........');
 
         Carbon::setLocale('id');
 

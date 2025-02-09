@@ -103,6 +103,9 @@ class BeritaAcaraPenghapusanGDController extends Controller
             'insulation_R_r' => $request->input('insulation_R_r'),
             'insulation_S_s' => $request->input('insulation_S_s'),
             'insulation_T_t' => $request->input('insulation_T_t'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
             return redirect()->route('BeritaAcaraPenghapusanGD')->with('success', 'Data berhasil Disimpan');
@@ -201,6 +204,9 @@ class BeritaAcaraPenghapusanGDController extends Controller
             'insulation_R_r' => $request->input('insulation_R_r'),
             'insulation_S_s' => $request->input('insulation_S_s'),
             'insulation_T_t' => $request->input('insulation_T_t'),
+            'pengawas' => $request->input('pengawas'),
+            'pelaksana' => $request->input('pelaksana'),
+            'manager_ulp' => $request->input('manager_ulp'),
             ]);
 
         return redirect()->route('BeritaAcaraPenghapusanGD')->with('success','Berita Acara Pembongkaran Gardu Berhasil Diupdate');
@@ -219,9 +225,6 @@ class BeritaAcaraPenghapusanGDController extends Controller
     public function downloadPdf($id, Request $request)
     {
         $berita_acara_penghapusan_gd= BeritaAcaraPenghapusanGD::find($id);
-        $berita_acara_penghapusan_gd->pelaksana = $request->input('pelaksana','........');
-        $berita_acara_penghapusan_gd->pengawas = $request->input('pengawas','........');
-        $berita_acara_penghapusan_gd->manager = $request->input('manager','........');
 
         Carbon::setLocale('id');
 
