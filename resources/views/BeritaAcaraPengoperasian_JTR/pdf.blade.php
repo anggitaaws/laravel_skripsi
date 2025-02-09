@@ -294,13 +294,13 @@ body {
             Pelaksana,<br>
             JTC KONS. DAN LOG<br>
             <br><br><br><br>
-            <strong>ERFAN ARSYAD</strong>
+            <strong>{{$berita_acara_pengoperasian_jtr->pelaksana}}</strong>
         </td>
         <td style="width: 50%;">
             Pengawas,<br>
             TL. TEKNIK<br>
             <br><br><br><br>
-            <strong>HAYYA</strong>
+            <strong>{{$berita_acara_pengoperasian_jtr->pengawas}}</strong>
         </td>
     </tr>
 </table>
@@ -310,7 +310,7 @@ body {
     Mengetahui,<br>
     MANAGER ULP<br>
     <br><br><br><br>
-    <strong>YANTO YULIASMIN LINTHIN</strong>
+    <strong>{{$berita_acara_pengoperasian_jtr->manager_ulp}}</strong>
 </div>
         </body>
 </html>
