@@ -39,6 +39,9 @@ class BeritaAcaraUpdateJTM extends Model
         'insulation_r_body',
         'insulation_s_body',
         'insulation_t_body',
+        'pengawas',
+        'pelaksana',
+        'manager_ulp',
     ];
 
     public function dataAsetJTM()

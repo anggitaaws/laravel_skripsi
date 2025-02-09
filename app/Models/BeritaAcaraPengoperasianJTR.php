@@ -38,6 +38,9 @@ class BeritaAcaraPengoperasianJTR extends Model
         'insulation_s_body',
         'insulation_t_body',
         'earthneutral',
+        'pengawas',
+        'pelaksana',
+        'manager_ulp',
     ];
 
     public function dataAsetJTR()

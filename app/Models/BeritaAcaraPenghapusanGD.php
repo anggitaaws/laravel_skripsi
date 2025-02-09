@@ -54,5 +54,8 @@ class BeritaAcaraPenghapusanGD extends Model
         'insulation_R_r',
         'insulation_S_s',
         'insulation_T_t',
+        'pengawas',
+        'pelaksana',
+        'manager_ulp',
     ];
 }
