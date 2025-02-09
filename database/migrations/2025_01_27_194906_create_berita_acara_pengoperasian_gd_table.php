@@ -56,6 +56,9 @@ return new class extends Migration
             $table->string('insulation_R_r')->nullable(); // R-r
             $table->string('insulation_S_s')->nullable(); // S-s
             $table->string('insulation_T_t')->nullable(); //T-t
+            $table->string('manager_ulp')->nullable();
+            $table->string('pelaksana')->nullable();
+            $table->string('pengawas')->nullable();
             $table->timestamps();
         });
     }

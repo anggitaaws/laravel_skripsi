@@ -40,6 +40,9 @@ return new class extends Migration
             $table->string('insulation_r_body')->nullable();
             $table->string('insulation_s_body')->nullable();
             $table->string('insulation_t_body')->nullable();
+            $table->string('manager_ulp')->nullable();
+            $table->string('pelaksana')->nullable();
+            $table->string('pengawas')->nullable();
             $table->timestamps();
         });
     }

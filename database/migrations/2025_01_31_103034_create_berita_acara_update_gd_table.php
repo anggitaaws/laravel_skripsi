@@ -56,6 +56,9 @@ return new class extends Migration
             $table->string('earthneutral')->nullable(); // Tahanan Pentanahan Netral Trafo dan Ujung JTR
             $table->string('earthla')->nullable(); // Tahanan Pentanahan Lightning Arrester 
             $table->string('earthbody')->nullable(); // Tahanan Pentanahan Body Trafo
+            $table->string('manager_ulp')->nullable();
+            $table->string('pelaksana')->nullable();
+            $table->string('pengawas')->nullable();
             $table->timestamps();
         });
     }
