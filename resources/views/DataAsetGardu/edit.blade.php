@@ -139,6 +139,12 @@
                                       <input type="text" name="id_gardu" class="form-control form-control-sm" id="id_gardu" placeholder="id_gardu" value="{{ $data_aset_gardu->id_gardu }}">
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">ULP</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" name="ulp" class="form-control form-control-sm" id="ulp" placeholder="ulp" value="{{ $data_aset_gardu->ulp }}">
+                                    </div>
+                                </div>
                             <div class="form-group row">
                                 <label for="colFormLabelSm" class="col-sm-4 col-form-label col-form-label-sm">Nama GD Baru</label>
                                 <div class="col-sm-10">

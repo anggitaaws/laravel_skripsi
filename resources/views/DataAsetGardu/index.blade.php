@@ -146,6 +146,7 @@
                                         <tr class="align-items-center" style="background-color: #e7f6f9; color: #125d72;">
                                             <th>No</th>
                                             <th>Id Gardu </th>
+                                            <th>ULP </th>
                                             <th>Nama Gardu Baru</th>
                                             <th>KVA Internal</th>
                                             <th>Phasa Internal</th>
@@ -167,6 +168,7 @@
                                             <tr>
                                                 <td class="align-middle">{{ $loop->iteration }}</td>
                                                 <td class="align-middle">{{ $rs->id_gardu }}</td>
+                                                <td class="align-middle">{{ $rs->ulp }}</td>
                                                 <td class="align-middle">{{ $rs->name }}</td>
                                                 <td class="align-middle">{{ $rs->id_transpower }}</td>
                                                 <td class="align-middle">{{ $rs->phase }}</td>
